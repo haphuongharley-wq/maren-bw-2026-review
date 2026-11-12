@@ -1,94 +1,148 @@
 <!doctype html>
-<html lang="vi">
+<html lang="no">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Black Week + Jul 2026 · Preview</title>
+<title>Jul 2026 · Fra stress til ro · til godkjenning</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="pages/_shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-main{padding:48px 0 80px}
-.grid{display:grid;gap:16px}
+:root{--navy:#274472;--navy-d:#1a2f52;--navy-dd:#142340;--gold:#AB9461;--gold-d:#8a7340;--gold-l:#d8c79c;--gold-xl:#f6efe1;--cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--ink:#1f2a3d;--slate:#5d6a82;
+--serif:'Cormorant Garamond',Georgia,serif;--sans:Inter,system-ui,-apple-system,sans-serif;--r:24px;--sh:0 24px 60px -28px rgba(26,45,80,.35)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;margin:0}
+.eyebrow{display:block;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#74602f;margin:0 0 12px}
+.hero{position:relative;background:var(--navy-dd);color:#e6ebf4;overflow:hidden}
+.hero .wrap{position:relative;display:grid;gap:32px;padding-top:clamp(48px,8vw,96px);padding-bottom:clamp(72px,10vw,120px)}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:end}}
+.hero .eyebrow{color:var(--gold-l)}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);color:#fff}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold-l)}
+.hero p{max-width:560px;color:#c3cde0;font-size:1.08rem;margin:18px 0 0}
+.hero figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;max-width:380px;width:100%;justify-self:end;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+.doors{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;max-width:420px;margin-top:28px}
+.doors span{aspect-ratio:3/4;border:1px solid rgba(216,199,156,.45);border-radius:8px;display:flex;align-items:center;justify-content:center;font:600 1rem var(--serif);color:var(--gold-l)}
+.facts{display:grid;gap:1px;background:var(--sand);border:1px solid var(--sand);border-radius:var(--r);overflow:hidden;margin-top:-48px;position:relative;box-shadow:var(--sh)}
+@media(min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+.facts div{background:#fff;padding:20px 22px}
+.facts small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-bottom:6px}
+.facts b{display:block;font:600 1.7rem/1.1 var(--serif);color:var(--navy);font-variant-numeric:lining-nums}
+.facts span{font-size:.88rem;color:var(--slate)}
+section.blk{padding:clamp(56px,8vw,96px) 0 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:24px}
+.head h2{font-size:clamp(2rem,4.5vw,2.8rem);color:var(--navy)}
+.head p{max-width:520px;color:var(--slate);margin:0}
+.grid{display:grid;gap:18px}
 @media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
-.card{box-shadow:none}
-.card h2{font-size:1.6rem;margin-bottom:6px}
-.card p{color:var(--slate);font-size:.95rem}
-.links{display:flex;flex-wrap:wrap;gap:8px}
-.links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:999px;border:1px solid var(--sand);color:var(--navy);font-weight:600;font-size:.9rem;text-decoration:none}
-.links a.main{background:var(--navy);border-color:var(--navy);color:#fff}
-.links a:hover{border-color:var(--gold)}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r-sm);overflow:hidden;font-size:.92rem}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--sand);vertical-align:top}
-th{background:var(--cream);color:var(--navy)}
-.tblw{overflow-x:auto;margin:12px 0 8px}
-h2.sec{margin-top:48px}
-.open li{margin-bottom:6px}
+.card{background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .2s,border-color .2s}
+.card:hover{box-shadow:var(--sh);border-color:#e2d8c4}
+.card .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--gold-xl);color:#74602f;font:600 1.15rem var(--serif);font-variant-numeric:lining-nums}
+.card h3{font-size:1.7rem;color:var(--navy)}
+.card p{margin:0;color:var(--slate);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.chips a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:999px;border:1px solid var(--sand);font-size:.88rem;font-weight:500;color:var(--navy);text-decoration:none;transition:border-color .2s,background .2s}
+.chips a:hover{border-color:var(--gold);background:var(--gold-xl)}
+.chips a.main{background:var(--navy);border-color:var(--navy);color:#fff}
+.chips a.main:hover{background:var(--navy-d)}
+.docs{display:grid;gap:12px}
+@media(min-width:760px){.docs{grid-template-columns:repeat(3,1fr)}}
+.doc{display:flex;flex-direction:column;gap:4px;min-height:120px;padding:20px 22px;border-radius:var(--r);background:var(--cream);text-decoration:none;color:var(--ink);transition:transform .2s,background .2s}
+.doc:hover{background:var(--gold-xl);transform:translateY(-2px)}
+.doc b{font:600 1.45rem var(--serif);color:var(--navy)}
+.doc span{font-size:.9rem;color:var(--slate)}
+.tl{list-style:none;padding:0;border-left:2px solid var(--sand);margin:0 0 0 8px}
+.tl li{position:relative;padding:0 0 22px 26px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--gold)}
+.tl li.key::before{background:var(--gold)}
+.tl b{display:block;color:var(--navy)}
+.tl span{color:var(--slate);font-size:.95rem}
+.two{display:grid;gap:32px}
+@media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
+.open{background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:24px;align-self:start}
+.open ul{margin:0;padding-left:20px}.open li{margin-bottom:8px}
+.open mark{background:#ffe08a;padding:0 4px;border-radius:4px}
+footer{padding:72px 16px 48px;color:var(--slate);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Det lille pusterommet · til godkjenning</span>
+      <h1>Julen 2026: <em>Fra stress til ro</em></h1>
+      <p>En gratis video om julestress for flinke piker, to korte salgsrunder før jul, og Romjulskalenderen i gave til alle som blir med. Her ser du sidene, e-postene og manusene slik de blir.</p>
+      <div class="doors" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>★</span></div>
+    </div>
+    <figure><img src="pages/img/maren-vinter.jpg" alt="Maren smiler i et lyst, vinterlig rom"></figure>
+  </div>
+</header>
+
 <main class="wrap">
-  <span class="eyebrow">Det lille pusterommet · prototype để duyệt nhanh</span>
-  <h1>Black Week + Giáng sinh 2026</h1>
-  <p class="lead">Prototype 4 trang của chiến dịch VSL «Julestress» (chữ tiếng Việt để duyệt nhanh), và toàn bộ copy tiếng Na Uy bên dưới. Mỗi trang tự đổi theo giờ Na Uy; thanh tối phía trên trang cho phép xem từng trạng thái. Sau khi duyệt, nội dung được dịch sang tiếng Na Uy và dựng trong Kajabi.</p>
-
-  <div class="tblw"><table>
-    <tr><th></th><th>Ngày 1</th><th>Ngày 2</th></tr>
-    <tr><td>Trả một lần</td><td><b>7 997 kr</b> (tiết kiệm 6 993 kr)</td><td><b>8 997 kr</b> (tiết kiệm 5 993 kr)</td></tr>
-    <tr><td>Trả 3 lần (đề xuất)</td><td>3 × 2 797 kr (8 391 kr)</td><td>3 × 3 147 kr (9 441 kr)</td></tr>
-    <tr><td>Giá so sánh</td><td colspan="2">14 990 kr · đợt 1: 25–26/11 · đợt 2: 10–11/12 (cùng giá)</td></tr>
-  </table></div>
-
-  <h2 class="sec">Các trang</h2>
-  <div class="grid">
-    <section class="card">
-      <h2>1. Trang đăng ký xem video</h2>
-      <p>Form tên, email, số điện thoại. Trước khi mở: tới trang cảm ơn. Đang mở: tới thẳng trang video.</p>
-      <div class="links"><a class="main" href="pages/vi/dang-ky.html?state=before1">Trước khi mở</a><a href="pages/vi/dang-ky.html?state=open1">Đang mở</a><a href="pages/vi/dang-ky.html?state=before2">Trước đợt 2</a><a href="pages/vi/dang-ky.html?state=closed">Đã đóng</a></div>
-    </section>
-    <section class="card">
-      <h2>2. Trang cảm ơn</h2>
-      <p>Ba việc nhỏ trước ngày video mở, có nút thêm vào lịch.</p>
-      <div class="links"><a class="main" href="pages/vi/takk.html?state=round1">Đợt 1</a><a href="pages/vi/takk.html?state=round2">Đợt 2</a></div>
-    </section>
-    <section class="card">
-      <h2>3. Trang video và bán hàng</h2>
-      <p>Ngày bán: chỉ có video và một nút «Se tilbudet ↓». Bấm nút thì phần ưu đãi hiện ra. Link có <code>#tilbud</code> (từ email) mở thẳng phần ưu đãi.</p>
-      <div class="links"><a href="pages/vi/video.html?state=before">Trước khi mở</a><a class="main" href="pages/vi/video.html?state=r1d1">Đợt 1 · ngày 1</a><a href="pages/vi/video.html?state=r1d1#tilbud">Ngày 1 + ưu đãi</a><a href="pages/vi/video.html?state=r1d2#tilbud">Ngày 2 + ưu đãi</a><a href="pages/vi/video.html?state=between">Giữa hai đợt</a><a href="pages/vi/video.html?state=r2d2#tilbud">Đợt 2 · ngày 2 + Q&amp;A</a><a href="pages/vi/video.html?state=r2d2&amp;qa=replay#tilbud">Ngày 2 + bản ghi Q&amp;A</a><a href="pages/vi/video.html?state=closed">Đã đóng</a></div>
-    </section>
-    <section class="card">
-      <h2>4. Romjulskalenderen (quà)</h2>
-      <p>Mở bằng form. 8 ô cửa từ 25/12 đến 1/1; ô chưa tới ngày thì rung và báo ngày mở; khách tự tích «Ferdig for i dag ✓».</p>
-      <div class="links"><a class="main" href="pages/vi/kalender.html?state=locked">Chưa mở form</a><a href="pages/vi/kalender.html?state=waiting">Trước 25/12</a><a href="pages/vi/kalender.html?state=day3">27/12</a><a href="pages/vi/kalender.html?state=alldone">Xong 8 ô</a><a href="pages/vi/kalender.html?state=closed">Đã đóng</a></div>
-    </section>
+  <div class="facts">
+    <div><small>Dag 1</small><b>7 997 kr</b><span>eller 3 × 2 797 kr (totalt 8 391 kr)</span></div>
+    <div><small>Dag 2</small><b>8 997 kr</b><span>eller 3 × 3 147 kr (totalt 9 441 kr)</span></div>
+    <div><small>Ordinær pris</small><b><s>14 990 kr</s></b><span>vises gjennomstreket</span></div>
+    <div><small>To runder</small><b>25. og 26. nov</b><span>og 10. og 11. desember</span></div>
   </div>
 
-  <h2 class="sec">Copy tiếng Na Uy (bản để Maren duyệt)</h2>
-  <p>Toàn bộ chữ của chiến dịch bằng tiếng Na Uy. Chỗ tô vàng là chỗ Maren cần xác nhận.</p>
-  <div class="links"><a class="main" href="copy/vsl.html">VSL-manus</a><a href="copy/sider.html">Sidene</a><a href="copy/e-poster.html">E-postene (38)</a><a href="copy/kalender.html">Romjulskalenderen</a><a href="copy/live-qa.html">Live Q&amp;A</a></div>
+  <section class="blk">
+    <div class="head"><h2>Sidene</h2><p>Hver side bytter innhold selv etter norsk tid. Knappene viser hver tilstand.</p></div>
+    <div class="grid">
+      <article class="card"><span class="num">1</span><h3>Påmelding til videoen</h3><p>Skjema med navn, e-post og telefon. Før åpning går man til takkesiden, mens videoen er åpen rett til videoen.</p>
+        <div class="chips"><a class="main" href="pages/registrering.html?state=before1">Før åpning</a><a href="pages/registrering.html?state=open1">Åpen</a><a href="pages/registrering.html?state=before2">Før runde 2</a><a href="pages/registrering.html?state=closed">Stengt</a></div></article>
+      <article class="card"><span class="num">2</span><h3>Takkesiden</h3><p>Tre små ting før videoen åpner, med knapp for å legge tiden i kalenderen.</p>
+        <div class="chips"><a class="main" href="pages/takk.html?state=round1">Runde 1</a><a href="pages/takk.html?state=round2">Runde 2</a></div></article>
+      <article class="card"><span class="num">3</span><h3>Videoen og tilbudet</h3><p>På salgsdagene vises først bare videoen og «Se tilbudet ↓». Lenker fra e-post med #tilbud åpner tilbudet direkte.</p>
+        <div class="chips"><a href="pages/video.html?state=before">Før åpning</a><a class="main" href="pages/video.html?state=r1d1">Dag 1</a><a href="pages/video.html?state=r1d1#tilbud">Dag 1 med tilbud</a><a href="pages/video.html?state=r1d2#tilbud">Dag 2 med tilbud</a><a href="pages/video.html?state=between">Mellom rundene</a><a href="pages/video.html?state=r2d2#tilbud">Runde 2, dag 2 og Q&amp;A</a><a href="pages/video.html?state=closed">Stengt</a></div></article>
+      <article class="card"><span class="num">4</span><h3>Romjulskalenderen</h3><p>Åpnes med et skjema. Åtte luker fra første juledag til nyttårsdag, og du huker av selv når du er ferdig.</p>
+        <div class="chips"><a class="main" href="pages/kalender.html?state=locked">Låst</a><a href="pages/kalender.html?state=waiting">Før 25. desember</a><a href="pages/kalender.html?state=day3">27. desember</a><a href="pages/kalender.html?state=alldone">Alle åtte</a><a href="pages/kalender.html?state=closed">Stengt</a></div></article>
+    </div>
+  </section>
 
-  <h2 class="sec">Lịch</h2>
-  <div class="tblw"><table>
-    <tr><th>Ngày</th><th>Việc</th></tr>
-    <tr><td>14–16/11</td><td>Kịch bản VSL tiếng Na Uy, Maren duyệt sau webinar</td></tr>
-    <tr><td>17/11</td><td>Trang đăng ký và trang cảm ơn chạy được, email mời đã lên lịch</td></tr>
-    <tr><td><b>18/11</b></td><td><b>Email mời đầu tiên</b></td></tr>
-    <tr><td>19–21/11</td><td>Maren quay VSL</td></tr>
-    <tr><td>24/11</td><td>Kiểm tra toàn bộ, mua thử, mở lịch</td></tr>
-    <tr><td><b>25–26/11</b></td><td><b>Đợt 1</b>: video mở 08:00, đóng 26/11 lúc 23:59</td></tr>
-    <tr><td><b>10–11/12</b></td><td><b>Đợt 2</b>, live Q&amp;A 11/12 lúc 19:00</td></tr>
-    <tr><td>25/12–1/1</td><td>Mỗi ngày mở một ô cửa · trang lịch đóng 7/1/2027</td></tr>
-  </table></div>
+  <section class="blk">
+    <div class="head"><h2>E-postene og manusene</h2><p>Gule merker er steder der Maren må bekrefte noe.</p></div>
+    <div class="docs">
+      <a class="doc" href="emails/"><b>E-postene</b><span>38 e-poster: invitasjon, påminnelser, salg i to runder, kjøpere og de åtte lukene</span></a>
+      <a class="doc" href="copy/vsl.html"><b>Videomanus</b><span>20 minutter, samme video i begge runder</span></a>
+      <a class="doc" href="copy/live-qa.html"><b>Live Q&amp;A</b><span>45 minutter, fredag 11. desember kl. 19.00</span></a>
+      <a class="doc" href="copy/kalender.html"><b>Lukene</b><span>Tittel, innspillingsplan, liten oppgave og PDF for hver luke</span></a>
+      <a class="doc" href="copy/sider.html"><b>Alle sidetekster</b><span>Tekstene på sidene, tilstand for tilstand</span></a>
+      <a class="doc" href="pages/vi/dang-ky.html"><b>Prototype (vietnamesisk)</b><span>For teamet: første utkast av sidene</span></a>
+    </div>
+  </section>
 
-  <h2 class="sec">Còn mở</h2>
-  <ul class="open">
-    <li>Link thanh toán là chỗ giữ chỗ (<code>#checkout-7997</code> …): cần 4 offer Kajabi và link Vipps/Klarna cho từng giá.</li>
-    <li>Giá trả 3 lần là đề xuất, cần duyệt.</li>
-    <li>Giá so sánh 14 990 kr: kiểm tra quy định «førpris» với kế toán của Maren.</li>
-    <li>Video, file ghi âm 8 ô cửa và 8 trang PDF chưa có; prototype dùng khung giữ chỗ.</li>
-    <li>Nhận xét khách hàng giữ nguyên văn tiếng Na Uy.</li>
-  </ul>
+  <section class="blk two">
+    <div>
+      <div class="head"><h2>Tidslinje</h2></div>
+      <ol class="tl">
+        <li><b>14. til 16. november</b><span>Maren godkjenner videomanuset</span></li>
+        <li class="key"><b>Onsdag 18. november</b><span>Første invitasjon</span></li>
+        <li><b>19. til 21. november</b><span>Maren spiller inn videoen</span></li>
+        <li><b>Tirsdag 24. november</b><span>Full test: kjøp, gave og kalender</span></li>
+        <li class="key"><b>Onsdag 25. og torsdag 26. november</b><span>Runde 1: videoen åpner kl. 08.00, stenger kl. 23.59 dag 2</span></li>
+        <li class="key"><b>Torsdag 10. og fredag 11. desember</b><span>Runde 2, live Q&amp;A fredag kl. 19.00</span></li>
+        <li><b>25. desember til 1. januar</b><span>En ny luke hver morgen</span></li>
+        <li><b>7. januar 2027</b><span>Kalenderen stenger</span></li>
+      </ol>
+    </div>
+    <div class="open">
+      <span class="eyebrow">Gjenstår</span>
+      <ul>
+        <li>Kjøpslenkene er plassholdere til de fire tilbudene finnes i Kajabi, med Vipps og Klarna for hver pris.</li>
+        <li>Videoen, de åtte lydopptakene og PDF-sidene lages.</li>
+        <li><mark>Maren, bekreft</mark>: merkene i manus, e-poster og kalender.</li>
+        <li>Ordinær pris 14 990 kr som førpris: sjekk reglene med regnskapsfører.</li>
+      </ul>
+    </div>
+  </section>
 </main>
+<footer class="wrap">Utkast til godkjenning. Ikke del lenken offentlig; sidene vises ikke i søkemotorer.</footer>
 </body>
 </html>

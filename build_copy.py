@@ -19,37 +19,60 @@ DOCS = [
     ("05-live-qa-no", "live-qa", "Live Q&A · 11. desember"),
 ]
 CSS = """
-body{margin:0;background:#FAF9F6;color:#1f2a3d;font:17px/1.65 Inter,system-ui,sans-serif}
-.top{position:sticky;top:0;background:#111a2b;padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px}
-.top a{display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18);font-size:.85rem}
-.top a.on{background:#8a7340;border-color:#8a7340}
-main{max-width:820px;margin:0 auto;padding:32px 16px 80px}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:#274472;line-height:1.15}
-h1{font-size:2.4rem}h2{font-size:1.8rem;margin-top:2em;border-top:1px solid #EDE7DB;padding-top:1em}h3{font-size:1.35rem}
-blockquote{margin:1em 0;padding:4px 18px;border-left:3px solid #AB9461;background:#fff}
-table{border-collapse:collapse;width:100%;background:#fff;font-size:.92rem;display:block;overflow-x:auto}
-th,td{border-bottom:1px solid #EDE7DB;padding:8px 10px;text-align:left;vertical-align:top}
-code{background:#f4efe5;padding:1px 5px;border-radius:4px}
+:root{--navy:#274472;--navy-dd:#142340;--gold:#AB9461;--gold-d:#8a7340;--gold-l:#d8c79c;--cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--ink:#1f2a3d;--slate:#5d6a82}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:10;background:var(--navy-dd);padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bar a{display:inline-flex;align-items:center;min-height:40px;padding:4px 14px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.16);font-size:.85rem}
+.bar a:hover{border-color:var(--gold-l)}
+.bar a.on{background:#74602f;border-color:#74602f}
+.hd{background:var(--navy-dd);color:#c3cde0;padding:40px 16px 48px}
+.hd div{max-width:1120px;margin:0 auto}
+.hd small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+.hd h1{font:600 clamp(2.2rem,6vw,3.4rem)/1.1 'Cormorant Garamond',Georgia,serif;color:#fff;margin:0 0 10px}
+.hd p{margin:0;max-width:620px}
+.hd mark{background:#ffe08a;color:var(--ink);padding:0 5px;border-radius:4px}
+.lay{max-width:1120px;margin:0 auto;padding:40px 16px 96px;display:grid;gap:40px}
+@media(min-width:1000px){.lay{grid-template-columns:240px minmax(0,1fr)}.toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 96px);overflow:auto}}
+.toc{font-size:.88rem}
+.toc b{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+.toc ul{list-style:none;margin:0;padding:0}.toc ul ul{display:none}
+.toc a{display:block;padding:6px 10px;border-left:2px solid var(--sand);color:var(--slate);text-decoration:none}
+.toc a:hover{color:var(--navy);border-color:var(--gold)}
+article{max-width:720px;min-width:0}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.15}
+article h1{font-size:2.2rem;margin-top:0}
+article h2{font-size:1.9rem;margin:2.2em 0 .6em;padding-top:1.2em;border-top:1px solid var(--sand);scroll-margin-top:72px}
+article h3{font-size:1.4rem;margin:1.8em 0 .4em;scroll-margin-top:72px}
+blockquote{margin:1.2em 0;padding:14px 20px;border-left:3px solid var(--gold);background:#fff;border-radius:0 14px 14px 0}
+blockquote p{margin:.4em 0}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.9rem;display:block;overflow-x:auto;border-radius:12px;border:1px solid var(--sand)}
+th,td{border-bottom:1px solid var(--sand);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--navy)}
+code{background:var(--cream);padding:1px 6px;border-radius:5px;font-size:.88em}
+hr{border:0;border-top:1px solid var(--sand);margin:2em 0}
 mark{background:#ffe08a;padding:1px 4px;border-radius:4px}
-.n{font-size:.85rem;color:#5d6a82;margin:0 0 24px}
 """
 
 
-def page(slug, title, body, count):
+def page(slug, title, body, toc, count):
     nav = '<a href="../">← Oversikt</a>' + "".join(
         f'<a href="{s}.html"{" class=on" if s == slug else ""}>{t.split(" ·")[0]}</a>' for _, s, t in DOCS)
     return f"""<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex"><title>{title} · Black Week + jul 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>{CSS}</style></head><body><nav class="top">{nav}</nav><main>
-<p class="n">Utkast til godkjenning. Gult merke = Maren må bekrefte ({count} steder).</p>
-{body}</main></body></html>"""
+<meta name="robots" content="noindex"><title>{title} · Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>{CSS}</style></head><body><nav class="bar" aria-label="Dokumenter">{nav}</nav>
+<header class="hd"><div><small>Jul 2026 · til godkjenning</small><h1>{title}</h1><p>Utkast. <mark>Gult</mark> betyr at Maren må bekrefte noe ({count} steder).</p></div></header>
+<div class="lay"><nav class="toc" aria-label="Innhold"><b>Innhold</b>{toc}</nav><article>{body}</article></div></body></html>"""
 
 
 OUT.mkdir(exist_ok=True)
 for name, slug, title in DOCS:
     text = (SRC / f"{name}.md").read_text(encoding="utf-8")
-    html = markdown.markdown(text, extensions=["tables", "sane_lists"])
+    md = markdown.Markdown(extensions=["tables", "sane_lists", "toc"])
+    html = md.convert(text)
+    toc = md.toc
     html, n = re.subn(r"\[Maren, bekreft:[^\]]*\]", lambda m: f"<mark>{m.group(0)}</mark>", html)
-    (OUT / f"{slug}.html").write_text(page(slug, title, html, n), encoding="utf-8")
+    (OUT / f"{slug}.html").write_text(page(slug, title, html, toc, n), encoding="utf-8")
     print("ok", slug, n)

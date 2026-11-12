@@ -1,29 +1,117 @@
 <!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex"><title>E-postene · Black Week + jul 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex"><title>E-postene · Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#FAF9F6;color:#1f2a3d;font:17px/1.65 Inter,system-ui,sans-serif}
-.top{position:sticky;top:0;background:#111a2b;padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px}
-.top a{display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18);font-size:.85rem}
-.top a.on{background:#8a7340;border-color:#8a7340}
-main{max-width:820px;margin:0 auto;padding:32px 16px 80px}
-h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:#274472;line-height:1.15}
-h1{font-size:2.4rem}h2{font-size:1.8rem;margin-top:2em;border-top:1px solid #EDE7DB;padding-top:1em}h3{font-size:1.35rem}
-blockquote{margin:1em 0;padding:4px 18px;border-left:3px solid #AB9461;background:#fff}
-table{border-collapse:collapse;width:100%;background:#fff;font-size:.92rem;display:block;overflow-x:auto}
-th,td{border-bottom:1px solid #EDE7DB;padding:8px 10px;text-align:left;vertical-align:top}
-code{background:#f4efe5;padding:1px 5px;border-radius:4px}
+:root{--navy:#274472;--navy-dd:#142340;--gold:#AB9461;--gold-d:#8a7340;--gold-l:#d8c79c;--cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--ink:#1f2a3d;--slate:#5d6a82}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:10;background:var(--navy-dd);padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bar a{display:inline-flex;align-items:center;min-height:40px;padding:4px 14px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.16);font-size:.85rem}
+.bar a:hover{border-color:var(--gold-l)}
+.bar a.on{background:#74602f;border-color:#74602f}
+.hd{background:var(--navy-dd);color:#c3cde0;padding:40px 16px 48px}
+.hd div{max-width:1120px;margin:0 auto}
+.hd small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
+.hd h1{font:600 clamp(2.2rem,6vw,3.4rem)/1.1 'Cormorant Garamond',Georgia,serif;color:#fff;margin:0 0 10px}
+.hd p{margin:0;max-width:620px}
+.hd mark{background:#ffe08a;color:var(--ink);padding:0 5px;border-radius:4px}
+.lay{max-width:1120px;margin:0 auto;padding:40px 16px 96px;display:grid;gap:40px}
+@media(min-width:1000px){.lay{grid-template-columns:240px minmax(0,1fr)}.toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 96px);overflow:auto}}
+.toc{font-size:.88rem}
+.toc b{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+.toc ul{list-style:none;margin:0;padding:0}.toc ul ul{display:none}
+.toc a{display:block;padding:6px 10px;border-left:2px solid var(--sand);color:var(--slate);text-decoration:none}
+.toc a:hover{color:var(--navy);border-color:var(--gold)}
+article{max-width:720px;min-width:0}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.15}
+article h1{font-size:2.2rem;margin-top:0}
+article h2{font-size:1.9rem;margin:2.2em 0 .6em;padding-top:1.2em;border-top:1px solid var(--sand);scroll-margin-top:72px}
+article h3{font-size:1.4rem;margin:1.8em 0 .4em;scroll-margin-top:72px}
+blockquote{margin:1.2em 0;padding:14px 20px;border-left:3px solid var(--gold);background:#fff;border-radius:0 14px 14px 0}
+blockquote p{margin:.4em 0}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.9rem;display:block;overflow-x:auto;border-radius:12px;border:1px solid var(--sand)}
+th,td{border-bottom:1px solid var(--sand);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--navy)}
+code{background:var(--cream);padding:1px 6px;border-radius:5px;font-size:.88em}
+hr{border:0;border-top:1px solid var(--sand);margin:2em 0}
 mark{background:#ffe08a;padding:1px 4px;border-radius:4px}
-.n{font-size:.85rem;color:#5d6a82;margin:0 0 24px}
-</style></head><body><nav class="top"><a href="../">← Oversikt</a><a href="vsl.html">VSL-manus</a><a href="sider.html">Sidene</a><a href="e-poster.html" class=on>E-postene</a><a href="kalender.html">Romjulskalenderen</a><a href="live-qa.html">Live Q&A</a></nav><main>
-<p class="n">Utkast til godkjenning. Gult merke = Maren må bekrefte (7 steder).</p>
-<h1>E-poster · Black Week + før jul (norsk, bokmål)</h1>
+</style></head><body><nav class="bar" aria-label="Dokumenter"><a href="../">← Oversikt</a><a href="vsl.html">VSL-manus</a><a href="sider.html">Sidene</a><a href="e-poster.html" class=on>E-postene</a><a href="kalender.html">Romjulskalenderen</a><a href="live-qa.html">Live Q&A</a></nav>
+<header class="hd"><div><small>Jul 2026 · til godkjenning</small><h1>E-postene</h1><p>Utkast. <mark>Gult</mark> betyr at Maren må bekrefte noe (7 steder).</p></div></header>
+<div class="lay"><nav class="toc" aria-label="Innhold"><b>Innhold</b><div class="toc">
+<ul>
+<li><a href="#e-poster-black-week-fr-jul-norsk-bokmal">E-poster · Black Week + før jul (norsk, bokmål)</a><ul>
+<li><a href="#oversikt">Oversikt</a></li>
+<li><a href="#runde-1-invitasjon-ikke-pameldt">RUNDE 1 · INVITASJON (ikke påmeldt)</a><ul>
+<li><a href="#a1-ons-18-november-kl-0800-ikke-pameldt">A1 · ons 18. november kl. 08.00 · Ikke påmeldt</a></li>
+<li><a href="#a2-fre-20-november-kl-1900-ikke-pameldt">A2 · fre 20. november kl. 19.00 · Ikke påmeldt</a></li>
+<li><a href="#a3-sndag-22-november-kl-1800-ikke-pameldt">A3 · søndag 22. november kl. 18.00 · Ikke påmeldt</a></li>
+<li><a href="#a4-tirsdag-24-november-kl-1800-ikke-pameldt">A4 · tirsdag 24. november kl. 18.00 · Ikke påmeldt</a></li>
+<li><a href="#a5-onsdag-25-november-kl-0800-ikke-pameldt">A5 · onsdag 25. november kl. 08.00 · Ikke påmeldt</a></li>
+<li><a href="#a6-torsdag-26-november-kl-0800-ikke-pameldt">A6 · torsdag 26. november kl. 08.00 · Ikke påmeldt</a></li>
+</ul>
+</li>
+<li><a href="#runde-1-pameldt">RUNDE 1 · PÅMELDT</a><ul>
+<li><a href="#b1-rett-etter-pamelding-runde-1-pameldt">B1 · rett etter påmelding (runde 1) · Påmeldt</a></li>
+<li><a href="#b1-r2-rett-etter-pamelding-runde-2-pameldt-til-runde-2">B1-R2 · rett etter påmelding (runde 2) · Påmeldt til runde 2</a></li>
+<li><a href="#b1-apen-rett-etter-pamelding-mens-videoen-er-apen-pameldt">B1-åpen · rett etter påmelding mens videoen er åpen · Påmeldt</a></li>
+<li><a href="#b2-lrdag-21-november-kl-1000-pameldt">B2 · lørdag 21. november kl. 10.00 · Påmeldt</a></li>
+<li><a href="#b3-tirsdag-24-november-kl-1800-pameldt">B3 · tirsdag 24. november kl. 18.00 · Påmeldt</a></li>
+</ul>
+</li>
+<li><a href="#runde-1-salg-pameldt-ikke-kjpt">RUNDE 1 · SALG (påmeldt, ikke kjøpt)</a><ul>
+<li><a href="#c1-onsdag-25-november-kl-0800-pameldt-ikke-kjpt">C1 · onsdag 25. november kl. 08.00 · Påmeldt, ikke kjøpt</a></li>
+<li><a href="#c2-onsdag-25-november-kl-1300-pameldt-ikke-kjpt">C2 · onsdag 25. november kl. 13.00 · Påmeldt, ikke kjøpt</a></li>
+<li><a href="#c3-onsdag-25-november-kl-2000-pameldt-ikke-kjpt">C3 · onsdag 25. november kl. 20.00 · Påmeldt, ikke kjøpt</a></li>
+<li><a href="#c4-torsdag-26-november-kl-0800-pameldt-ikke-kjpt">C4 · torsdag 26. november kl. 08.00 · Påmeldt, ikke kjøpt</a></li>
+<li><a href="#c5-torsdag-26-november-kl-2000-pameldt-ikke-kjpt">C5 · torsdag 26. november kl. 20.00 · Påmeldt, ikke kjøpt</a></li>
+</ul>
+</li>
+<li><a href="#runde-2-pameldt-i-runde-1-ikke-kjpt">RUNDE 2 · PÅMELDT I RUNDE 1 (ikke kjøpt)</a><ul>
+<li><a href="#e1-mandag-7-desember-kl-0800-pameldt-i-runde-1-ikke-kjpt">E1 · mandag 7. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</a></li>
+<li><a href="#e2-torsdag-10-desember-kl-0800-pameldt-i-runde-1-ikke-kjpt">E2 · torsdag 10. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</a></li>
+<li><a href="#e3-torsdag-10-desember-kl-2000-pameldt-i-runde-1-ikke-kjpt">E3 · torsdag 10. desember kl. 20.00 · Påmeldt i runde 1, ikke kjøpt</a></li>
+<li><a href="#e4-fredag-11-desember-kl-0800-pameldt-i-runde-1-ikke-kjpt">E4 · fredag 11. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</a></li>
+<li><a href="#e5-fredag-11-desember-kl-1800-pameldt-i-runde-1-ikke-kjpt">E5 · fredag 11. desember kl. 18.00 · Påmeldt i runde 1, ikke kjøpt</a></li>
+<li><a href="#e6-fredag-11-desember-kl-2100-pameldt-i-runde-1-ikke-kjpt">E6 · fredag 11. desember kl. 21.00 · Påmeldt i runde 1, ikke kjøpt</a></li>
+</ul>
+</li>
+<li><a href="#runde-2-resten-av-listen-aldri-pameldt">RUNDE 2 · RESTEN AV LISTEN (aldri påmeldt)</a><ul>
+<li><a href="#f1-mandag-7-desember-kl-0800-aldri-pameldt">F1 · mandag 7. desember kl. 08.00 · Aldri påmeldt</a></li>
+<li><a href="#f2-onsdag-9-desember-kl-1800-aldri-pameldt">F2 · onsdag 9. desember kl. 18.00 · Aldri påmeldt</a></li>
+<li><a href="#f3-torsdag-10-desember-kl-0800-aldri-pameldt">F3 · torsdag 10. desember kl. 08.00 · Aldri påmeldt</a></li>
+<li><a href="#f4-fredag-11-desember-kl-0800-aldri-pameldt">F4 · fredag 11. desember kl. 08.00 · Aldri påmeldt</a></li>
+</ul>
+</li>
+<li><a href="#kjpere">KJØPERE</a><ul>
+<li><a href="#d1-rett-etter-kjp-alle-kjpere">D1 · rett etter kjøp · Alle kjøpere</a></li>
+<li><a href="#d0-onsdag-25-november-kl-0700-kjpere-i-webinaruka-15-til-18-november-ny">D0 · onsdag 25. november kl. 07.00 · Kjøpere i webinaruka 15. til 18. november · NY</a></li>
+<li><a href="#d3-sndag-20-desember-kl-1000-alle-som-far-kalenderen">D3 · søndag 20. desember kl. 10.00 · Alle som får kalenderen</a></li>
+<li><a href="#d4-tirsdag-5-januar-2027-kl-1000-alle-som-far-kalenderen">D4 · tirsdag 5. januar 2027 kl. 10.00 · Alle som får kalenderen</a></li>
+</ul>
+</li>
+<li><a href="#kalender-en-e-post-hver-morgen-kl-0730">KALENDER · EN E-POST HVER MORGEN (kl. 07.30)</a><ul>
+<li><a href="#k1-25-desember-kl-0730">K1 · 25. desember kl. 07.30</a></li>
+<li><a href="#k2-26-desember-kl-0730">K2 · 26. desember kl. 07.30</a></li>
+<li><a href="#k3-27-desember-kl-0730">K3 · 27. desember kl. 07.30</a></li>
+<li><a href="#k4-28-desember-kl-0730">K4 · 28. desember kl. 07.30</a></li>
+<li><a href="#k5-29-desember-kl-0730">K5 · 29. desember kl. 07.30</a></li>
+<li><a href="#k6-30-desember-kl-0730">K6 · 30. desember kl. 07.30</a></li>
+<li><a href="#k7-31-desember-kl-0730">K7 · 31. desember kl. 07.30</a></li>
+<li><a href="#k8-1-januar-kl-0730">K8 · 1. januar kl. 07.30</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav><article><h1 id="e-poster-black-week-fr-jul-norsk-bokmal">E-poster · Black Week + før jul (norsk, bokmål)</h1>
 <p>Avsender: Maren Kvalvaag-Toven, Det lille pusterommet. Alle tider er norsk tid (Oslo).</p>
 <p>Plassholdere: [REGISTRERINGSLENKE], [VIDEOLENKE] (salgs-e-poster lenker til videosiden med #tilbud), [KALENDERLENKE], [Q&amp;A-LENKE], [OPPTAK-Q&amp;A], [STOPP-LENKE], [Fornavn]. Åpne punkter står som <mark>[Maren, bekreft: ...]</mark>.</p>
 <p><strong>Utelates fra alle salgs-e-poster (A, C, E, F):</strong> alle kunder (kjøpt Fra stress til ro, taggen «aktiv coachingkunde», taggen «avsluttet coachingkunde») og alle som har meldt seg på webinaret i den nye trakten. Listen oppdateres automatisk etter tagger når e-posten sendes.</p>
 <p><strong>Hver e-post har én knapp.</strong> Alle salgs-e-poster (A, C, E, F) har en avmeldingslinje nederst. Kjøper-e-postene (D, K) har den ikke.</p>
-<p><strong>Priser:</strong> dag 1 7 997 kr, dag 2 8 997 kr, ordinær pris 14 990 kr. Delbetaling (foreslått, må bekreftes): dag 1 3 × 2 797 kr (totalt 8 391 kr), dag 2 3 × 3 147 kr (totalt 9 441 kr). Totalen står alltid ved siden av delbeløpet.</p>
-<h2>Oversikt</h2>
+<p><strong>Priser:</strong> dag 1 7 997 kr, dag 2 8 997 kr, ordinær pris 14 990 kr. Delbetaling (bekreftet 13/11): dag 1 3 × 2 797 kr (totalt 8 391 kr), dag 2 3 × 3 147 kr (totalt 9 441 kr). Totalen står alltid ved siden av delbeløpet.</p>
+<h2 id="oversikt">Oversikt</h2>
 <table>
 <thead>
 <tr>
@@ -269,8 +357,8 @@ mark{background:#ffe08a;padding:1px 4px;border-radius:4px}
 - D0 erstatter D2 i det vietnamesiske utkastet. D2 hadde samme målgruppe, samme tidspunkt og samme formål, så de er slått sammen til én e-post (D0).
 - Det vietnamesiske utkastet har ingen e-poster med ID G. Luke-e-postene heter K1 til K8, som i utkastet.</p>
 <hr />
-<h2>RUNDE 1 · INVITASJON (ikke påmeldt)</h2>
-<h3>A1 · ons 18. november kl. 08.00 · Ikke påmeldt</h3>
+<h2 id="runde-1-invitasjon-ikke-pameldt">RUNDE 1 · INVITASJON (ikke påmeldt)</h2>
+<h3 id="a1-ons-18-november-kl-0800-ikke-pameldt">A1 · ons 18. november kl. 08.00 · Ikke påmeldt</h3>
 <p>Emne: 36 dager til julaften
 Forhåndstekst: Har du begynt på listen i hodet allerede?</p>
 <p>Hei [Fornavn],</p>
@@ -282,7 +370,7 @@ Forhåndstekst: Har du begynt på listen i hodet allerede?</p>
 <p><strong>[Knapp: Send meg videoen]</strong> → [REGISTRERINGSLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>A2 · fre 20. november kl. 19.00 · Ikke påmeldt</h3>
+<h3 id="a2-fre-20-november-kl-1900-ikke-pameldt">A2 · fre 20. november kl. 19.00 · Ikke påmeldt</h3>
 <p>Emne: Listen ingen har skrevet ned
 Forhåndstekst: Og den tyngste linjen står nederst.</p>
 <p>Hei [Fornavn],</p>
@@ -296,7 +384,7 @@ Forhåndstekst: Og den tyngste linjen står nederst.</p>
 <p><strong>[Knapp: Hold av videoen til meg]</strong> → [REGISTRERINGSLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>A3 · søndag 22. november kl. 18.00 · Ikke påmeldt</h3>
+<h3 id="a3-sndag-22-november-kl-1800-ikke-pameldt">A3 · søndag 22. november kl. 18.00 · Ikke påmeldt</h3>
 <p>Emne: Hvorfor blir du syk akkurat når du endelig har fri?
 Forhåndstekst: Kroppen har holdt det inne hele sesongen.</p>
 <p>Hei [Fornavn],</p>
@@ -308,7 +396,7 @@ Forhåndstekst: Kroppen har holdt det inne hele sesongen.</p>
 <p><strong>[Knapp: Send meg videoen]</strong> → [REGISTRERINGSLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>A4 · tirsdag 24. november kl. 18.00 · Ikke påmeldt</h3>
+<h3 id="a4-tirsdag-24-november-kl-1800-ikke-pameldt">A4 · tirsdag 24. november kl. 18.00 · Ikke påmeldt</h3>
 <p>Emne: I morgen kl. 08.00
 Forhåndstekst: Julevideoen min åpner.</p>
 <p>Hei [Fornavn],</p>
@@ -317,7 +405,7 @@ Forhåndstekst: Julevideoen min åpner.</p>
 <p><strong>[Knapp: Send meg videoen]</strong> → [REGISTRERINGSLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>A5 · onsdag 25. november kl. 08.00 · Ikke påmeldt</h3>
+<h3 id="a5-onsdag-25-november-kl-0800-ikke-pameldt">A5 · onsdag 25. november kl. 08.00 · Ikke påmeldt</h3>
 <p>Emne: Videoen er åpen, og Black Week har startet
 Forhåndstekst: 20 minutter til deg selv før julestria.</p>
 <p>Hei [Fornavn],</p>
@@ -327,7 +415,7 @@ Forhåndstekst: 20 minutter til deg selv før julestria.</p>
 <p>På slutten åpner jeg dørene til <strong>Fra stress til ro, skreddersydd for deg</strong>, til Black Week-pris: 7 997 kr i dag (ordinær pris 14 990 kr), og 8 997 kr i morgen. Alle som blir med, får en gave av meg: <strong>Romjulskalenderen</strong>, åtte luker fra 25. desember til 1. januar, fem minutter om dagen.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>A6 · torsdag 26. november kl. 08.00 · Ikke påmeldt</h3>
+<h3 id="a6-torsdag-26-november-kl-0800-ikke-pameldt">A6 · torsdag 26. november kl. 08.00 · Ikke påmeldt</h3>
 <p>Emne: Siste dag du kan se den
 Forhåndstekst: I kveld kl. 23.59 stenger det.</p>
 <p>Hei [Fornavn],</p>
@@ -337,8 +425,8 @@ Forhåndstekst: I kveld kl. 23.59 stenger det.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
 <hr />
-<h2>RUNDE 1 · PÅMELDT</h2>
-<h3>B1 · rett etter påmelding (runde 1) · Påmeldt</h3>
+<h2 id="runde-1-pameldt">RUNDE 1 · PÅMELDT</h2>
+<h3 id="b1-rett-etter-pamelding-runde-1-pameldt">B1 · rett etter påmelding (runde 1) · Påmeldt</h3>
 <p>Emne: Videoen din kommer onsdag 🎄
 Forhåndstekst: Tre små ting før vi møtes.</p>
 <p>Hei [Fornavn],</p>
@@ -349,7 +437,7 @@ Forhåndstekst: Tre små ting før vi møtes.</p>
 3. Skriv ned én setning: <em>Hva gjorde meg mest sliten i fjor jul?</em></p>
 <p><strong>[Knapp: Legg i kalenderen]</strong> → <mark>[Maren, bekreft: lenke til «legg i kalender»]</mark></p>
 <p>Klem fra Maren</p>
-<h3>B1-R2 · rett etter påmelding (runde 2) · Påmeldt til runde 2</h3>
+<h3 id="b1-r2-rett-etter-pamelding-runde-2-pameldt-til-runde-2">B1-R2 · rett etter påmelding (runde 2) · Påmeldt til runde 2</h3>
 <p>Emne: Videoen din kommer torsdag 🎄
 Forhåndstekst: Tre små ting før vi møtes.</p>
 <p>Hei [Fornavn],</p>
@@ -361,7 +449,7 @@ Forhåndstekst: Tre små ting før vi møtes.</p>
 <p>Fredag 11. desember kl. 19.00 til 19.45 har jeg i tillegg en direktesending der du kan stille meg spørsmål.</p>
 <p><strong>[Knapp: Legg i kalenderen]</strong> → <mark>[Maren, bekreft: lenke til «legg i kalender»]</mark></p>
 <p>Klem fra Maren</p>
-<h3>B1-åpen · rett etter påmelding mens videoen er åpen · Påmeldt</h3>
+<h3 id="b1-apen-rett-etter-pamelding-mens-videoen-er-apen-pameldt">B1-åpen · rett etter påmelding mens videoen er åpen · Påmeldt</h3>
 <p>Emne: Videoen er åpen, se den nå
 Forhåndstekst: 20 minutter til deg selv.</p>
 <p>Hei [Fornavn],</p>
@@ -369,7 +457,7 @@ Forhåndstekst: 20 minutter til deg selv.</p>
 <p>Sett av 20 rolige minutter. Videoen har en pusteøvelse du gjør sammen med meg.</p>
 <p><strong>[Knapp: Se videoen nå]</strong> → [VIDEOLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>B2 · lørdag 21. november kl. 10.00 · Påmeldt</h3>
+<h3 id="b2-lrdag-21-november-kl-1000-pameldt">B2 · lørdag 21. november kl. 10.00 · Påmeldt</h3>
 <p>Emne: Fem minutter til helgen din
 Forhåndstekst: Første steg i Stopp · Se · Velg.</p>
 <p>Hei [Fornavn],</p>
@@ -380,7 +468,7 @@ Forhåndstekst: Første steg i Stopp · Se · Velg.</p>
 <p>Vi ses onsdag.</p>
 <p><strong>[Knapp: Se videosiden]</strong> → [VIDEOLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>B3 · tirsdag 24. november kl. 18.00 · Påmeldt</h3>
+<h3 id="b3-tirsdag-24-november-kl-1800-pameldt">B3 · tirsdag 24. november kl. 18.00 · Påmeldt</h3>
 <p>Emne: I morgen kl. 08.00
 Forhåndstekst: Videoen din er snart åpen.</p>
 <p>Hei [Fornavn],</p>
@@ -389,8 +477,8 @@ Forhåndstekst: Videoen din er snart åpen.</p>
 <p><strong>[Knapp: Åpne videosiden]</strong> → [VIDEOLENKE]</p>
 <p>Klem fra Maren</p>
 <hr />
-<h2>RUNDE 1 · SALG (påmeldt, ikke kjøpt)</h2>
-<h3>C1 · onsdag 25. november kl. 08.00 · Påmeldt, ikke kjøpt</h3>
+<h2 id="runde-1-salg-pameldt-ikke-kjpt">RUNDE 1 · SALG (påmeldt, ikke kjøpt)</h2>
+<h3 id="c1-onsdag-25-november-kl-0800-pameldt-ikke-kjpt">C1 · onsdag 25. november kl. 08.00 · Påmeldt, ikke kjøpt</h3>
 <p>Emne: Videoen din er her
 Forhåndstekst: 20 minutter, og en gave til romjula.</p>
 <p>Hei [Fornavn],</p>
@@ -399,7 +487,7 @@ Forhåndstekst: 20 minutter, og en gave til romjula.</p>
 <p>Se den helt til slutt. Der åpner jeg dørene til <strong>Fra stress til ro</strong> med Black Week-pris: <strong>7 997 kr bare i dag</strong> (ordinær pris 14 990 kr). Du kan også dele det opp: 3 × 2 797 kr (totalt 8 391 kr). Alle som blir med, får <strong>Romjulskalenderen</strong>, kalenderen med åtte luker til romjula.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>C2 · onsdag 25. november kl. 13.00 · Påmeldt, ikke kjøpt</h3>
+<h3 id="c2-onsdag-25-november-kl-1300-pameldt-ikke-kjpt">C2 · onsdag 25. november kl. 13.00 · Påmeldt, ikke kjøpt</h3>
 <p>Emne: Stopp · Se · Velg
 Forhåndstekst: Tre steg, og hvordan de fortsetter etter jul.</p>
 <p>Hei [Fornavn],</p>
@@ -413,7 +501,7 @@ Forhåndstekst: Tre steg, og hvordan de fortsetter etter jul.</p>
 <p><strong>[Knapp: Jeg vil begynne]</strong> → [VIDEOLENKE]#tilbud</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>C3 · onsdag 25. november kl. 20.00 · Påmeldt, ikke kjøpt</h3>
+<h3 id="c3-onsdag-25-november-kl-2000-pameldt-ikke-kjpt">C3 · onsdag 25. november kl. 20.00 · Påmeldt, ikke kjøpt</h3>
 <p>Emne: Prisen går opp kl. 23.59
 Forhåndstekst: Etter det er den 8 997 kr.</p>
 <p>Hei [Fornavn],</p>
@@ -427,7 +515,7 @@ Anne Schei</p>
 <p>Sov godt.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>C4 · torsdag 26. november kl. 08.00 · Påmeldt, ikke kjøpt</h3>
+<h3 id="c4-torsdag-26-november-kl-0800-pameldt-ikke-kjpt">C4 · torsdag 26. november kl. 08.00 · Påmeldt, ikke kjøpt</h3>
 <p>Emne: Siste dag
 Forhåndstekst: Og svar på det jeg blir spurt om oftest.</p>
 <p>Hei [Fornavn],</p>
@@ -444,7 +532,7 @@ Ja: 3 × 3 147 kr (totalt 9 441 kr). Du kan betale med kort, Vipps eller Klarna.
 <p><strong>[Knapp: Jeg er klar]</strong> → [VIDEOLENKE]#tilbud</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>C5 · torsdag 26. november kl. 20.00 · Påmeldt, ikke kjøpt</h3>
+<h3 id="c5-torsdag-26-november-kl-2000-pameldt-ikke-kjpt">C5 · torsdag 26. november kl. 20.00 · Påmeldt, ikke kjøpt</h3>
 <p>Emne: Stenger kl. 23.59
 Forhåndstekst: Noen få timer igjen.</p>
 <p>Hei [Fornavn],</p>
@@ -454,8 +542,8 @@ Forhåndstekst: Noen få timer igjen.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
 <hr />
-<h2>RUNDE 2 · PÅMELDT I RUNDE 1 (ikke kjøpt)</h2>
-<h3>E1 · mandag 7. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</h3>
+<h2 id="runde-2-pameldt-i-runde-1-ikke-kjpt">RUNDE 2 · PÅMELDT I RUNDE 1 (ikke kjøpt)</h2>
+<h3 id="e1-mandag-7-desember-kl-0800-pameldt-i-runde-1-ikke-kjpt">E1 · mandag 7. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</h3>
 <p>Emne: Jeg åpner dørene én gang til
 Forhåndstekst: Denne torsdagen, før jul.</p>
 <p>Hei [Fornavn],</p>
@@ -465,7 +553,7 @@ Forhåndstekst: Denne torsdagen, før jul.</p>
 <p><strong>[Knapp: Åpne videosiden]</strong> → [VIDEOLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>E2 · torsdag 10. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</h3>
+<h3 id="e2-torsdag-10-desember-kl-0800-pameldt-i-runde-1-ikke-kjpt">E2 · torsdag 10. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</h3>
 <p>Emne: Videoen er åpnet igjen
 Forhåndstekst: Og den laveste prisen gjelder bare i dag.</p>
 <p>Hei [Fornavn],</p>
@@ -474,7 +562,7 @@ Forhåndstekst: Og den laveste prisen gjelder bare i dag.</p>
 <p><strong>I dag:</strong> Fra stress til ro til <strong>7 997 kr</strong> (ordinær pris 14 990 kr), eller 3 × 2 797 kr (totalt 8 391 kr), og Romjulskalenderen som gave. I morgen er prisen 8 997 kr, og det stenger i morgen kveld kl. 23.59.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>E3 · torsdag 10. desember kl. 20.00 · Påmeldt i runde 1, ikke kjøpt</h3>
+<h3 id="e3-torsdag-10-desember-kl-2000-pameldt-i-runde-1-ikke-kjpt">E3 · torsdag 10. desember kl. 20.00 · Påmeldt i runde 1, ikke kjøpt</h3>
 <p>Emne: Prisen går opp ved midnatt, og vi ses i morgen kveld
 Forhåndstekst: Direktesending fredag kl. 19.00.</p>
 <p>Hei [Fornavn],</p>
@@ -491,7 +579,7 @@ Therese</p>
 <p><strong>[Knapp: Start for 7 997 kr]</strong> → [VIDEOLENKE]#tilbud</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>E4 · fredag 11. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</h3>
+<h3 id="e4-fredag-11-desember-kl-0800-pameldt-i-runde-1-ikke-kjpt">E4 · fredag 11. desember kl. 08.00 · Påmeldt i runde 1, ikke kjøpt</h3>
 <p>Emne: Siste dag, og direktesending kl. 19.00
 Forhåndstekst: Det stenger i kveld kl. 23.59.</p>
 <p>Hei [Fornavn],</p>
@@ -501,7 +589,7 @@ Forhåndstekst: Det stenger i kveld kl. 23.59.</p>
 <p><strong>[Knapp: Jeg vil begynne]</strong> → [VIDEOLENKE]#tilbud</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>E5 · fredag 11. desember kl. 18.00 · Påmeldt i runde 1, ikke kjøpt</h3>
+<h3 id="e5-fredag-11-desember-kl-1800-pameldt-i-runde-1-ikke-kjpt">E5 · fredag 11. desember kl. 18.00 · Påmeldt i runde 1, ikke kjøpt</h3>
 <p>Emne: Om én time
 Forhåndstekst: Direktesending kl. 19.00.</p>
 <p>Hei [Fornavn],</p>
@@ -509,7 +597,7 @@ Forhåndstekst: Direktesending kl. 19.00.</p>
 <p><strong>[Knapp: Gå til direktesendingen]</strong> → [Q&amp;A-LENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>E6 · fredag 11. desember kl. 21.00 · Påmeldt i runde 1, ikke kjøpt</h3>
+<h3 id="e6-fredag-11-desember-kl-2100-pameldt-i-runde-1-ikke-kjpt">E6 · fredag 11. desember kl. 21.00 · Påmeldt i runde 1, ikke kjøpt</h3>
 <p>Emne: Opptaket er her, og det er tre timer igjen
 Forhåndstekst: Det stenger kl. 23.59.</p>
 <p>Hei [Fornavn],</p>
@@ -520,8 +608,8 @@ Forhåndstekst: Det stenger kl. 23.59.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
 <hr />
-<h2>RUNDE 2 · RESTEN AV LISTEN (aldri påmeldt)</h2>
-<h3>F1 · mandag 7. desember kl. 08.00 · Aldri påmeldt</h3>
+<h2 id="runde-2-resten-av-listen-aldri-pameldt">RUNDE 2 · RESTEN AV LISTEN (aldri påmeldt)</h2>
+<h3 id="f1-mandag-7-desember-kl-0800-aldri-pameldt">F1 · mandag 7. desember kl. 08.00 · Aldri påmeldt</h3>
 <p>Emne: Denne julen, for deg selv
 Forhåndstekst: En video på 20 minutter før høytiden.</p>
 <p>Hei [Fornavn],</p>
@@ -531,7 +619,7 @@ Forhåndstekst: En video på 20 minutter før høytiden.</p>
 <p><strong>[Knapp: Send meg videoen]</strong> → [REGISTRERINGSLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>F2 · onsdag 9. desember kl. 18.00 · Aldri påmeldt</h3>
+<h3 id="f2-onsdag-9-desember-kl-1800-aldri-pameldt">F2 · onsdag 9. desember kl. 18.00 · Aldri påmeldt</h3>
 <p>Emne: I morgen
 Forhåndstekst: Julevideoen min åpner kl. 08.00.</p>
 <p>Hei [Fornavn],</p>
@@ -539,7 +627,7 @@ Forhåndstekst: Julevideoen min åpner kl. 08.00.</p>
 <p><strong>[Knapp: Hold av videoen til meg]</strong> → [REGISTRERINGSLENKE]</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>F3 · torsdag 10. desember kl. 08.00 · Aldri påmeldt</h3>
+<h3 id="f3-torsdag-10-desember-kl-0800-aldri-pameldt">F3 · torsdag 10. desember kl. 08.00 · Aldri påmeldt</h3>
 <p>Emne: Videoen er åpen
 Forhåndstekst: Meld deg på og se den med en gang.</p>
 <p>Hei [Fornavn],</p>
@@ -548,7 +636,7 @@ Forhåndstekst: Meld deg på og se den med en gang.</p>
 <p>På slutten av videoen åpner jeg dørene til Fra stress til ro til førjulspris: 7 997 kr i dag (ordinær pris 14 990 kr), og Romjulskalenderen som gave.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
-<h3>F4 · fredag 11. desember kl. 08.00 · Aldri påmeldt</h3>
+<h3 id="f4-fredag-11-desember-kl-0800-aldri-pameldt">F4 · fredag 11. desember kl. 08.00 · Aldri påmeldt</h3>
 <p>Emne: Siste dag, og direktesending i kveld
 Forhåndstekst: Det stenger kl. 23.59.</p>
 <p>Hei [Fornavn],</p>
@@ -557,8 +645,8 @@ Forhåndstekst: Det stenger kl. 23.59.</p>
 <p>Klem fra Maren</p>
 <p>Vil du ikke ha flere e-poster om dette? [Klikk her], så stopper de. → [STOPP-LENKE]</p>
 <hr />
-<h2>KJØPERE</h2>
-<h3>D1 · rett etter kjøp · Alle kjøpere</h3>
+<h2 id="kjpere">KJØPERE</h2>
+<h3 id="d1-rett-etter-kjp-alle-kjpere">D1 · rett etter kjøp · Alle kjøpere</h3>
 <p>Emne: Velkommen ❤️
 Forhåndstekst: Slik kommer du i gang, og gaven din.</p>
 <p>Hei [Fornavn],</p>
@@ -571,7 +659,7 @@ Forhåndstekst: Slik kommer du i gang, og gaven din.</p>
 <p><strong>Gaven din:</strong> Romjulskalenderen er klar. Første luke åpner 25. desember.</p>
 <p><strong>[Knapp: Åpne kalenderen min]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>D0 · onsdag 25. november kl. 07.00 · Kjøpere i webinaruka 15. til 18. november · NY</h3>
+<h3 id="d0-onsdag-25-november-kl-0700-kjpere-i-webinaruka-15-til-18-november-ny">D0 · onsdag 25. november kl. 07.00 · Kjøpere i webinaruka 15. til 18. november · NY</h3>
 <p>Emne: En gave til deg 🎁
 Forhåndstekst: Fordi du var en av de første.</p>
 <p>Hei [Fornavn],</p>
@@ -580,7 +668,7 @@ Forhåndstekst: Fordi du var en av de første.</p>
 <p><strong>[Knapp: Åpne kalenderen min]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
 <p>PS. Jeg sender denne litt tidlig, før Black Week åpner for alle, så du får gaven først.</p>
-<h3>D3 · søndag 20. desember kl. 10.00 · Alle som får kalenderen</h3>
+<h3 id="d3-sndag-20-desember-kl-1000-alle-som-far-kalenderen">D3 · søndag 20. desember kl. 10.00 · Alle som får kalenderen</h3>
 <p>Emne: Om fem dager åpner første luke
 Forhåndstekst: Et lite tips til romjula.</p>
 <p>Hei [Fornavn],</p>
@@ -589,7 +677,7 @@ Forhåndstekst: Et lite tips til romjula.</p>
 <p>Vil du, kan du skrive ut PDF-siden og henge den på kjøleskapet, så du kan krysse av hver dag med en penn.</p>
 <p><strong>[Knapp: Se kalenderen min]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>D4 · tirsdag 5. januar 2027 kl. 10.00 · Alle som får kalenderen</h3>
+<h3 id="d4-tirsdag-5-januar-2027-kl-1000-alle-som-far-kalenderen">D4 · tirsdag 5. januar 2027 kl. 10.00 · Alle som får kalenderen</h3>
 <p>Emne: Kalenderen stenger i morgen
 Forhåndstekst: Last ned det du vil ta vare på.</p>
 <p>Hei [Fornavn],</p>
@@ -599,9 +687,9 @@ Forhåndstekst: Last ned det du vil ta vare på.</p>
 <p><strong>[Knapp: Last ned hele kalenderen]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
 <hr />
-<h2>KALENDER · EN E-POST HVER MORGEN (kl. 07.30)</h2>
+<h2 id="kalender-en-e-post-hver-morgen-kl-0730">KALENDER · EN E-POST HVER MORGEN (kl. 07.30)</h2>
 <p>Alle sendes til alle som får kalenderen. Hver e-post er kort: hilsen, lukens navn, en innledende setning og én knapp.</p>
-<h3>K1 · 25. desember kl. 07.30</h3>
+<h3 id="k1-25-desember-kl-0730">K1 · 25. desember kl. 07.30</h3>
 <p>Emne: Luke 1: Pust ut 🎄
 Forhåndstekst: De første fem minuttene i romjula er dine.</p>
 <p>Hei [Fornavn],</p>
@@ -609,7 +697,7 @@ Forhåndstekst: De første fem minuttene i romjula er dine.</p>
 <p>Før du gjør noe mer i dag: de første fem minuttene i romjula er dine.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K2 · 26. desember kl. 07.30</h3>
+<h3 id="k2-26-desember-kl-0730">K2 · 26. desember kl. 07.30</h3>
 <p>Emne: Luke 2: Hvile uten dårlig samvittighet
 Forhåndstekst: I dag har du lov til å ikke gjøre noe.</p>
 <p>Hei [Fornavn],</p>
@@ -617,7 +705,7 @@ Forhåndstekst: I dag har du lov til å ikke gjøre noe.</p>
 <p>I dag har du lov til å ikke gjøre noe. Jeg viser deg hvordan.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K3 · 27. desember kl. 07.30</h3>
+<h3 id="k3-27-desember-kl-0730">K3 · 27. desember kl. 07.30</h3>
 <p>Emne: Luke 3: Mitt 2026 i tre ord
 Forhåndstekst: Nå begynner vi på Se.</p>
 <p>Hei [Fornavn],</p>
@@ -625,7 +713,7 @@ Forhåndstekst: Nå begynner vi på Se.</p>
 <p>I dag begynner vi på <em>Se</em>, og vi tar det rolig.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K4 · 28. desember kl. 07.30</h3>
+<h3 id="k4-28-desember-kl-0730">K4 · 28. desember kl. 07.30</h3>
 <p>Emne: Luke 4: Hva tappet meg, hva ga meg energi?
 Forhåndstekst: To kolonner, fem minutter.</p>
 <p>Hei [Fornavn],</p>
@@ -633,7 +721,7 @@ Forhåndstekst: To kolonner, fem minutter.</p>
 <p>To kolonner, fem minutter, og et år som blir litt tydeligere.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K5 · 29. desember kl. 07.30</h3>
+<h3 id="k5-29-desember-kl-0730">K5 · 29. desember kl. 07.30</h3>
 <p>Emne: Luke 5: Mønsteret mitt i 2026
 Forhåndstekst: Hvor dukket flink pike-mønsteret opp i år?</p>
 <p>Hei [Fornavn],</p>
@@ -641,7 +729,7 @@ Forhåndstekst: Hvor dukket flink pike-mønsteret opp i år?</p>
 <p>Hvor har flink pike-mønsteret ditt dukket opp i år?</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K6 · 30. desember kl. 07.30</h3>
+<h3 id="k6-30-desember-kl-0730">K6 · 30. desember kl. 07.30</h3>
 <p>Emne: Luke 6: Tre grenser for 2027
 Forhåndstekst: I dag går vi over til Velg.</p>
 <p>Hei [Fornavn],</p>
@@ -649,7 +737,7 @@ Forhåndstekst: I dag går vi over til Velg.</p>
 <p>I dag går vi over til <em>Velg</em>.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K7 · 31. desember kl. 07.30</h3>
+<h3 id="k7-31-desember-kl-0730">K7 · 31. desember kl. 07.30</h3>
 <p>Emne: Luke 7: Et brev til meg selv
 Forhåndstekst: Skriv til deg selv, ett år frem i tid.</p>
 <p>Hei [Fornavn],</p>
@@ -657,10 +745,10 @@ Forhåndstekst: Skriv til deg selv, ett år frem i tid.</p>
 <p>I dag skriver du til deg selv den 31. desember 2027.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
 <p>Klem fra Maren</p>
-<h3>K8 · 1. januar kl. 07.30</h3>
+<h3 id="k8-1-januar-kl-0730">K8 · 1. januar kl. 07.30</h3>
 <p>Emne: Luke ★: Mitt 2027
 Forhåndstekst: Den siste luken er planen din.</p>
 <p>Hei [Fornavn],</p>
 <p>Godt nytt år. Den siste luken er <strong>Mitt 2027</strong>, og den er planen din.</p>
 <p><strong>[Knapp: Åpne dagens luke]</strong> → [KALENDERLENKE]</p>
-<p>Klem fra Maren</p></main></body></html>
+<p>Klem fra Maren</p></article></div></body></html>
