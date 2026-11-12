@@ -8,11 +8,11 @@
 <style>
 body{margin:0}
 :root{--gold-d:#8a7340}
-.rv-bar{position:sticky;top:0;z-index:100;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;background:#111a2b;color:#c3cde0;font:500 .8rem var(--sans)}
+.rv-bar{position:sticky;top:0;z-index:100;display:flex;gap:6px;align-items:center;padding:8px 12px;background:#111a2b;color:#c3cde0;font:500 .8rem/1.2 Inter,system-ui,-apple-system,sans-serif;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 .rv-bar b{color:#fff;margin-right:4px}
-.rv-bar a{display:inline-flex;align-items:center;min-height:32px;padding:4px 10px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18)}
+.rv-bar a{flex:none;display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18)}
 .rv-bar a.on{background:var(--gold-d);border-color:var(--gold-d);color:#fff}
-.rv-bar .home{margin-left:auto}
+.rv-bar .home{margin-left:auto;position:sticky;right:0;background:#111a2b}
 </style>
 </head>
 <body data-states="locked:Skjema ikke fylt ut|feil:Feil e-post|waiting:Før 25. des|open:27. des (2 luker gjort)|alldone:Alle 8 luker gjort|closed:Stengt (fra 7. jan 2027)">
@@ -209,6 +209,17 @@ body{margin:0}
 .bw dialog .acts .btn{flex:1 1 220px}
 .bw dialog .btn[disabled]{background:var(--sand);color:var(--navy);box-shadow:none;cursor:default;transform:none}
 .bw .shut{min-height:80vh;display:flex;align-items:center}
+
+/* polish: lighter depth, lining figures, compact mobile cards */
+.bw{--sh:0 1px 2px rgba(20,35,64,.05),0 16px 36px -24px rgba(20,35,64,.28);font-variant-numeric:lining-nums}
+.bw .signs li,.bw .learn li{box-shadow:none}
+@media(max-width:640px){
+  .bw .learn li{display:flex;gap:14px;align-items:flex-start;padding:18px}
+  .bw .learn li::before{flex:none;width:34px;height:34px;margin:0;font-size:1.1rem}
+  .bw .signs li{padding:14px 16px;gap:12px}
+  .bw .card{padding:22px}
+}
+/* /polish */
 </style>
 
 <div class="bw bw-cal" data-bw-page="kalender">

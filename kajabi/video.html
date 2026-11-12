@@ -211,6 +211,17 @@
 .bw .sticky .btn{min-height:48px;padding:10px 24px;font-size:.98rem;box-shadow:none}
 .bw .shut{min-height:72vh;display:flex;align-items:center}
 .bw .shut .card{max-width:520px;margin:32px auto 0;text-align:left}
+
+/* polish: lighter depth, lining figures, compact mobile cards */
+.bw{--sh:0 1px 2px rgba(20,35,64,.05),0 16px 36px -24px rgba(20,35,64,.28);font-variant-numeric:lining-nums}
+.bw .signs li,.bw .learn li{box-shadow:none}
+@media(max-width:640px){
+  .bw .learn li{display:flex;gap:14px;align-items:flex-start;padding:18px}
+  .bw .learn li::before{flex:none;width:34px;height:34px;margin:0;font-size:1.1rem}
+  .bw .signs li{padding:14px 16px;gap:12px}
+  .bw .card{padding:22px}
+}
+/* /polish */
 </style>
 
 <div class="bw" data-bw-page="video">

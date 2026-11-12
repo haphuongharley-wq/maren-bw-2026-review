@@ -12,6 +12,7 @@ import markdown
 SRC = Path.home() / "maren-project/copy/09-black-week-christmas/no"
 OUT = Path(__file__).resolve().parent / "copy"
 DOCS = [
+    ("00-plan-no", "plan", "Kampanjeplan · Julen 2026"),
     ("01-vsl-script-no", "vsl", "VSL-manus · 20 minutter"),
     ("02-pages-no", "sider", "Sidene · alle tilstander"),
     ("03-emails-no", "e-poster", "E-postene"),
@@ -23,14 +24,14 @@ CSS = """
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--navy)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.bar{position:sticky;top:0;z-index:10;background:var(--navy-dd);padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.bar a{display:inline-flex;align-items:center;min-height:40px;padding:4px 14px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.16);font-size:.85rem}
-.bar a:hover{border-color:var(--gold-l)}
-.bar a.on{background:#74602f;border-color:#74602f}
-.hd{background:var(--navy-dd);color:#c3cde0;padding:40px 16px 48px}
+.bar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--sand);padding:8px 16px;display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.bar a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;border-radius:8px;color:var(--slate);text-decoration:none;font-size:.92rem}
+.bar a:hover{color:var(--navy);background:var(--cream)}
+.bar a.on{color:var(--navy);font-weight:600;box-shadow:inset 0 -2px 0 var(--gold)}
+.hd{background:var(--bg);color:var(--slate);padding:40px 16px 8px}
 .hd div{max-width:1120px;margin:0 auto}
-.hd small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
-.hd h1{font:600 clamp(2.2rem,6vw,3.4rem)/1.1 'Cormorant Garamond',Georgia,serif;color:#fff;margin:0 0 10px}
+.hd small{display:block;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#74602f;margin-bottom:10px}
+.hd h1{font:600 clamp(2.2rem,6vw,3.2rem)/1.1 'Cormorant Garamond',Georgia,serif;color:var(--navy);margin:0 0 10px}
 .hd p{margin:0;max-width:620px}
 .hd mark{background:#ffe08a;color:var(--ink);padding:0 5px;border-radius:4px}
 .lay{max-width:1120px;margin:0 auto;padding:40px 16px 96px;display:grid;gap:40px}
@@ -57,12 +58,12 @@ mark{background:#ffe08a;padding:1px 4px;border-radius:4px}
 
 
 def page(slug, title, body, toc, count):
-    nav = '<a href="../">← Oversikt</a>' + "".join(
+    nav = '<a href="../" style="font:600 1.2rem Cormorant Garamond,Georgia,serif;color:#274472;margin-right:8px">Det lille pusterommet · Julen 2026</a>' + "".join(
         f'<a href="{s}.html"{" class=on" if s == slug else ""}>{t.split(" ·")[0]}</a>' for _, s, t in DOCS)
     return f"""<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex"><title>{title} · Jul 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>{CSS}</style></head><body><nav class="bar" aria-label="Dokumenter">{nav}</nav>
+<style>{CSS}body{{font-variant-numeric:lining-nums}}</style></head><body><nav class="bar" aria-label="Dokumenter">{nav}</nav>
 <header class="hd"><div><small>Jul 2026 · til godkjenning</small><h1>{title}</h1><p>Utkast. <mark>Gult</mark> betyr at Maren må bekrefte noe ({count} steder).</p></div></header>
 <div class="lay"><nav class="toc" aria-label="Innhold"><b>Innhold</b>{toc}</nav><article>{body}</article></div></body></html>"""
 

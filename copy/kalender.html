@@ -6,14 +6,14 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--navy)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.bar{position:sticky;top:0;z-index:10;background:var(--navy-dd);padding:8px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.bar a{display:inline-flex;align-items:center;min-height:40px;padding:4px 14px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.16);font-size:.85rem}
-.bar a:hover{border-color:var(--gold-l)}
-.bar a.on{background:#74602f;border-color:#74602f}
-.hd{background:var(--navy-dd);color:#c3cde0;padding:40px 16px 48px}
+.bar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--sand);padding:8px 16px;display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.bar a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;border-radius:8px;color:var(--slate);text-decoration:none;font-size:.92rem}
+.bar a:hover{color:var(--navy);background:var(--cream)}
+.bar a.on{color:var(--navy);font-weight:600;box-shadow:inset 0 -2px 0 var(--gold)}
+.hd{background:var(--bg);color:var(--slate);padding:40px 16px 8px}
 .hd div{max-width:1120px;margin:0 auto}
-.hd small{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);margin-bottom:10px}
-.hd h1{font:600 clamp(2.2rem,6vw,3.4rem)/1.1 'Cormorant Garamond',Georgia,serif;color:#fff;margin:0 0 10px}
+.hd small{display:block;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#74602f;margin-bottom:10px}
+.hd h1{font:600 clamp(2.2rem,6vw,3.2rem)/1.1 'Cormorant Garamond',Georgia,serif;color:var(--navy);margin:0 0 10px}
 .hd p{margin:0;max-width:620px}
 .hd mark{background:#ffe08a;color:var(--ink);padding:0 5px;border-radius:4px}
 .lay{max-width:1120px;margin:0 auto;padding:40px 16px 96px;display:grid;gap:40px}
@@ -36,7 +36,7 @@ th{background:var(--cream);color:var(--navy)}
 code{background:var(--cream);padding:1px 6px;border-radius:5px;font-size:.88em}
 hr{border:0;border-top:1px solid var(--sand);margin:2em 0}
 mark{background:#ffe08a;padding:1px 4px;border-radius:4px}
-</style></head><body><nav class="bar" aria-label="Dokumenter"><a href="../">← Oversikt</a><a href="vsl.html">VSL-manus</a><a href="sider.html">Sidene</a><a href="e-poster.html">E-postene</a><a href="kalender.html" class=on>Romjulskalenderen</a><a href="live-qa.html">Live Q&A</a></nav>
+body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria-label="Dokumenter"><a href="../" style="font:600 1.2rem Cormorant Garamond,Georgia,serif;color:#274472;margin-right:8px">Det lille pusterommet · Julen 2026</a><a href="plan.html">Kampanjeplan</a><a href="vsl.html">VSL-manus</a><a href="sider.html">Sidene</a><a href="e-poster.html">E-postene</a><a href="kalender.html" class=on>Romjulskalenderen</a><a href="live-qa.html">Live Q&A</a></nav>
 <header class="hd"><div><small>Jul 2026 · til godkjenning</small><h1>Romjulskalenderen · 8 luker</h1><p>Utkast. <mark>Gult</mark> betyr at Maren må bekrefte noe (6 steder).</p></div></header>
 <div class="lay"><nav class="toc" aria-label="Innhold"><b>Innhold</b><div class="toc">
 <ul>

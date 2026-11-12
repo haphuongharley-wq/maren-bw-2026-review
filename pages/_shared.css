@@ -67,9 +67,9 @@ section{padding:clamp(56px,9vw,104px) 0}
 .light .cd small{color:var(--gold-d)}
 
 /* Review bar: only on this prototype site, never in Kajabi */
-.rv-bar{position:sticky;top:0;z-index:100;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;background:#111a2b;color:#c3cde0;font:500 .8rem var(--sans)}
+.rv-bar{position:sticky;top:0;z-index:100;display:flex;gap:6px;align-items:center;padding:8px 12px;background:#111a2b;color:#c3cde0;font:500 .8rem/1.2 Inter,system-ui,-apple-system,sans-serif;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 .rv-bar b{color:#fff;margin-right:4px}
-.rv-bar a{display:inline-flex;align-items:center;min-height:32px;padding:4px 10px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18)}
+.rv-bar a{flex:none;display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18)}
 .rv-bar a.on{background:var(--gold-d);border-color:var(--gold-d);color:#fff}
-.rv-bar .home{margin-left:auto}
+.rv-bar .home{margin-left:auto;position:sticky;right:0;background:#111a2b}
 .note-vi{max-width:680px;margin:0 auto 24px;padding:10px 14px;border-left:3px solid var(--gold);background:var(--gold-xl);font-size:.85rem;color:var(--gold-d)}
