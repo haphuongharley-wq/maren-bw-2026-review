@@ -7,7 +7,7 @@
 <title>Romjulskalenderen · Prototype</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_shared.css">
+<link rel="stylesheet" href="../_shared.css">
 <style>
 body{background:var(--navy-dd);color:#e6ebf4}
 .top{padding:clamp(40px,7vw,80px) 0 24px;text-align:center;background:radial-gradient(900px 420px at 50% -10%,rgba(171,148,97,.28),transparent 70%)}
@@ -91,7 +91,7 @@ dialog .row{display:flex;flex-wrap:wrap;gap:10px}
 
 <dialog id="dlg"><button class="x" aria-label="Đóng" onclick="this.closest('dialog').close()">×</button><div class="in" id="dlg-in"></div></dialog>
 
-<script src="campaign-state.js"></script>
+<script src="../campaign-state.js"></script>
 <script>
 (function(){
   var DOORS=[
@@ -167,6 +167,6 @@ dialog .row{display:flex;flex-wrap:wrap;gap:10px}
   show();
 })();
 </script>
-<script src="review-bar.js"></script>
+<script src="../review-bar.js"></script>
 </body>
 </html>

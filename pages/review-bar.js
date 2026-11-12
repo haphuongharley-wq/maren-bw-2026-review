@@ -10,6 +10,6 @@
     if(name===cur){a.className='on';a.setAttribute('aria-current','true');}
     bar.appendChild(a);
   });
-  var home=document.createElement('a');home.href='../';home.className='home';home.textContent='← Tổng quan';bar.appendChild(home);
+  var home=document.createElement('a');home.href=location.pathname.indexOf('/vi/')>0?'../../':'../';home.className='home';home.textContent='← Tổng quan';bar.appendChild(home);
   document.body.insertBefore(bar,document.body.firstChild);
 })();

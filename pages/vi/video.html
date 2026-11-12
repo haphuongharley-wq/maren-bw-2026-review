@@ -7,7 +7,7 @@
 <title>Video và ưu đãi · Prototype</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_shared.css">
+<link rel="stylesheet" href="../_shared.css">
 <style>
 .ribbon{padding:10px 16px;text-align:center;background:var(--navy);color:#fff;font-size:.9rem;font-weight:600}
 .ribbon.gold{background:var(--gold-d);color:#fff}
@@ -15,7 +15,7 @@
 .vhero h1{color:#fff;max-width:900px;margin:0 auto .5em;font-size:clamp(2rem,5vw,3.2rem)}
 .vhero h1 em{color:var(--gold-l)}
 .vhero .eyebrow{color:var(--gold-l)}
-.player{position:relative;max-width:960px;margin:0 auto 28px;aspect-ratio:16/9;border-radius:var(--r-sm);overflow:hidden;background:#0c1626 url(img/maren-stol.jpg) center 30%/cover;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.player{position:relative;max-width:960px;margin:0 auto 28px;aspect-ratio:16/9;border-radius:var(--r-sm);overflow:hidden;background:#0c1626 url(../img/maren-stol.jpg) center 30%/cover;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
 .player::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,22,38,.25),rgba(12,22,38,.7))}
 .player .play{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(171,148,97,.25)}
 .player .play::before{content:"";margin-left:6px;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff}
@@ -148,7 +148,7 @@ details p{color:var(--slate)}
 
     <section class="cream">
       <div class="wrap quotes">
-        <blockquote class="quote"><p>«Enneagrammet hjalp meg å se mønstrene mine: ja-mennesket, de store kravene til meg selv, frykten for ikke å gjøre nok.»</p><footer><img src="img/anne-schei.jpg" alt="Anne Schei">Anne Schei, deltaker i Fra stress til ro</footer></blockquote>
+        <blockquote class="quote"><p>«Enneagrammet hjalp meg å se mønstrene mine: ja-mennesket, de store kravene til meg selv, frykten for ikke å gjøre nok.»</p><footer><img src="../img/anne-schei.jpg" alt="Anne Schei">Anne Schei, deltaker i Fra stress til ro</footer></blockquote>
         <blockquote class="quote"><p>«Jeg har blitt mer bevisst på egne behov, viktigheten av å sette grenser og at hvile faktisk har en verdi i seg selv.»</p><footer>Therese, deltaker i Fra stress til ro</footer></blockquote>
       </div>
     </section>
@@ -192,8 +192,8 @@ details p{color:var(--slate)}
   </div>
 </section>
 
-<script src="campaign-state.js"></script>
-<script src="video-page.js"></script>
-<script src="review-bar.js"></script>
+<script src="../campaign-state.js"></script>
+<script src="../video-page.js"></script>
+<script src="../review-bar.js"></script>
 </body>
 </html>
