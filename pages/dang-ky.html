@@ -41,7 +41,7 @@
         <form class="form" onsubmit="event.preventDefault();location.href={before1:'takk.html?state=round1',open1:'video.html?state=r1d1',before2:'takk.html?state=round2',open2:'video.html?state=r2d1'}[document.documentElement.getAttribute('data-state')]">
           <label for="n">Tên</label><input id="n" type="text" autocomplete="given-name" required>
           <label for="e">Email</label><input id="e" type="email" autocomplete="email" required>
-          <label for="t">Số điện thoại (không bắt buộc)</label><input id="t" type="tel" autocomplete="tel">
+          <label for="t">Số điện thoại</label><input id="t" type="tel" autocomplete="tel" required>
           <label class="consent"><input type="checkbox" required>Mình đồng ý nhận email từ Det lille pusterommet.</label>
           <button class="btn block" type="submit"><span data-state-show="before1 before2">Gửi video cho mình, miễn phí</span><span data-state-show="open1 open2">Xem video ngay</span></button>
         </form>

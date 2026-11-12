@@ -14,6 +14,7 @@
 .vhero{background:var(--navy-dd);color:#e6ebf4;padding:clamp(36px,6vw,72px) 0 clamp(40px,6vw,72px);text-align:center}
 .vhero h1{color:#fff;max-width:900px;margin:0 auto .5em;font-size:clamp(2rem,5vw,3.2rem)}
 .vhero h1 em{color:var(--gold-l)}
+.vhero .eyebrow{color:var(--gold-l)}
 .player{position:relative;max-width:960px;margin:0 auto 28px;aspect-ratio:16/9;border-radius:var(--r-sm);overflow:hidden;background:#0c1626 url(img/maren-stol.jpg) center 30%/cover;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
 .player::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,22,38,.25),rgba(12,22,38,.7))}
 .player .play{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(171,148,97,.25)}
@@ -63,10 +64,19 @@ details p{color:var(--slate)}
     <div class="wrap">
       <span class="eyebrow">Video miễn phí</span>
       <h1>Video mở <em>thứ Tư 25/11 lúc 08:00</em></h1>
-      <div class="player"><div class="cdbox"><span class="play" aria-hidden="true"></span>
-        <span class="cd" data-countdown="2026-11-25T08:00"><span><b data-cd="d">0</b><small>ngày</small></span><span><b data-cd="h">00</b><small>giờ</small></span><span><b data-cd="m">00</b><small>phút</small></span><span><b data-cd="s">00</b><small>giây</small></span></span>
-      </div></div>
-      <a class="btn" href="dang-ky.html">Nhắc mình</a>
+      <div class="player"><span class="play" aria-hidden="true"></span><span class="lbl">Video 20 phút với Maren</span></div>
+      <p style="margin:0 0 10px">Video mở sau</p>
+      <span class="cd" data-countdown="2026-11-25T08:00"><span><b data-cd="d">0</b><small>ngày</small></span><span><b data-cd="h">00</b><small>giờ</small></span><span><b data-cd="m">00</b><small>phút</small></span><span><b data-cd="s">00</b><small>giây</small></span></span>
+      <p style="margin:22px 0 14px">Dành 20 phút yên tĩnh sáng thứ Tư, với một tách trà và cuốn sổ.</p>
+      <a class="btn" href="#kalender">Thêm vào lịch</a>
+    </div>
+  </section>
+  <section class="cream">
+    <div class="wrap narrow">
+      <h2 class="center">Bạn có nhận ra mình không?</h2>
+      <ul class="ticks"><li>Danh sách Giáng sinh trong đầu bạn không bao giờ xong: quà, đồ ăn, thiệp, ai sẽ đến nhà ai.</li><li>Bạn lo cho cả nhà vui, và quên mất chính mình.</li><li>Đến romjul, lúc đáng lẽ được nghỉ, bạn lại kiệt sức.</li></ul>
+      <h2 class="center" style="margin-top:40px">Trong video, bạn sẽ thấy</h2>
+      <ul class="ticks"><li>Danh sách vô hình của Giáng sinh, và vì sao nó không bao giờ xong.</li><li>Ba lý do mùa lễ nặng nhất với "cô gái ngoan".</li><li>Vì sao "nghỉ ngơi đi" không hiệu quả.</li><li>Mô hình Dừng · Nhìn · Chọn, kèm một bài thở bạn làm được ngay.</li></ul>
     </div>
   </section>
 </div>
@@ -80,7 +90,7 @@ details p{color:var(--slate)}
     <div class="wrap">
       <h1>Vì sao Giáng sinh rút cạn sức của "cô gái ngoan", và cách bạn <em>lấy lại romjul cho mình</em></h1>
       <div class="qa" data-state-show="r2d2"><span data-qa="live">Live Q&amp;A tối nay lúc 19:00 với Maren · <a href="#zoom-lenke">Vào Zoom</a></span><span data-qa="replay" hidden>Bản ghi Live Q&amp;A tối nay · <a href="#opptak-lenke">Xem bản ghi</a></span></div>
-      <div class="player"><span class="play" aria-hidden="true"></span><span class="lbl">[VIDEO 20 phút · Maren quay 19–21/11]</span></div>
+      <div class="player"><span class="play" aria-hidden="true"></span><span class="lbl">[VIDEO 20 phút · Maren quay 19 đến 21/11]</span></div>
       <a class="btn" href="#tilbud" data-reveal>Se tilbudet ↓</a>
     </div>
   </section>
@@ -103,7 +113,7 @@ details p{color:var(--slate)}
           <p></p>
           <a class="btn block" data-buy="full" href="#">Ja, jeg vil begynne</a>
           <a class="alt" data-buy="split" href="#">Hoặc trả 3 lần: <span data-price="split">3 × 2 797 kr</span> (tổng <span data-price="total">8 391 kr</span>)</a>
-          <div class="pay-marks"><span class="v">Vipps</span><span class="k">Klarna</span><span>Thẻ</span><span>Hoá đơn</span></div>
+          <div class="pay-marks"><span class="v">Vipps</span><span class="k">Klarna</span><span>Thẻ</span></div>
         </div>
       </div>
     </section>
@@ -112,10 +122,11 @@ details p{color:var(--slate)}
       <div class="wrap">
         <div class="narrow center"><span class="eyebrow">12 tuần</span><h2>Dừng · Nhìn · Chọn, <em>trong 12 tuần</em></h2></div>
         <div class="phases">
-          <div class="card"><small>Tuần 1–5</small><b>Dừng</b>Test Enneagram, điều gì xảy ra trong cơ thể khi căng thẳng, lắng nghe cơ thể, nghỉ ngơi và giấc ngủ, công cụ cấp cứu.</div>
-          <div class="card"><small>Tuần 6–10</small><b>Nhìn</b>Giá trị bản thân và cảm giác có lỗi, thôi so sánh, khuôn mẫu và ranh giới, video riêng theo kiểu Enneagram của bạn.</div>
-          <div class="card"><small>Tuần 11–12</small><b>Chọn</b>Thói quen mới, và một khung rõ ràng cho phần đời sau khoá học.</div>
+          <div class="card"><small>Tuần 1 đến 5</small><b>Dừng</b>Test Enneagram, điều gì xảy ra trong cơ thể khi căng thẳng, lắng nghe cơ thể, nghỉ ngơi và giấc ngủ, công cụ cấp cứu.</div>
+          <div class="card"><small>Tuần 6 đến 10</small><b>Nhìn</b>Giá trị bản thân và cảm giác có lỗi, thôi so sánh, khuôn mẫu và ranh giới.</div>
+          <div class="card"><small>Tuần 11 và 12</small><b>Chọn</b>Thói quen mới, và một khung rõ ràng cho phần đời sau khoá học.</div>
         </div>
+        <p class="narrow center" style="margin-top:24px">Trong suốt khoá học, bạn nhận video làm riêng cho đúng kiểu Enneagram của bạn.</p>
         <div class="narrow" style="margin-top:36px">
           <h3>Bạn không đi một mình</h3>
           <ul class="ticks"><li>Cộng đồng riêng</li><li>Coaching nhóm trên Zoom mỗi tháng với Maren</li><li>Buổi live hằng tháng có thiền nhóm</li><li>Ennea, trợ lý AI 24 giờ</li><li>Khảo sát từ ngày 1 đến ngày 90</li></ul>
@@ -148,7 +159,7 @@ details p{color:var(--slate)}
         <details><summary>Khi nào mình bắt đầu?</summary><p>Ngay khi bạn đăng ký. Bạn đi theo nhịp của mình.</p></details>
         <details><summary>Mình không có thời gian.</summary><p>Khoá học được làm cho người bận rộn. Ennea luôn ở đó khi bạn có vài phút.</p></details>
         <details><summary>Không có 1-1 thì có đủ không?</summary><p>Có coaching nhóm, buổi live, cộng đồng và Ennea đi cùng bạn.</p></details>
-        <details><summary>Có thể trả góp không?</summary><p>Có: chia nhỏ thanh toán, Vipps, Klarna hoặc hoá đơn.</p></details>
+        <details><summary>Có thể trả góp không?</summary><p>Có: trả 3 lần, Vipps, hoặc Klarna (trả sau hoặc chia nhỏ).</p></details>
         <details><summary>Khi nào mình nhận lịch?</summary><p>Ngay sau khi mua, bạn nhận link tới trang lịch. Các ô cửa mở từ 25/12.</p></details>
       </div>
     </section>
