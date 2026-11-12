@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Black Week + Jul 2026 · Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pages/_shared.css">
+<style>
+main{padding:48px 0 80px}
+.grid{display:grid;gap:16px}
+@media(min-width:820px){.grid{grid-template-columns:1fr 1fr}}
+.card{box-shadow:none}
+.card h2{font-size:1.6rem;margin-bottom:6px}
+.card p{color:var(--slate);font-size:.95rem}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border-radius:999px;border:1px solid var(--sand);color:var(--navy);font-weight:600;font-size:.9rem;text-decoration:none}
+.links a.main{background:var(--navy);border-color:var(--navy);color:#fff}
+.links a:hover{border-color:var(--gold)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r-sm);overflow:hidden;font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--sand);vertical-align:top}
+th{background:var(--cream);color:var(--navy)}
+.tblw{overflow-x:auto;margin:12px 0 8px}
+h2.sec{margin-top:48px}
+.open li{margin-bottom:6px}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <span class="eyebrow">Det lille pusterommet · prototype để duyệt nhanh</span>
+  <h1>Black Week + Giáng sinh 2026</h1>
+  <p class="lead">Prototype 4 trang của chiến dịch VSL «Julestress», dùng bản nháp tiếng Việt. Mỗi trang tự đổi theo giờ Na Uy; thanh tối phía trên trang cho phép xem từng trạng thái. Sau khi duyệt, nội dung được dịch sang tiếng Na Uy và dựng trong Kajabi.</p>
+
+  <div class="tblw"><table>
+    <tr><th></th><th>Ngày 1</th><th>Ngày 2</th></tr>
+    <tr><td>Trả một lần</td><td><b>7 997 kr</b> (tiết kiệm 6 993 kr)</td><td><b>8 997 kr</b> (tiết kiệm 5 993 kr)</td></tr>
+    <tr><td>Trả 3 lần (đề xuất)</td><td>3 × 2 797 kr (8 391 kr)</td><td>3 × 3 147 kr (9 441 kr)</td></tr>
+    <tr><td>Giá so sánh</td><td colspan="2">14 990 kr · đợt 1: 25–26/11 · đợt 2: 10–11/12 (cùng giá)</td></tr>
+  </table></div>
+
+  <h2 class="sec">Các trang</h2>
+  <div class="grid">
+    <section class="card">
+      <h2>1. Trang đăng ký xem video</h2>
+      <p>Form tên, email, số điện thoại. Trước khi mở: tới trang cảm ơn. Đang mở: tới thẳng trang video.</p>
+      <div class="links"><a class="main" href="pages/dang-ky.html?state=before1">Trước khi mở</a><a href="pages/dang-ky.html?state=open1">Đang mở</a><a href="pages/dang-ky.html?state=before2">Trước đợt 2</a><a href="pages/dang-ky.html?state=closed">Đã đóng</a></div>
+    </section>
+    <section class="card">
+      <h2>2. Trang cảm ơn</h2>
+      <p>Ba việc nhỏ trước ngày video mở, có nút thêm vào lịch.</p>
+      <div class="links"><a class="main" href="pages/takk.html?state=round1">Đợt 1</a><a href="pages/takk.html?state=round2">Đợt 2</a></div>
+    </section>
+    <section class="card">
+      <h2>3. Trang video và bán hàng</h2>
+      <p>Ngày bán: chỉ có video và một nút «Se tilbudet ↓». Bấm nút thì phần ưu đãi hiện ra. Link có <code>#tilbud</code> (từ email) mở thẳng phần ưu đãi.</p>
+      <div class="links"><a href="pages/video.html?state=before">Trước khi mở</a><a class="main" href="pages/video.html?state=r1d1">Đợt 1 · ngày 1</a><a href="pages/video.html?state=r1d1#tilbud">Ngày 1 + ưu đãi</a><a href="pages/video.html?state=r1d2#tilbud">Ngày 2 + ưu đãi</a><a href="pages/video.html?state=between">Giữa hai đợt</a><a href="pages/video.html?state=r2d2#tilbud">Đợt 2 · ngày 2 + Q&amp;A</a><a href="pages/video.html?state=r2d2&amp;qa=replay#tilbud">Ngày 2 + bản ghi Q&amp;A</a><a href="pages/video.html?state=closed">Đã đóng</a></div>
+    </section>
+    <section class="card">
+      <h2>4. Romjulskalenderen (quà)</h2>
+      <p>Mở bằng form. 8 ô cửa từ 25/12 đến 1/1; ô chưa tới ngày thì rung và báo ngày mở; khách tự tích «Ferdig for i dag ✓».</p>
+      <div class="links"><a class="main" href="pages/kalender.html?state=locked">Chưa mở form</a><a href="pages/kalender.html?state=waiting">Trước 25/12</a><a href="pages/kalender.html?state=day3">27/12</a><a href="pages/kalender.html?state=alldone">Xong 8 ô</a><a href="pages/kalender.html?state=closed">Đã đóng</a></div>
+    </section>
+  </div>
+
+  <h2 class="sec">Lịch</h2>
+  <div class="tblw"><table>
+    <tr><th>Ngày</th><th>Việc</th></tr>
+    <tr><td>14–16/11</td><td>Kịch bản VSL tiếng Na Uy, Maren duyệt sau webinar</td></tr>
+    <tr><td>17/11</td><td>Trang đăng ký và trang cảm ơn chạy được, email mời đã lên lịch</td></tr>
+    <tr><td><b>18/11</b></td><td><b>Email mời đầu tiên</b></td></tr>
+    <tr><td>19–21/11</td><td>Maren quay VSL</td></tr>
+    <tr><td>24/11</td><td>Kiểm tra toàn bộ, mua thử, mở lịch</td></tr>
+    <tr><td><b>25–26/11</b></td><td><b>Đợt 1</b>: video mở 08:00, đóng 26/11 lúc 23:59</td></tr>
+    <tr><td><b>10–11/12</b></td><td><b>Đợt 2</b>, live Q&amp;A 11/12 lúc 19:00</td></tr>
+    <tr><td>25/12–1/1</td><td>Mỗi ngày mở một ô cửa · trang lịch đóng 7/1/2027</td></tr>
+  </table></div>
+
+  <h2 class="sec">Còn mở</h2>
+  <ul class="open">
+    <li>Link thanh toán là chỗ giữ chỗ (<code>#checkout-7997</code> …): cần 4 offer Kajabi và link Vipps/Klarna cho từng giá.</li>
+    <li>Giá trả 3 lần là đề xuất, cần duyệt.</li>
+    <li>Giá so sánh 14 990 kr: kiểm tra quy định «førpris» với kế toán của Maren.</li>
+    <li>Video, file ghi âm 8 ô cửa và 8 trang PDF chưa có; prototype dùng khung giữ chỗ.</li>
+    <li>Nhận xét khách hàng giữ nguyên văn tiếng Na Uy.</li>
+  </ul>
+</main>
+</body>
+</html>

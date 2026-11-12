@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Romjulskalenderen · Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css">
+<style>
+body{background:var(--navy-dd);color:#e6ebf4}
+.top{padding:clamp(40px,7vw,80px) 0 24px;text-align:center;background:radial-gradient(900px 420px at 50% -10%,rgba(171,148,97,.28),transparent 70%)}
+.top h1{color:#fff}
+.top .lead{color:#c3cde0;max-width:620px;margin:0 auto 1em}
+.letter{max-width:620px;margin:24px auto 0;padding:24px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(216,199,156,.3);text-align:left;font:italic 500 1.2rem/1.5 var(--serif);color:#f2ead8}
+.unlock{max-width:520px;margin:28px auto 0;color:var(--ink)}
+.unlock .form label{color:var(--slate)}
+.steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:8px 0 18px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l)}
+.steps span{padding:6px 12px;border:1px solid rgba(216,199,156,.35);border-radius:999px}
+.progress{max-width:520px;margin:0 auto 26px;text-align:center}
+.progress .bar{height:10px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:8px}
+.progress .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-l));transition:width .4s var(--ease)}
+.doors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:880px;margin:0 auto;padding:0 0 60px}
+@media(min-width:760px){.doors{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
+.door{position:relative;aspect-ratio:3/4;border-radius:16px;border:1px solid rgba(216,199,156,.4);background:linear-gradient(180deg,#1d3054,#121f38);color:var(--gold-l);font:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px;text-align:center;transition:transform .2s var(--ease),box-shadow .2s,border-color .2s}
+.door .n{font:600 2.6rem/1 var(--serif)}
+.door .d{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#9fb0cc}
+.door .t{font:italic 500 1rem/1.25 var(--serif);color:#e6ebf4}
+.door.locked{opacity:.55}
+.door.locked::after{content:"";position:absolute;top:12px;right:12px;width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239fb0cc' stroke-width='2'%3E%3Crect x='5' y='11' width='14' height='9' rx='2'/%3E%3Cpath d='M8 11V8a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E") center/contain no-repeat}
+.door.today{border-color:var(--gold);box-shadow:0 0 0 3px rgba(171,148,97,.35),0 0 40px -6px rgba(216,199,156,.7)}
+.door.done{background:linear-gradient(180deg,#2a3d5f,#1a2a48)}
+.door.done::after{content:"✓";position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;font:700 .9rem/26px var(--sans)}
+.door:hover:not(.locked){transform:translateY(-3px)}
+.door.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);padding:10px 18px;border-radius:999px;background:#fff;color:var(--navy);font-weight:600;box-shadow:var(--sh)}
+dialog{max-width:620px;width:calc(100% - 32px);border:0;border-radius:var(--r);padding:0;background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:rgba(10,18,32,.7)}
+dialog .in{padding:28px}
+dialog .x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:50%;background:var(--sand);font-size:1.2rem;cursor:pointer}
+dialog .audio{display:flex;align-items:center;gap:12px;padding:14px;border-radius:var(--r-sm);background:#fff;border:1px solid var(--sand);margin:14px 0}
+dialog .audio i{width:44px;height:44px;border-radius:50%;background:var(--navy);flex:none;position:relative}
+dialog .audio i::before{content:"";position:absolute;left:17px;top:13px;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent #fff}
+dialog .task{padding:14px;border-left:3px solid var(--gold);background:var(--gold-xl);border-radius:0 var(--r-sm) var(--r-sm) 0;margin:0 0 16px}
+dialog .row{display:flex;flex-wrap:wrap;gap:10px}
+.finale{max-width:620px;margin:0 auto 32px;text-align:center}
+.finale .card{color:var(--ink)}
+.cdwrap{text-align:center;margin:0 0 26px}
+.cdwrap p{color:#c3cde0}
+.closed{min-height:80vh;display:flex;align-items:center;text-align:center}
+</style>
+</head>
+<body data-states="locked:Chưa mở form|waiting:Đã mở form, trước 25/12|day3:Ngày 27/12 (xong 2 ô)|alldone:1/1 (xong cả 8)|closed:Đã đóng (từ 7/1/2027)">
+
+<header class="top">
+  <div class="wrap">
+    <span class="eyebrow">Quà của bạn · chỉ dành cho người tham gia Fra stress til ro</span>
+    <h1>Romjulskalenderen</h1>
+    <p class="lead">8 ô cửa. 5 phút mỗi ngày. Một năm 2026 được khép lại tử tế, và một năm 2027 bạn tự chọn.</p>
+    <div id="intro">
+      <div class="letter">Bạn thân mến,<br>cảm ơn bạn đã bước vào Fra stress til ro. Romjul là khoảng thời gian quý nhất trong năm để dừng lại, và mình muốn ở bên bạn trong những ngày đó. Mỗi sáng từ 25/12, một ô cửa mới sẽ mở.<br>Ôm bạn, Maren</div>
+      <div class="card unlock">
+        <form class="form" id="unlock">
+          <label for="n">Tên</label><input id="n" type="text" required autocomplete="given-name">
+          <label for="e">Email (email bạn đã dùng khi mua)</label><input id="e" type="email" required autocomplete="email">
+          <label for="t">Số điện thoại</label><input id="t" type="tel" autocomplete="tel">
+          <button class="btn block" type="submit">Mở lịch của mình</button>
+        </form>
+        <p class="micro center">Trong Kajabi: form gốc gắn tag người nhận quà, rồi trang hiện lịch.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="cal" hidden>
+  <div class="wrap">
+    <div class="cdwrap" id="wait" hidden><p>Ô cửa đầu tiên mở sau</p><span class="cd" id="cd"><span><b data-cd="d">0</b><small>ngày</small></span><span><b data-cd="h">00</b><small>giờ</small></span><span><b data-cd="m">00</b><small>phút</small></span></span></div>
+    <div class="progress" id="prog"><span id="prog-t">0 trên 8 ngày</span><div class="bar"><i id="prog-b"></i></div></div>
+    <div class="finale" id="finale" hidden><div class="card"><p style="font:italic 500 1.35rem/1.45 var(--serif);color:var(--navy)">Bạn đã làm được. Năm 2026 đã được khép lại, và năm 2027 là của bạn. Mình rất tự hào về bạn.<br>Maren</p><a class="btn navy" href="#pdf-alle">Tải toàn bộ lịch (PDF)</a></div></div>
+    <div class="steps"><span>Dừng · ô 1–2</span><span>Nhìn · ô 3–5</span><span>Chọn · ô 6–8</span></div>
+    <div class="doors" id="doors"></div>
+  </div>
+</main>
+
+<section class="closed" id="closed" hidden>
+  <div class="wrap narrow"><h1 style="color:#fff">Romjul đã qua</h1><p class="lead" style="color:#c3cde0">Mình chúc bạn một năm 2027 bình yên, đúng như bạn đã chọn.</p><p style="font:italic 500 1.5rem var(--serif);color:var(--gold-l)">Maren</p></div>
+</section>
+
+<dialog id="dlg"><button class="x" aria-label="Đóng" onclick="this.closest('dialog').close()">×</button><div class="in" id="dlg-in"></div></dialog>
+
+<script src="campaign-state.js"></script>
+<script>
+(function(){
+  var DOORS=[
+    {d:'2026-12-25',n:'1',no:'Pust ut',vi:'Thở ra',intro:'Chúc mừng Giáng sinh. Trước khi làm thêm bất cứ điều gì, hãy thở ra.',task:'Hôm nay, mỗi lần bước vào bếp, thở ra một hơi dài trước khi bắt tay vào việc.'},
+    {d:'2026-12-26',n:'2',no:'Hvile uten dårlig samvittighet',vi:'Nghỉ mà không thấy có lỗi',intro:'Hôm nay bạn được phép không làm gì.',task:'Chọn 20 phút hôm nay để không làm gì có ích. Đặt hẹn giờ.'},
+    {d:'2026-12-27',n:'3',no:'Mitt 2026 i tre ord',vi:'Năm 2026 của tôi trong ba chữ',intro:'Hôm nay chúng ta bắt đầu nhìn lại, nhẹ nhàng thôi.',task:'Viết ba chữ và ba khoảnh khắc lên trang PDF.'},
+    {d:'2026-12-28',n:'4',no:'Hva tappet meg, hva ga meg energi?',vi:'Điều gì rút cạn, điều gì nuôi dưỡng tôi?',intro:'Hai cột, năm phút, và một năm nhìn rõ hơn.',task:'Khoanh tròn một thứ ở mỗi cột: một thứ bạn sẽ làm ít đi và một thứ bạn sẽ làm nhiều lên.'},
+    {d:'2026-12-29',n:'5',no:'Mønsteret mitt i 2026',vi:'Khuôn mẫu của tôi năm 2026',intro:'Khuôn mẫu "cô gái ngoan" của bạn đã xuất hiện ở đâu năm nay?',task:'Viết một câu: «Năm 2026, khuôn mẫu của mình xuất hiện khi ___.»'},
+    {d:'2026-12-30',n:'6',no:'Tre grenser for 2027',vi:'Ba ranh giới cho 2027',intro:'Hôm nay chúng ta bước sang Chọn.',task:'Viết ba ranh giới, và mỗi cái một câu bạn sẽ nói.'},
+    {d:'2026-12-31',n:'7',no:'Et brev til meg selv',vi:'Lá thư gửi chính mình',intro:'Viết cho bạn của ngày 31/12/2027.',task:'Viết lá thư, ghi «Mở ngày 31/12/2027» ở ngoài, cất ở nơi an toàn.'},
+    {d:'2027-01-01',n:'★',no:'Mitt 2027',vi:'Năm 2027 của tôi',intro:'Chúc mừng năm mới. Ô cửa cuối cùng là kế hoạch của bạn.',task:'Điền trang «Năm 2027 của tôi» và dán lên chỗ bạn nhìn thấy mỗi ngày.'}
+  ];
+  var KEY_U='maren-romjul-unlocked',KEY_D='maren-romjul-done';
+  var q=new URLSearchParams(location.search),preview=q.get('state');
+  var PRESET={locked:{today:'2026-12-20',u:false,done:[]},waiting:{today:'2026-12-20',u:true,done:[]},day3:{today:'2026-12-27',u:true,done:['1','2']},alldone:{today:'2027-01-01',u:true,done:['1','2','3','4','5','6','7','★']},closed:{today:'2027-01-07',u:true,done:[]}}[preview];
+  function osloDate(ms){return new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Oslo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(ms));}
+  var today=PRESET?PRESET.today:(q.get('dato')||osloDate(Date.now()));
+  function get(k,def){if(PRESET)return k===KEY_U?PRESET.u:PRESET.done.slice();try{var v=JSON.parse(localStorage.getItem(k));return v===null?def:v;}catch(e){return def;}}
+  function set(k,v){if(PRESET)return;try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+  var done=get(KEY_D,[]),state;
+  if(today>='2027-01-07')state='closed';else if(!get(KEY_U,false))state='locked';else if(today<'2026-12-25')state='waiting';else state='open';
+  document.documentElement.setAttribute('data-state',preview||state);
+  var intro=document.getElementById('intro'),cal=document.getElementById('cal');
+  function show(){
+    var s=document.documentElement.getAttribute('data-state');
+    document.getElementById('closed').hidden=s!=='closed';
+    document.querySelector('.top').hidden=s==='closed';
+    intro.hidden=s!=='locked';cal.hidden=s==='locked'||s==='closed';
+    document.getElementById('wait').hidden=today>='2026-12-25';
+    render();
+  }
+  document.getElementById('unlock').addEventListener('submit',function(e){
+    e.preventDefault();set(KEY_U,true);
+    document.documentElement.setAttribute('data-state',today<'2026-12-25'?'waiting':'open');show();
+  });
+  function label(d){var p=d.split('-');return +p[2]+'/'+(+p[1]);}
+  function render(){
+    var box=document.getElementById('doors');box.innerHTML='';
+    DOORS.forEach(function(x){
+      var b=document.createElement('button');b.type='button';b.className='door';
+      var open=x.d<=today,isDone=done.indexOf(x.n)>=0;
+      if(!open)b.classList.add('locked');else if(isDone)b.classList.add('done');else if(x.d===today)b.classList.add('today');
+      b.innerHTML='<span class="n">'+x.n+'</span><span class="d">'+label(x.d)+'</span>'+(open?'<span class="t">'+x.no+'</span>':'');
+      b.setAttribute('aria-label','Ô '+x.n+', '+label(x.d)+(open?', '+x.no:', chưa mở')+(isDone?', đã xong':''));
+      b.addEventListener('click',function(){open?openDoor(x):nope(b,x);});
+      box.appendChild(b);
+    });
+    document.getElementById('prog-t').textContent=done.length+' trên 8 ngày';
+    document.getElementById('prog-b').style.width=(done.length/8*100)+'%';
+    document.getElementById('finale').hidden=done.length<8;
+  }
+  function nope(b,x){
+    b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');
+    var t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.textContent='Mở ngày '+label(x.d);
+    document.body.appendChild(t);setTimeout(function(){t.remove();},1800);
+  }
+  function openDoor(x){
+    var isDone=done.indexOf(x.n)>=0,dlg=document.getElementById('dlg');
+    document.getElementById('dlg-in').innerHTML='<span class="eyebrow">Ô '+x.n+' · '+label(x.d)+'</span><h2>'+x.no+'</h2><p style="color:var(--slate);margin-top:-8px">('+x.vi+')</p><p>'+x.intro+'</p>'+
+      '<div class="audio"><i aria-hidden="true"></i><div><b>Ghi âm 5 phút với Maren</b><br><small>[File ghi âm, Maren thu theo dàn ý]</small></div></div>'+
+      '<div class="task"><b>Việc nhỏ hôm nay:</b> '+x.task+'</div>'+
+      '<div class="row"><a class="btn ghost" href="#pdf-'+x.n+'">Tải trang PDF</a><button class="btn navy" id="fin" type="button">'+(isDone?'Đã xong ✓':'Ferdig for i dag ✓')+'</button></div>';
+    document.getElementById('fin').addEventListener('click',function(){
+      if(done.indexOf(x.n)<0){done.push(x.n);set(KEY_D,done);}dlg.close();render();
+    });
+    dlg.showModal();
+  }
+  // countdown to 25/12 08:00? doors open at midnight Oslo time
+  var target=CampaignState.localToUtc('2026-12-25T00:00'),cd=document.getElementById('cd');
+  function p(n){return(n<10?'0':'')+n;}
+  function tick(){var t=Math.max(0,target-Date.now());if(preview)t=(4*86400+6*3600+12*60)*1000;var m=Math.floor(t/60000);cd.querySelector('[data-cd=d]').textContent=Math.floor(m/1440);cd.querySelector('[data-cd=h]').textContent=p(Math.floor(m%1440/60));cd.querySelector('[data-cd=m]').textContent=p(m%60);}
+  tick();setInterval(tick,30000);
+  show();
+})();
+</script>
+<script src="review-bar.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Đăng ký xem video · Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css">
+<style>
+.hero{padding:clamp(40px,7vw,88px) 0;background:radial-gradient(900px 480px at 85% 0%,var(--gold-xl),transparent 60%),linear-gradient(180deg,var(--bg),var(--cream))}
+.hero .grid{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.hero .grid{grid-template-columns:1.1fr .9fr}}
+.hero .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--navy);color:#fff;font-size:.8rem;font-weight:600;margin-bottom:18px}
+.hero .card h2{font-size:1.6rem}
+.learn{display:grid;gap:18px}
+@media(min-width:760px){.learn{grid-template-columns:1fr 1fr}}
+.learn .card{box-shadow:none}
+.learn b{display:block;font-family:var(--serif);font-size:1.35rem;color:var(--navy);margin-bottom:6px}
+.about{display:grid;gap:32px;align-items:center}
+@media(min-width:860px){.about{grid-template-columns:.8fr 1.2fr}}
+.about>img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%;max-width:380px}
+</style>
+</head>
+<body data-states="before1:Trước khi mở (18–24/11)|open1:Đang mở (25–26/11)|before2:Trước đợt 2 (27/11–9/12)|open2:Đang mở (10–11/12)|closed:Đã đóng (từ 12/12)">
+
+<div data-state-show="before1 open1 before2 open2">
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <span class="tag" data-state-show="before1">Video miễn phí · ra mắt thứ Tư 25/11 lúc 08:00</span>
+        <span class="tag" data-state-show="before2">Video miễn phí · mở lại thứ Năm 10/12 lúc 08:00</span>
+        <span class="tag" data-state-show="open1 open2">Video đã có · đăng ký để xem ngay</span>
+        <h1>Giáng sinh này, đừng để romjul là lúc <em>bạn sụp đổ.</em></h1>
+        <p class="lead">Một video miễn phí 20 phút từ Maren Kvalvaag-Toven: vì sao Giáng sinh rút cạn sức của "cô gái ngoan", và mô hình 3 bước <b>Dừng · Nhìn · Chọn</b> để khép lại năm 2026 và bước vào năm 2027 theo cách khác.</p>
+      </div>
+      <div class="card" id="dang-ky">
+        <h2 data-state-show="before1 before2">Giữ chỗ xem video</h2>
+        <h2 data-state-show="open1 open2">Xem video ngay</h2>
+        <form class="form" onsubmit="event.preventDefault();location.href={before1:'takk.html?state=round1',open1:'video.html?state=r1d1',before2:'takk.html?state=round2',open2:'video.html?state=r2d1'}[document.documentElement.getAttribute('data-state')]">
+          <label for="n">Tên</label><input id="n" type="text" autocomplete="given-name" required>
+          <label for="e">Email</label><input id="e" type="email" autocomplete="email" required>
+          <label for="t">Số điện thoại (không bắt buộc)</label><input id="t" type="tel" autocomplete="tel">
+          <label class="consent"><input type="checkbox" required>Mình đồng ý nhận email từ Det lille pusterommet.</label>
+          <button class="btn block" type="submit"><span data-state-show="before1 before2">Gửi video cho mình, miễn phí</span><span data-state-show="open1 open2">Xem video ngay</span></button>
+        </form>
+        <p class="micro center">Trong Kajabi đây là form gốc: gắn tag <code>bw-registrert</code>, rồi tới trang cảm ơn (trước khi mở) hoặc thẳng tới trang video (đang mở).</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="narrow center"><span class="eyebrow">Trong video</span><h2>Bạn sẽ thấy</h2></div>
+      <div class="learn">
+        <div class="card"><b>Danh sách vô hình của Giáng sinh</b>và vì sao nó không bao giờ xong.</div>
+        <div class="card"><b>Ba lý do mùa lễ nặng nhất với "cô gái ngoan"</b>kỳ vọng lên đỉnh, không có thời gian hồi phục, và cú sập ở romjul.</div>
+        <div class="card"><b>Vì sao "nghỉ ngơi đi" không hiệu quả</b>mỗi người kiệt sức theo khuôn mẫu riêng của mình.</div>
+        <div class="card"><b>Mô hình Dừng · Nhìn · Chọn</b>kèm một bài thở bạn làm được ngay trong lúc xem.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream">
+    <div class="wrap about">
+      <img src="img/maren-vinter.jpg" alt="Maren smiler i et lyst, vinterlig rom" loading="lazy">
+      <div>
+        <span class="eyebrow">Maren Kvalvaag-Toven</span>
+        <h2>Nhà trị liệu gia đình, coach Enneagram, tác giả <em>Ut av utbrenthet</em></h2>
+        <p>Năm 2019, Maren đứng bên quầy bếp và không thở được. Từ năm 2020, cô đã đồng hành cùng hơn 6 400 phụ nữ tìm lại bình yên.</p>
+        <blockquote class="quote"><p>«Jeg snakker meg selv opp, akkurat slik jeg heier på dem rundt meg. Sakte, men sikkert begynner jeg å glede meg til jobb igjen.»</p><footer><img src="img/anne-schei.jpg" alt="Anne Schei">Anne Schei, deltaker i Fra stress til ro</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="wrap narrow">
+      <h2>Giáng sinh này, <em>hãy để chính bạn cũng được có mặt.</em></h2>
+      <a class="btn" href="#dang-ky"><span data-state-show="before1 before2">Gửi video cho mình</span><span data-state-show="open1 open2">Xem video ngay</span></a>
+    </div>
+  </section>
+</div>
+
+<section class="hero" data-state-show="closed">
+  <div class="wrap narrow center">
+    <h1>Video đã đóng.</h1>
+    <p class="lead">Cảm ơn bạn đã ghé qua. Hãy để lại email để biết khi mình mở cửa lần tới.</p>
+    <form class="form card" onsubmit="event.preventDefault();this.innerHTML='<p class=center>Cảm ơn bạn, mình sẽ báo cho bạn.</p>'">
+      <label for="e2">Email</label><input id="e2" type="email" required>
+      <button class="btn block" type="submit">Báo cho mình</button>
+    </form>
+  </div>
+</section>
+
+<script src="campaign-state.js"></script>
+<script>CampaignState.apply(CampaignState.resolve([{name:'before1'},{name:'open1',from:'2026-11-25T08:00'},{name:'before2',from:'2026-11-27T00:00'},{name:'open2',from:'2026-12-10T08:00'},{name:'closed',from:'2026-12-12T00:00'}]));</script>
+<script src="review-bar.js"></script>
+</body>
+</html>
