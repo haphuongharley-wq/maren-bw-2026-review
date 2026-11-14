@@ -71,5 +71,5 @@ section{padding:clamp(56px,9vw,104px) 0}
 .rv-bar b{color:#fff;margin-right:4px}
 .rv-bar a{flex:none;display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;border-radius:999px;color:#e6ebf4;text-decoration:none;border:1px solid rgba(255,255,255,.18)}
 .rv-bar a.on{background:var(--gold-d);border-color:var(--gold-d);color:#fff}
-.rv-bar .home{margin-left:auto;position:sticky;right:0;background:#111a2b}
+.rv-bar .home{margin-left:auto;position:sticky;right:0;background:#111a2b;box-shadow:-28px 0 18px -6px #111a2b}
 .note-vi{max-width:680px;margin:0 auto 24px;padding:10px 14px;border-left:3px solid var(--gold);background:var(--gold-xl);font-size:.85rem;color:var(--gold-d)}
