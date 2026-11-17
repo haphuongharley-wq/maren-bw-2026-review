@@ -12,15 +12,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 PAGES = {
     'registrering': ('Påmelding · gratis video',
-        'before1:Før åpning (til 25. nov)|open1:Åpen (25. og 26. nov)|before2:Før runde 2 (27. nov til 9. des)'
-        '|open2:Åpen (10. og 11. des)|closed:Stengt (fra 12. des)'),
+        'before1:Før åpning (til 25. nov)|open1:Åpen (25. og 26. nov)|before2:Før runde 2 (27. nov til 8. des)'
+        '|open2:Åpen (9. og 10. des)|closed:Stengt (fra 11. des)'),
     'takk': ('Takk for påmeldingen',
-        'round1:Runde 1 (påmeldt før 25. nov)|round2:Runde 2 (påmeldt 27. nov til 9. des)'),
+        'round1:Runde 1 (påmeldt før 25. nov)|round2:Runde 2 (påmeldt 27. nov til 8. des)'),
     'video': ('Video og tilbud',
-        'before1:Før åpning (runde 1)|r1d1:Runde 1 · dag 1 (25. nov)|r1d2:Runde 1 · dag 2 (26. nov, direktesending 12.00)'
-        '|r1d2vent:26. nov 12.45 til 14.00 (opptaket kommer)|between:Mellom rundene'
-        '|before2:Før åpning (runde 2, ?runde=2)|r2d1:Runde 2 · dag 1 (10. des)'
-        '|r2d2:Runde 2 · dag 2 (11. des, direktesending 12.00)|r2d2opptak:11. des fra 14.00 (opptak)|closed:Stengt (fra 12. des)'),
+        'before1:Før åpning (runde 1)|r1d1:Runde 1 · dag 1 (25. nov)|r1d2:Runde 1 · dag 2 (26. nov, direktesending 19.00)'
+        '|r1d2vent:26. nov 19.45 til 21.00 (opptaket kommer)|between:Mellom rundene'
+        '|before2:Før åpning (runde 2, ?runde=2)|r2d1:Runde 2 · dag 1 (9. des)'
+        '|r2d2:Runde 2 · dag 2 (10. des, direktesending 12.00)|r2d2opptak:10. des fra 14.00 (opptak)|closed:Stengt (fra 11. des)'),
     'kalender': ('Romjulskalenderen',
         'locked:Skjema ikke fylt ut|feil:Feil e-post|waiting:Før 25. des|open:27. des (2 luker gjort)'
         '|alldone:Alle 8 luker gjort|closed:Stengt (fra 7. jan 2027)'),

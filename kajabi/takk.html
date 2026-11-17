@@ -5,8 +5,8 @@
 
   This is the redirect target of the "Registrering" form on the påmeldingsside.
   STATES (by Oslo time = the round the person just signed up for):
-    round1  until 26 Nov (video Wed 25 Nov 08:00)    round2  from 27 Nov (video Thu 10 Dec 08:00)
-  While the video is open (25 Nov 08:00 to 26 Nov 23:59 and 10 Dec 08:00 to 11 Dec 23:59) this page
+    round1  until 26 Nov (video Wed 25 Nov 08:00)    round2  from 27 Nov (video Wed 9 Dec 08:00)
+  While the video is open (25 Nov 08:00 to 26 Nov 23:59 and 9 Dec 08:00 to 10 Dec 23:59) this page
   forwards straight to the video page: set CONFIG.videoUrl (full URL of the video page).
   Preview with ?state=round1|round2 (no forwarding in previews).
 -->
@@ -197,18 +197,18 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
       <div class="card rise jul-sprig">
         <p class="eyebrow">Du er påmeldt</p>
         <h1 data-state-show="round1">Videoen din kommer <em>onsdag kl. 08.00</em></h1>
-        <h1 data-state-show="round2" hidden>Videoen din kommer <em>torsdag kl. 08.00</em></h1>
+        <h1 data-state-show="round2" hidden>Videoen din kommer <em>onsdag kl. 08.00</em></h1>
         <p class="lead">Jeg har sendt deg en bekreftelse på e-post. Finner du den ikke, så sjekk Reklame eller Søppelpost.</p>
-        <h2>Tre små ting før <span data-state-show="round1">onsdag</span><span data-state-show="round2" hidden>torsdag</span></h2>
+        <h2>Tre små ting før <span data-state-show="round1">onsdag</span><span data-state-show="round2" hidden>onsdag</span></h2>
         <ol class="steps">
-          <li><b>Legg det i kalenderen.</b> <span data-state-show="round1">Onsdag 25. november kl. 08.00.</span><span data-state-show="round2" hidden>Torsdag 10. desember kl. 08.00.</span><br><a class="btn navy" href="#" data-ics-btn>Legg i kalenderen</a></li>
+          <li><b>Legg det i kalenderen.</b> <span data-state-show="round1">Onsdag 25. november kl. 08.00.</span><span data-state-show="round2" hidden>Onsdag 9. desember kl. 08.00.</span><br><a class="btn navy" href="#" data-ics-btn>Legg i kalenderen</a></li>
           <li><b>Finn 20 rolige minutter.</b> Videoen har en pusteøvelse som du gjør sammen med meg.</li>
           <li><b>Skriv ned én setning:</b> <i>Hva gjorde meg mest sliten i fjor jul?</i> Ta vare på den. Vi skal bruke den. Svar gjerne på e-posten med setningen din.</li>
         </ol>
         <div class="bye">
           <img src="https://haphuongharley-wq.github.io/maren-bw-2026-review/pages/img/maren-portrett-128.jpg" alt="Maren Kvalvaag-Toven" width="64" height="64" loading="lazy">
           <div>
-            <p>Vi snakkes <span data-state-show="round1">onsdag,</span><span data-state-show="round2" hidden>torsdag,</span></p>
+            <p>Vi snakkes <span data-state-show="round1">onsdag,</span><span data-state-show="round2" hidden>onsdag,</span></p>
             <p class="sig">Klem fra Maren</p>
           </div>
         </div>
@@ -229,8 +229,8 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
     {name:'round1'},
     {name:'open1',from:'2026-11-25T08:00'},
     {name:'round2',from:'2026-11-27T00:00'},
-    {name:'open2',from:'2026-12-10T08:00'},
-    {name:'round2',from:'2026-12-12T00:00'}
+    {name:'open2',from:'2026-12-09T08:00'},
+    {name:'round2',from:'2026-12-11T00:00'}
   ];
   // ---- base helpers (same in all four snippets) ----
   var root=document.querySelector('.bw[data-bw-page="'+PAGE+'"]');if(!root)return;
@@ -288,6 +288,6 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
   }
   apply(state);
   var url=CONFIG.videoUrl.charAt(0)==='#'?location.origin+location.pathname:CONFIG.videoUrl;
-  ics(root.querySelector('[data-ics-btn]'),state==='round1'?'2026-11-25T08:00':'2026-12-10T08:00',url);
+  ics(root.querySelector('[data-ics-btn]'),state==='round1'?'2026-11-25T08:00':'2026-12-09T08:00',url);
 })();
 </script>

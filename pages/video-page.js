@@ -7,14 +7,14 @@
     {name:'before'},
     {name:'r1d1',from:'2026-11-25T08:00'},{name:'r1d2',from:'2026-11-26T00:00'},
     {name:'between',from:'2026-11-27T00:00'},
-    {name:'r2d1',from:'2026-12-10T08:00'},{name:'r2d2',from:'2026-12-11T00:00'},
-    {name:'closed',from:'2026-12-12T00:00'}
+    {name:'r2d1',from:'2026-12-09T08:00'},{name:'r2d2',from:'2026-12-10T00:00'},
+    {name:'closed',from:'2026-12-11T00:00'}
   ];
   var DAY={r1d1:1,r2d1:1,r1d2:2,r2d2:2};
   var PRICE={1:{full:'7 997 kr',split:'3 × 2 797 kr',total:'8 391 kr',save:'6 993 kr'},2:{full:'8 997 kr',split:'3 × 3 147 kr',total:'9 441 kr',save:'5 993 kr'}};
   var OFFERS={1:{full:'#checkout-7997',split:'#checkout-3x2797'},2:{full:'#checkout-8997',split:'#checkout-3x3147'}};  // real Kajabi offer URLs later
-  var END={r1d1:'2026-11-25T23:59',r1d2:'2026-11-26T23:59',r2d1:'2026-12-10T23:59',r2d2:'2026-12-11T23:59'};
-  var QA={live:'#zoom-lenke',replay:'#opptak-lenke',replayFrom:'2026-12-11T20:45'};
+  var END={r1d1:'2026-11-25T23:59',r1d2:'2026-11-26T23:59',r2d1:'2026-12-09T23:59',r2d2:'2026-12-10T23:59'};
+  var QA={live:'#zoom-lenke',replay:'#opptak-lenke',replayFrom:'2026-12-10T20:45'};
   var KEY='maren-bw26-offer-seen';
   // ----------------
   var params=new URLSearchParams(location.search),preview=params.get('state');

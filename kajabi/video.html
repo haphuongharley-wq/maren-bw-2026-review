@@ -10,13 +10,13 @@
   STATES (switch by themselves, Oslo time):
     before1  until Wed 25 Nov 07:59 (countdown, no prices)
     r1d1     Wed 25 Nov 08:00 to 23:59 (7 997 kr)      r1d2  Thu 26 Nov 00:00 to 23:59 (8 997 kr)
-    between  27 Nov to 10 Dec 07:59 (door closed, notify form)
-             before2 (countdown to Thu 10 Dec 08:00) is shown instead when the link has ?runde=2:
-             use that link in the round 2 emails sent before 10 Dec.
-    r2d1     Thu 10 Dec 08:00 to 23:59 (7 997 kr)      r2d2  Fri 11 Dec 00:00 to 23:59 (8 997 kr)
-             r1d2 and r2d2 show the Q&A box (live 12.00 to 12.45): until 12:45 «Gå til direktesendingen»,
-             12:45 to 14:00 «Opptaket ... kommer i ettermiddag», from 14:00 «Se opptaket».
-    closed   from Sat 12 Dec
+    between  27 Nov to 9 Dec 07:59 (door closed, notify form)
+             before2 (countdown to Wed 9 Dec 08:00) is shown instead when the link has ?runde=2:
+             use that link in the round 2 emails sent before 9 Dec.
+    r2d1     Wed 9 Dec 08:00 to 23:59 (7 997 kr)      r2d2  Thu 10 Dec 00:00 to 23:59 (8 997 kr)
+             r1d2 and r2d2 show the Q&A box (r1d2 live 19.00 to 19.45, r2d2 live 12.00 to 12.45): until the end «Gå til direktesendingen»,
+             after the session «Opptaket ... kommer» until the recording time, then «Se opptaket» (r1d2 21:00, r2d2 14:00).
+    closed   from Fri 11 Dec
   Sale days are video first: the offer stays hidden until «Se tilbudet ↓» is pressed, or the link ends
   in #tilbud, or this browser has opened it before. The page reloads itself when a countdown ends.
   Preview: ?state=before1|r1d1|r1d2|between|before2|r2d1|r2d2|closed (add #tilbud to open the offer).
@@ -302,7 +302,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
       <div class="wrap">
         <p class="eyebrow">Gratis video</p>
         <h1 data-state-show="before1">Videoen åpner <em>onsdag 25. november kl. 08.00</em></h1>
-        <h1 data-state-show="before2" hidden>Videoen åpner <em>torsdag 10. desember kl. 08.00</em></h1>
+        <h1 data-state-show="before2" hidden>Videoen åpner <em>onsdag 9. desember kl. 08.00</em></h1>
         <div class="player">
           <div class="poster">
             <img src="https://haphuongharley-wq.github.io/maren-bw-2026-review/pages/img/maren-stol.jpg" alt="Maren sitter i en blå lenestol hjemme ved peisen" width="800" height="1199">
@@ -311,7 +311,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
         </div>
         <p class="note">Siden åpner av seg selv når nedtellingen er ferdig. Du trenger ikke å gjøre noe.</p>
         <a class="btn" href="#" data-ics-btn>Legg i kalenderen</a>
-        <p class="line">Sett av 20 minutter <span data-state-show="before1">onsdag</span><span data-state-show="before2" hidden>torsdag</span> morgen.</p>
+        <p class="line">Sett av 20 minutter <span data-state-show="before1">onsdag</span><span data-state-show="before2" hidden>onsdag</span> morgen.</p>
       </div>
     </section>
     <section class="cream">
@@ -343,9 +343,9 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
     <section class="vhero dark jul-night" data-sale-hero>
       <div class="wrap">
         <div class="qa" data-state-show="r1d2 r2d2">
-          <p data-qa="live">Direktesending i dag kl. 12.00 med Maren, spørsmål og svar. Ta med lunsjen.</p>
+          <p data-qa="live"><span data-state-show="r1d2">Direktesending i kveld kl. 19.00 med Maren, spørsmål og svar.</span><span data-state-show="r2d2" hidden>Direktesending i dag kl. 12.00 med Maren, spørsmål og svar. Ta med lunsjen.</span></p>
           <a data-qa="live" data-link="live" href="#">Gå til direktesendingen</a>
-          <p data-qa="wait" hidden>Opptaket av direktesendingen kommer i ettermiddag.</p>
+          <p data-qa="wait" hidden>Opptaket av direktesendingen kommer <span data-state-show="r1d2">i kveld</span><span data-state-show="r2d2" hidden>i ettermiddag</span>.</p>
           <p data-qa="replay" hidden>Opptak av dagens direktesending</p>
           <a data-qa="replay" data-link="replay" href="#" hidden>Se opptaket</a>
         </div>
@@ -474,7 +474,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
   <section class="shut jul-night" data-state-show="between" hidden>
     <div class="wrap narrow center">
       <h1>Påmeldingen er stengt</h1>
-      <p class="lead">Denne runden er over. Jeg åpner én gang til før jul, torsdag 10. desember.</p>
+      <p class="lead">Denne runden er over. Jeg åpner én gang til før jul, onsdag 9. desember.</p>
       <div class="card" data-meldt-hide>
         <!-- FORM PLACEHOLDER: native Kajabi form "Venteliste" is moved in here -->
         <div class="kform" data-kajabi-form="venteliste">
@@ -507,10 +507,10 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
   var CONFIG={
     day1:{price:'7 997 kr',save:'6 993 kr',split:'3 × 2 797 kr',total:'8 391 kr',buy:'#checkout-7997',buySplit:'#checkout-3x2797'},
     day2:{price:'8 997 kr',save:'5 993 kr',split:'3 × 3 147 kr',total:'9 441 kr',buy:'#checkout-8997',buySplit:'#checkout-3x3147'},
-    // Q&A on day 2 of each round, 12.00 to 12.45: live link until 12.45, recording link from 14.00
+    // Q&A on day 2: round 1 19.00 to 19.45 (recording from 21.00), round 2 12.00 to 12.45 (recording from 14.00)
     qa:{
       r1d2:{live:'#lenke-direktesending-runde1',replay:'#lenke-opptak-runde1'}, // Thu 26 Nov
-      r2d2:{live:'#lenke-direktesending-runde2',replay:'#lenke-opptak-runde2'}  // Fri 11 Dec
+      r2d2:{live:'#lenke-direktesending-runde2',replay:'#lenke-opptak-runde2'}  // Thu 10 Dec
     }
   };
   // ---------------------------------------------------------------------------------------
@@ -519,12 +519,12 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
     {name:'before1'},
     {name:'r1d1',from:'2026-11-25T08:00'},{name:'r1d2',from:'2026-11-26T00:00'},
     {name:'between',from:'2026-11-27T00:00'},
-    {name:'r2d1',from:'2026-12-10T08:00'},{name:'r2d2',from:'2026-12-11T00:00'},
-    {name:'closed',from:'2026-12-12T00:00'}
+    {name:'r2d1',from:'2026-12-09T08:00'},{name:'r2d2',from:'2026-12-10T00:00'},
+    {name:'closed',from:'2026-12-11T00:00'}
   ];
-  var OPEN={before1:'2026-11-25T08:00',before2:'2026-12-10T08:00'};
-  var END={r1d1:'2026-11-25T23:59',r1d2:'2026-11-26T23:59',r2d1:'2026-12-10T23:59',r2d2:'2026-12-11T23:59'};
-  var QA={r1d2:{wait:'2026-11-26T12:45',replay:'2026-11-26T14:00'},r2d2:{wait:'2026-12-11T12:45',replay:'2026-12-11T14:00'}};
+  var OPEN={before1:'2026-11-25T08:00',before2:'2026-12-09T08:00'};
+  var END={r1d1:'2026-11-25T23:59',r1d2:'2026-11-26T23:59',r2d1:'2026-12-09T23:59',r2d2:'2026-12-10T23:59'};
+  var QA={r1d2:{wait:'2026-11-26T19:45',replay:'2026-11-26T21:00'},r2d2:{wait:'2026-12-10T12:45',replay:'2026-12-10T14:00'}};
   var QA_PREVIEW={r1d2vent:['r1d2','wait'],r2d2opptak:['r2d2','replay']},KEY='bw26-offer-seen';
   // ---- base helpers (same in all four snippets) ----
   var root=document.querySelector('.bw[data-bw-page="'+PAGE+'"]');if(!root)return;
@@ -589,7 +589,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
   var P=CONFIG['day'+day];
   root.querySelectorAll('[data-price]').forEach(function(el){el.textContent=P[el.getAttribute('data-price')];});
   root.querySelectorAll('[data-buy]').forEach(function(a){a.href=a.getAttribute('data-buy')==='split'?P.buySplit:P.buy;});
-  if(QA[state]){ // Q&A box: live until 12.45, then «kommer i ettermiddag», recording from 14.00
+  if(QA[state]){ // Q&A box: live link until the session ends, then «kommer», then the recording (times in QA)
     root.querySelectorAll('[data-link]').forEach(function(a){a.href=CONFIG.qa[state][a.getAttribute('data-link')];});
     var qa=function(){
       var t=Date.now(),m=qaMode||(preview?'live':t<at(QA[state].wait)?'live':t<at(QA[state].replay)?'wait':'replay');
