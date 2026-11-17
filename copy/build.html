@@ -46,7 +46,7 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <li><a href="#3-forms-tags-segments-automations">3. Forms, tags, segments, automations</a><ul>
 <li><a href="#forms">Forms ✅</a></li>
 <li><a href="#tags">Tags ✅</a></li>
-<li><a href="#automations-publish-in-the-admin">Automations ⬜ publish in the admin</a></li>
+<li><a href="#automations">Automations ✅</a></li>
 <li><a href="#segments-evaluated-at-send-time">Segments ✅ (evaluated at send time)</a></li>
 </ul>
 </li>
@@ -83,7 +83,7 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <tr>
 <td>Registration</td>
 <td><a href="https://www.detlillepusterommet.no/julevideo">/julevideo</a></td>
-<td>States: before 25.11 · 25–26.11 · before round 2 (27.11–8.12) · 9–10.12 · closed. Form: name, email, phone (all required, no consent checkbox). Redirects to <code>/julevideo-takk</code>.</td>
+<td>States in round 1: before 25.11 · 25–26.11. Form: name, email, phone (all required, no consent checkbox). Redirects to <code>/julevideo-takk</code>.</td>
 </tr>
 <tr>
 <td>Thank you</td>
@@ -93,12 +93,11 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <tr>
 <td>Video + sales</td>
 <td><a href="https://www.detlillepusterommet.no/julevideo-se">/julevideo-se</a></td>
-<td>Before 25.11: thumbnail + countdown. From 25.11 08.00: video first, the offer appears after the button «Se tilbudet». Price and buy links switch by day: Wednesday 7 997 kr (or 3 × 2 797 kr), Thursday 8 997 kr (or 3 × 3 147 kr). 27.11–8.12: «Denne runden er over» with a button to <code>/julevideo</code>.</td>
+<td>Before 25.11: thumbnail + countdown. From 25.11 08.00: video first, the offer appears after the button «Se tilbudet». Price and buy links switch by day: Wednesday 7 997 kr (or 3 × 2 797 kr), Thursday 8 997 kr (or 3 × 3 147 kr).</td>
 </tr>
 </tbody>
 </table>
-<p>Preview any state with <code>?state=...</code>, e.g. <code>/julevideo-se?state=r1d1#tilbud</code>. States: registration <code>before1</code>, <code>open1</code>, <code>before2</code>, <code>open2</code>, <code>closed</code>; video <code>before1</code>, <code>r1d1</code>, <code>r1d2</code>, <code>between</code>, <code>r2d1</code>, <code>r2d2</code>, <code>closed</code>. After an update, the URL without <code>?</code> can show the old version for about 5 minutes (Kajabi cache).</p>
-<p>Removed: <code>/julevideo-live</code> (back to draft; the Zoom link goes straight into emails, SMS and the video page) and the waitlist form on <code>/julevideo-se</code>.</p>
+<p>Preview any state with <code>?state=...</code>, e.g. <code>/julevideo-se?state=r1d1#tilbud</code>. Round 1 states: registration <code>before1</code>, <code>open1</code>; video <code>before1</code>, <code>r1d1</code> (Wednesday), <code>r1d2</code> (Thursday). After an update, the URL without <code>?</code> can show the old version for about 5 minutes (Kajabi cache).</p>
 <h2 id="2-offers-and-checkout">2. Offers and checkout ⬜</h2>
 <p>Not built yet. Needed before <strong>Tue 24.11</strong> so the video page can be tested.</p>
 <table>
@@ -137,49 +136,35 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 </tr>
 </tbody>
 </table>
-<p>Each offer grants course <code>2149607383</code> and access group <code>2149619906</code>, and tags buyers <code>bw26-kjopt</code> and <code>Fra stress til ro-skreddersydd for deg</code> (<code>2150447869</code>). The checkout links then go into the video page (Claude updates it).</p>
+<p>Each offer grants course <code>2149607383</code> and access group <code>2149619906</code>. Purchase automation for each offer, same as the existing «Fra stress til ro – skreddersydd for deg» offers (e.g. automation 1494613): tag <code>bw26-kjopt</code>, tag <code>Fra stress til ro-skreddersydd for deg</code> (<code>2150447869</code>), subscribe to the ordinary welcome sequence <code>2148916296</code> («Etter kjøp av Fra stress til ro – skreddersydd for deg»), and subscribe to sequence <code>BW26 – D1</code>. The checkout links then go into the video page (Claude updates it).</p>
 <h2 id="3-forms-tags-segments-automations">3. Forms, tags, segments, automations</h2>
 <h3 id="forms">Forms ✅</h3>
 <ul>
 <li>Registration <code>BW26 Registrering</code> (<code>2149786880</code>): name, email, phone. Redirects to <code>/julevideo-takk</code>.</li>
-<li>Waitlist <code>BW26 Venteliste</code> (<code>2149786881</code>): email only. Shown on <code>/julevideo</code> only after the campaign closes (from 11.12).</li>
 </ul>
 <h3 id="tags">Tags ✅</h3>
-<p><code>bw26-registrert</code>, <code>bw26-kjopt</code>, <code>bw26-kalender</code>, <code>bw26-venteliste</code>, <code>wbn26-registrert</code>.</p>
-<h3 id="automations-publish-in-the-admin">Automations ⬜ publish in the admin</h3>
-<p>All are drafts. Kajabi's AI tools cannot publish automations, so publish them by hand <strong>before 12.00 on Wed 18.11</strong>.</p>
+<p><code>bw26-registrert</code>, <code>bw26-kjopt</code>, <code>bw26-kalender</code>, <code>wbn26-registrert</code>.</p>
+<h3 id="automations">Automations ✅</h3>
+<p>Checked 18.11, 03.00 Vietnam time: both are published.</p>
 <table>
 <thead>
 <tr>
 <th>Automation</th>
 <th>What it does</th>
-<th>Action</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="https://app.kajabi.com/admin/workflows/1605707/edit">1605707</a></td>
 <td>Registration form → tag <code>bw26-registrert</code></td>
-<td>⬜ Publish</td>
-</tr>
-<tr>
-<td><a href="https://app.kajabi.com/admin/workflows/1605708/edit">1605708</a></td>
-<td>Waitlist form → tag <code>bw26-venteliste</code></td>
-<td>⬜ Publish</td>
 </tr>
 <tr>
 <td><a href="https://app.kajabi.com/admin/workflows/1605710/edit">1605710</a></td>
 <td>Webinar registration form → tag <code>wbn26-registrert</code> (keeps new webinar registrants out of the invitations)</td>
-<td>⬜ Publish</td>
-</tr>
-<tr>
-<td><a href="https://app.kajabi.com/admin/workflows/1605709/edit">1605709</a></td>
-<td>Old round 2 waitlist (form already deleted)</td>
-<td>⬜ Delete, and delete tag <code>bw26-venteliste-runde2</code></td>
 </tr>
 </tbody>
 </table>
-<p>After publishing: register once on <code>/julevideo</code> with an internal email and check that the contact gets <code>bw26-registrert</code> and lands on <code>/julevideo-takk</code>.</p>
+<p>⬜ Register once on <code>/julevideo</code> with an internal email and check that the contact gets <code>bw26-registrert</code> and lands on <code>/julevideo-takk</code>.</p>
 <h3 id="segments-evaluated-at-send-time">Segments ✅ (evaluated at send time)</h3>
 <p>Excluded from the invitations: program and coaching customers, people who registered for a webinar from 15.11, people who clicked the stop link, and anyone already registered or who bought.</p>
 <table>
@@ -231,11 +216,6 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <td>Tue 24.11 18.00 (B3)</td>
 </tr>
 <tr>
-<td>Zoom link, Live Q&amp;A round 2 (10.12 12.00)</td>
-<td>Email B1-R2 (sent from 27.11 on registration), round 2 emails</td>
-<td>Fri 27.11</td>
-</tr>
-<tr>
 <td>VSL video (embed code)</td>
 <td>Video page</td>
 <td>Tue 24.11</td>
@@ -246,18 +226,8 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <td>Tue 24.11</td>
 </tr>
 <tr>
-<td>Q&amp;A recording page <code>/julevideo-opptak</code></td>
-<td>Email C5 (26.11 21.00)</td>
-<td>Thu 26.11 21.00</td>
-</tr>
-<tr>
 <td>Romjulskalenderen page <code>/romjulskalenderen</code></td>
-<td>Buyer emails D0 and D1</td>
-<td>Wed 25.11 07.00 (D0)</td>
-</tr>
-<tr>
-<td>Ordinary after-purchase email (to align D1 with it)</td>
-<td>D1</td>
+<td>Buyer email D1</td>
 <td>Wed 25.11 08.00</td>
 </tr>
 </tbody>
@@ -396,13 +366,7 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <td>C5</td>
 <td>Thu 26.11, 21.00</td>
 <td>C</td>
-<td>Registered, not bought (needs the recording page)</td>
-</tr>
-<tr>
-<td>D0</td>
-<td>Wed 25.11, 07.00</td>
-<td>⬜ segment to create</td>
-<td>People who bought in the webinar week 15–18.11 (tag Fra stress til ro-skreddersydd for deg, bought before 25.11)</td>
+<td>Registered, not bought</td>
 </tr>
 </tbody>
 </table>
@@ -410,9 +374,9 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <h3 id="triggered-emails">Triggered emails</h3>
 <ul>
 <li><strong>B1</strong> (right after registration): sequence <code>BW26 – B1</code>, email on day 0. Registration form <code>2149786880</code> → Automations → Subscribe to sequence <code>BW26 – B1</code>. B1 does not contain the Zoom link; the link comes in Q1 and the SMS on 26.11.</li>
-<li><strong>D1</strong> (right after purchase): sequence <code>BW26 – D1</code>, email on day 0, triggered by all four offers. On hold until the ordinary after-purchase email is checked, so the buyer does not get two welcome emails.</li>
+<li><strong>D1</strong> (right after purchase): sequence <code>BW26 – D1</code>, email on day 0, triggered by all four offers. D1 only gives the gift (Romjulskalenderen). The course welcome (survey, login, workbook, Enneagram test, bonuses) comes from the ordinary welcome email <code>2151532911</code> in sequence <code>2148916296</code>, so buyers do not get two welcome emails.</li>
 </ul>
 <h2 id="7-sms">7. SMS ⬜</h2>
 <p>Send the 6 round 1 SMS at the times on the <a href="sms.html">SMS page</a>, with the same SMS tool as the webinar SMS. S4 and S5 (Live Q&amp;A) go to everyone registered, buyers included; the others only to registrants who have not bought.</p>
 <h2 id="8-live-qa-thu-2611-19001945">8. Live Q&amp;A, Thu 26.11 19.00–19.45 ⬜</h2>
-<p>Everyone who registered is invited, buyers included (emails B1, B3, C4, C4b, Q1; SMS S4, S5). See the <a href="live-qa.html">run sheet</a>. The recording goes on <code>/julevideo-opptak</code> around 21.00 and email C5 links to it.</p></article></div></body></html>
+<p>Everyone who registered is invited, buyers included (emails B1, B3, C4, C4b, Q1; SMS S4, S5). See the <a href="live-qa.html">run sheet</a>. There is no replay page in round 1.</p></article></div></body></html>
