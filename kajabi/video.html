@@ -531,7 +531,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
         var sec=f.closest('section,.section');ph.appendChild(f);
         if(sec&&!sec.contains(root)&&!sec.querySelector('form'))sec.style.display='none';
         var b=f.querySelector('[type=submit]');
-        if(b&&src){if(b.tagName==='BUTTON')b.innerHTML=src.innerHTML;else{var sp=[].filter.call(src.querySelectorAll('[data-state-show]'),function(s){return shows(s,state);})[0];b.value=(sp||src).textContent.trim();}}
+        if(b&&src){var sp=[].filter.call(src.querySelectorAll('[data-state-show]'),function(s){return shows(s,state);})[0],txt=(sp||src).textContent.trim();if(b.tagName==='BUTTON')b.textContent=txt;else b.value=txt;}
       }
       ph.parentNode.querySelectorAll('[data-help-for]').forEach(function(h){var inp=ph.querySelector('input[type='+h.getAttribute('data-help-for')+']');if(inp)inp.insertAdjacentElement('afterend',h);});
     });

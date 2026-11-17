@@ -11,8 +11,7 @@
   NATIVE KAJABI FORMS: add two Form sections DIRECTLY AFTER this code section, in this order.
   The script moves them into the [data-kajabi-form] placeholders below (1st form -> 1st placeholder)
   and hides the emptied sections. If the script cannot run, the forms simply stay below this section.
-    1) "Registrering": Fornavn (name, required), E-post (required), Mobil (custom phone field, required),
-       consent checkbox (required) with the text in the <template> below.
+    1) "Registrering": Fornavn (name, required), E-post (required), Mobil (custom phone field, required). No consent checkbox.
        Tag: bw26-registrert. Redirect after submit: the TAKK page URL.
        (During open1/open2 the takk page forwards straight to the video page, set videoUrl in its CONFIG.)
     2) "Venteliste" (closed state): E-post (required). Tag: bw26-venteliste.
@@ -205,11 +204,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
 .bw .cd b{font-family:Inter,system-ui,sans-serif!important;font-variant-numeric:lining-nums tabular-nums;font-weight:600}
 .bw .shut,.bw .closed-s{min-height:100vh;display:flex;align-items:center}
 .bw .door .t{display:none!important}
-.bw .kform .consent{min-height:44px;padding:8px 0;cursor:pointer}
 .bw .kform input[type=checkbox]{width:24px!important;height:24px!important}
-.bw .kform .checkbox-field label{display:flex;gap:12px;align-items:flex-start;margin:0;font-size:.88rem;font-weight:400;line-height:1.5;color:var(--slate);cursor:pointer}
-.bw .kform .checkbox-field .text{font-weight:400}
-.bw .kform .checkbox-field .overlay{display:none}
 :is(:is(.bw .jul-night,.bw.jul-night),.bw.jul-night) .shut,.bw.bw-cal .top{background:transparent}
 :is(.bw .jul-night,.bw.jul-night) dialog p,:is(.bw .jul-night,.bw.jul-night) dialog .lead,:is(.bw .jul-night,.bw.jul-night) dialog li{color:var(--slate)}
 :is(.bw .jul-night,.bw.jul-night) dialog h1,:is(.bw .jul-night,.bw.jul-night) dialog h2,:is(.bw .jul-night,.bw.jul-night) dialog h3,:is(.bw .jul-night,.bw.jul-night) dialog b{color:var(--navy)}
@@ -242,7 +237,6 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
                 <div class="field"><label for="bw-fn">Fornavn</label><input id="bw-fn" name="name" type="text" autocomplete="given-name" required></div>
                 <div class="field"><label for="bw-em">E-post</label><input id="bw-em" name="email" type="email" autocomplete="email" required></div>
                 <div class="field"><label for="bw-tel">Mobil</label><input id="bw-tel" name="phone" type="tel" autocomplete="tel" required></div>
-                <label class="consent"><input type="checkbox" name="consent" required><span>Jeg samtykker til å motta e-poster og SMS fra Det lille pusterommet. Jeg kan når som helst melde meg av.</span></label>
                 <button type="submit"><span data-state-show="before1 before2">Send meg videoen, gratis</span><span data-state-show="open1 open2">Se videoen nå</span></button>
               </form>
             </template>
@@ -353,7 +347,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
         var sec=f.closest('section,.section');ph.appendChild(f);
         if(sec&&!sec.contains(root)&&!sec.querySelector('form'))sec.style.display='none';
         var b=f.querySelector('[type=submit]');
-        if(b&&src){if(b.tagName==='BUTTON')b.innerHTML=src.innerHTML;else{var sp=[].filter.call(src.querySelectorAll('[data-state-show]'),function(s){return shows(s,state);})[0];b.value=(sp||src).textContent.trim();}}
+        if(b&&src){var sp=[].filter.call(src.querySelectorAll('[data-state-show]'),function(s){return shows(s,state);})[0],txt=(sp||src).textContent.trim();if(b.tagName==='BUTTON')b.textContent=txt;else b.value=txt;}
       }
       ph.parentNode.querySelectorAll('[data-help-for]').forEach(function(h){var inp=ph.querySelector('input[type='+h.getAttribute('data-help-for')+']');if(inp)inp.insertAdjacentElement('afterend',h);});
     });
