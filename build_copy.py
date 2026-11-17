@@ -18,6 +18,7 @@ DOCS = [
     ("03-emails-no", "e-poster", "E-postene"),
     ("04-calendar-no", "kalender", "Romjulskalenderen · 8 luker"),
     ("05-live-qa-no", "live-qa", "Live Q&A · 26. november og 10. desember"),
+    ("06-sms-no", "sms", "SMS · 10 meldinger"),
 ]
 CSS = """
 :root{--navy:#274472;--navy-dd:#142340;--gold:#AB9461;--gold-d:#8a7340;--gold-l:#d8c79c;--cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--ink:#1f2a3d;--slate:#5d6a82}
