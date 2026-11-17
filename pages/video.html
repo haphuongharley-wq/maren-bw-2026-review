@@ -326,7 +326,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
           </div>
         </div>
         <p class="note">Siden åpner av seg selv når nedtellingen er ferdig. Du trenger ikke å gjøre noe.</p>
-        <a class="btn" href="#" data-ics-btn>Legg i kalenderen</a>
+        <a class="btn" href="#" data-ics-btn>Legg i Google Kalender</a>
         <p class="line">Sett av 20 minutter <span data-state-show="before1">onsdag</span><span data-state-show="before2" hidden>onsdag</span> morgen.</p>
       </div>
     </section>
@@ -346,7 +346,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
           <li><span>Hvorfor «bare hvil litt» ikke virker for deg</span></li>
           <li><span>Stopp · Se · Velg, en enkel modell i tre steg, med en pusteøvelse du gjør underveis</span></li>
         </ol>
-        <p class="cta"><a class="btn" href="#" data-ics-btn>Legg i kalenderen</a></p>
+        <p class="cta"><a class="btn" href="#" data-ics-btn>Legg i Google Kalender</a></p>
       </div>
     </section>
   </div>
@@ -583,10 +583,11 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
     });
   }
   // ---- page ----
-  function ics(a,start,url){ // "Legg i kalenderen": a 20 minute event as an .ics file
+  function gcal(a,start,url){ // "Legg i Google Kalender": opens a prefilled 20 minute Google Calendar event
     function f(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';}
-    var s=at(start),t=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Det lille pusterommet//NO','BEGIN:VEVENT','UID:'+s+'-video@detlillepusterommet','DTSTAMP:'+f(Date.now()),'DTSTART:'+f(s),'DTEND:'+f(s+20*60000),'SUMMARY:Gratis video fra Maren Kvalvaag-Toven','DESCRIPTION:'+url,'URL:'+url,'END:VEVENT','END:VCALENDAR'].join('\r\n');
-    a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(t);a.setAttribute('download','video-fra-maren.ics');
+    var s=at(start);
+    a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Gratis video fra Maren Kvalvaag-Toven')+'&dates='+f(s)+'/'+f(s+20*60000)+'&details='+encodeURIComponent('Se videoen her: '+url)+'&location='+encodeURIComponent(url)+'&ctz=Europe/Oslo';
+    a.target='_blank';a.rel='noopener';
   }
   var alias=QA_PREVIEW[preview],qaMode=alias?alias[1]:/^(live|wait|replay|off)$/.test(q.get('qa'))?q.get('qa'):'';
   var state=alias?alias[0]:preview==='before2'?preview:resolve(STATES);
@@ -596,7 +597,7 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){forms(state);apply(state);});else{forms(state);apply(state);}
   if(alias)root.setAttribute('data-state',preview); // review bar highlights the shortcut
   countdowns({open:OPEN[state],end:END[state]});
-  if(OPEN[state])root.querySelectorAll('[data-ics-btn]').forEach(function(a){ics(a,OPEN[state],location.origin+location.pathname);});
+  if(OPEN[state])root.querySelectorAll('[data-ics-btn]').forEach(function(a){gcal(a,OPEN[state],location.origin+location.pathname);});
 
   var day={r1d1:1,r2d1:1,r1d2:2,r2d2:2}[state];
   if(!day)return;

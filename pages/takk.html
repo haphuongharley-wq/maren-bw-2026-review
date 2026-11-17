@@ -27,7 +27,7 @@ body{margin:0}
     round1  until 26 Nov (video Wed 25 Nov 08:00)    round2  from 27 Nov (video Wed 9 Dec 08:00)
   While the video is open (25 Nov 08:00 to 26 Nov 23:59 and 9 Dec 08:00 to 10 Dec 23:59) this page
   forwards straight to the video page: set CONFIG.videoUrl (full URL of the video page).
-  Preview with ?state=round1|round2 (no forwarding in previews).
+  Preview with ?state=round1|round2; ?state=open1|open2 forwards to the video page preview (r1d1 / r2d1).
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -220,7 +220,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
         <p class="lead">Jeg har sendt deg en bekreftelse på e-post. Finner du den ikke, så sjekk Reklame eller Søppelpost.</p>
         <h2>Tre små ting før <span data-state-show="round1">onsdag</span><span data-state-show="round2" hidden>onsdag</span></h2>
         <ol class="steps">
-          <li><b>Legg det i kalenderen.</b> <span data-state-show="round1">Onsdag 25. november kl. 08.00.</span><span data-state-show="round2" hidden>Onsdag 9. desember kl. 08.00.</span><br><a class="btn navy" href="#" data-ics-btn>Legg i kalenderen</a></li>
+          <li><b>Legg det i kalenderen.</b> <span data-state-show="round1">Onsdag 25. november kl. 08.00.</span><span data-state-show="round2" hidden>Onsdag 9. desember kl. 08.00.</span><br><a class="btn navy" href="#" data-ics-btn>Legg i Google Kalender</a></li>
           <li><b>Finn 20 rolige minutter.</b> Videoen har en pusteøvelse som du gjør sammen med meg.</li>
           <li><b>Skriv ned én setning:</b> <i>Hva gjorde meg mest sliten i fjor jul?</i> Ta vare på den. Vi skal bruke den. Svar gjerne på e-posten med setningen din.</li>
         </ol>
@@ -303,19 +303,20 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
     });
   }
   // ---- page ----
-  function ics(a,start,url){ // "Legg i kalenderen": a 20 minute event as an .ics file
+  function gcal(a,start,url){ // "Legg i Google Kalender": opens a prefilled 20 minute Google Calendar event
     function f(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';}
-    var s=at(start),t=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Det lille pusterommet//NO','BEGIN:VEVENT','UID:'+s+'-video@detlillepusterommet','DTSTAMP:'+f(Date.now()),'DTSTART:'+f(s),'DTEND:'+f(s+20*60000),'SUMMARY:Gratis video fra Maren Kvalvaag-Toven','DESCRIPTION:'+url,'URL:'+url,'END:VEVENT','END:VCALENDAR'].join('\r\n');
-    a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(t);a.setAttribute('download','video-fra-maren.ics');
+    var s=at(start);
+    a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Gratis video fra Maren Kvalvaag-Toven')+'&dates='+f(s)+'/'+f(s+20*60000)+'&details='+encodeURIComponent('Se videoen her: '+url)+'&location='+encodeURIComponent(url)+'&ctz=Europe/Oslo';
+    a.target='_blank';a.rel='noopener';
   }
   var state=resolve(STATES);
   if(state==='open1'||state==='open2'){ // the video is out: go straight to it
-    if(!preview&&CONFIG.videoUrl.charAt(0)!=='#'){location.replace(CONFIG.videoUrl);return;}
+    if(CONFIG.videoUrl.charAt(0)!=='#'){location.replace(CONFIG.videoUrl+(preview?'?state='+(state==='open1'?'r1d1':'r2d1'):''));return;} // previews forward to the matching video preview
     state=state==='open1'?'round1':'round2';
   }
   apply(state);
   var url=CONFIG.videoUrl.charAt(0)==='#'?location.origin+location.pathname:CONFIG.videoUrl;
-  ics(root.querySelector('[data-ics-btn]'),state==='round1'?'2026-11-25T08:00':'2026-12-09T08:00',url);
+  gcal(root.querySelector('[data-ics-btn]'),state==='round1'?'2026-11-25T08:00':'2026-12-09T08:00',url);
 })();
 </script>
 <!-- ===== end of snippet ===== -->
