@@ -18,7 +18,7 @@ PAGES = {
         'round1:Runde 1 (påmeldt før 25. nov)|round2:Runde 2 (påmeldt 27. nov til 8. des)'),
     'video': ('Video og tilbud',
         'before1:Før åpning (runde 1)|r1d1:Runde 1 · dag 1 (25. nov)|r1d2:Runde 1 · dag 2 (26. nov, direktesending 19.00)'
-        '|r1d2vent:26. nov 19.45 til 21.00 (opptaket kommer)|between:Mellom rundene'
+        '|r1d2vent:26. nov etter direktesendingen (19.45)|between:Mellom rundene'
         '|before2:Før åpning (runde 2, ?runde=2)|r2d1:Runde 2 · dag 1 (9. des)'
         '|r2d2:Runde 2 · dag 2 (10. des, direktesending 12.00)|r2d2opptak:10. des fra 14.00 (opptak)|closed:Stengt (fra 11. des)'),
     'kalender': ('Romjulskalenderen',

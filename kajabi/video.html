@@ -15,13 +15,13 @@
              use that link in the round 2 emails sent before 9 Dec.
     r2d1     Wed 9 Dec 08:00 to 23:59 (7 997 kr)      r2d2  Thu 10 Dec 00:00 to 23:59 (8 997 kr)
              r1d2 and r2d2 show the Q&A box (r1d2 live 19.00 to 19.45, r2d2 live 12.00 to 12.45): until the end «Gå til direktesendingen»,
-             after the session «Opptaket ... kommer» until the recording time, then «Se opptaket» (r1d2 21:00, r2d2 14:00).
+             after the session: r1d2 hides the box (no recording in round 1); r2d2 shows «Opptaket ... kommer» until 14:00, then «Se opptaket».
     closed   from Fri 11 Dec
   Sale days are video first: the offer stays hidden until «Se tilbudet ↓» is pressed, or the link ends
   in #tilbud, or this browser has opened it before. The page reloads itself when a countdown ends.
   Preview: ?state=before1|r1d1|r1d2|between|before2|r2d1|r2d2|closed (add #tilbud to open the offer).
   Q&A box on r1d2/r2d2: add ?qa=live|wait|replay (previews default to live). Shortcuts for the review bar:
-  ?state=r1d2vent (r1d2 + qa=wait), ?state=r2d2opptak (r2d2 + qa=replay). Previews ignore what the
+  ?state=r1d2vent (r1d2 after the session, box hidden), ?state=r2d2opptak (r2d2 + qa=replay). Previews ignore what the
   browser remembers.
 
   VIDEO: replace the inside of the <div data-kajabi-video> frame with the video embed code
@@ -495,7 +495,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
     day2:{price:'8 997 kr',save:'5 993 kr',split:'3 × 3 147 kr',total:'9 441 kr',buy:'#checkout-8997',buySplit:'#checkout-3x3147'},
     // Q&A on day 2: round 1 19.00 to 19.45 (recording from 21.00), round 2 12.00 to 12.45 (recording from 14.00)
     qa:{ // live: Zoom link per round, filled in when Maren sends it
-      r1d2:{live:'',replay:'https://www.detlillepusterommet.no/julevideo-opptak'}, // Thu 26 Nov
+      r1d2:{live:''}, // Thu 26 Nov
       r2d2:{live:'',replay:'https://www.detlillepusterommet.no/julevideo-opptak'}  // Thu 10 Dec
     }
   };
@@ -510,8 +510,8 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
   ];
   var OPEN={before1:'2026-11-25T08:00',before2:'2026-12-09T08:00'};
   var END={r1d1:'2026-11-25T23:59',r1d2:'2026-11-26T23:59',r2d1:'2026-12-09T23:59',r2d2:'2026-12-10T23:59'};
-  var QA={r1d2:{wait:'2026-11-26T19:45',replay:'2026-11-26T21:00'},r2d2:{wait:'2026-12-10T12:45',replay:'2026-12-10T14:00'}};
-  var QA_PREVIEW={r1d2vent:['r1d2','wait'],r2d2opptak:['r2d2','replay']},KEY='bw26-offer-seen';
+  var QA={r1d2:{wait:'2026-11-26T19:45'},r2d2:{wait:'2026-12-10T12:45',replay:'2026-12-10T14:00'}};
+  var QA_PREVIEW={r1d2vent:['r1d2','off'],r2d2opptak:['r2d2','replay']},KEY='bw26-offer-seen';
   // ---- base helpers (same in all four snippets) ----
   var root=document.querySelector('.bw[data-bw-page="'+PAGE+'"]');if(!root)return;
   var TZ='Europe/Oslo',q=new URLSearchParams(location.search),preview=q.get('state'),now=Date.now();
@@ -561,7 +561,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
     var s=at(start),t=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Det lille pusterommet//NO','BEGIN:VEVENT','UID:'+s+'-video@detlillepusterommet','DTSTAMP:'+f(Date.now()),'DTSTART:'+f(s),'DTEND:'+f(s+20*60000),'SUMMARY:Gratis video fra Maren Kvalvaag-Toven','DESCRIPTION:'+url,'URL:'+url,'END:VEVENT','END:VCALENDAR'].join('\r\n');
     a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(t);a.setAttribute('download','video-fra-maren.ics');
   }
-  var alias=QA_PREVIEW[preview],qaMode=alias?alias[1]:/^(live|wait|replay)$/.test(q.get('qa'))?q.get('qa'):'';
+  var alias=QA_PREVIEW[preview],qaMode=alias?alias[1]:/^(live|wait|replay|off)$/.test(q.get('qa'))?q.get('qa'):'';
   var state=alias?alias[0]:preview==='before2'?preview:resolve(STATES);
   if(state==='between'&&q.get('runde')==='2')state='before2';
   apply(state);
@@ -577,9 +577,10 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
   root.querySelectorAll('[data-price]').forEach(function(el){el.textContent=P[el.getAttribute('data-price')];});
   root.querySelectorAll('[data-buy]').forEach(function(a){a.href=a.getAttribute('data-buy')==='split'?P.buySplit:P.buy;});
   if(QA[state]){ // Q&A box: live link until the session ends, then «kommer», then the recording (times in QA)
-    root.querySelectorAll('[data-link]').forEach(function(a){a.href=CONFIG.qa[state][a.getAttribute('data-link')];});
+    root.querySelectorAll('[data-link]').forEach(function(a){a.href=CONFIG.qa[state][a.getAttribute('data-link')]||'#';});
     var qa=function(){
-      var t=Date.now(),m=qaMode||(preview?'live':t<at(QA[state].wait)?'live':t<at(QA[state].replay)?'wait':'replay');
+      var t=Date.now(),m=qaMode||(preview?'live':t<at(QA[state].wait)?'live':!QA[state].replay?'off':t<at(QA[state].replay)?'wait':'replay');
+      var box=root.querySelector('.qa');if(box)box.style.display=m==='off'?'none':''; // round 1 has no recording: the box goes after the session
       root.querySelectorAll('[data-qa]').forEach(function(el){el.hidden=el.getAttribute('data-qa')!==m;});
     };
     qa();if(!qaMode&&!preview)setInterval(qa,30000);
