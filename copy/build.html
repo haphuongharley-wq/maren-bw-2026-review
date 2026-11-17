@@ -1,0 +1,418 @@
+<!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Build · runde 1 · Jul 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#274472;--navy-dd:#142340;--gold:#AB9461;--gold-d:#8a7340;--gold-l:#d8c79c;--cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--ink:#1f2a3d;--slate:#5d6a82}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.bar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--sand);padding:8px 16px;display:flex;flex-wrap:wrap;gap:2px;align-items:center}
+.bar a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;border-radius:8px;color:var(--slate);text-decoration:none;font-size:.92rem}
+.bar a:hover{color:var(--navy);background:var(--cream)}
+.bar a.on{color:var(--navy);font-weight:600;box-shadow:inset 0 -2px 0 var(--gold)}
+.hd{background:var(--bg);color:var(--slate);padding:40px 16px 8px}
+.hd div{max-width:1120px;margin:0 auto}
+.hd small{display:block;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#74602f;margin-bottom:10px}
+.hd h1{font:600 clamp(2.2rem,6vw,3.2rem)/1.1 'Cormorant Garamond',Georgia,serif;color:var(--navy);margin:0 0 10px}
+.hd p{margin:0;max-width:620px}
+.hd mark{background:#ffe08a;color:var(--ink);padding:0 5px;border-radius:4px}
+.lay{max-width:1120px;margin:0 auto;padding:40px 16px 96px;display:grid;gap:40px}
+@media(min-width:1000px){.lay{grid-template-columns:240px minmax(0,1fr)}.toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 96px);overflow:auto}}
+.toc{font-size:.88rem}
+.toc b{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+.toc ul{list-style:none;margin:0;padding:0}.toc ul ul{display:none}
+.toc a{display:block;padding:6px 10px;border-left:2px solid var(--sand);color:var(--slate);text-decoration:none}
+.toc a:hover{color:var(--navy);border-color:var(--gold)}
+article{max-width:720px;min-width:0}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--navy);line-height:1.15}
+article h1{font-size:2.2rem;margin-top:0}
+article h2{font-size:1.9rem;margin:2.2em 0 .6em;padding-top:1.2em;border-top:1px solid var(--sand);scroll-margin-top:72px}
+article h3{font-size:1.4rem;margin:1.8em 0 .4em;scroll-margin-top:72px}
+blockquote{margin:1.2em 0;padding:14px 20px;border-left:3px solid var(--gold);background:#fff;border-radius:0 14px 14px 0}
+blockquote p{margin:.4em 0}
+table{border-collapse:collapse;width:100%;background:#fff;font-size:.9rem;display:block;overflow-x:auto;border-radius:12px;border:1px solid var(--sand)}
+th,td{border-bottom:1px solid var(--sand);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--cream);color:var(--navy)}
+code{background:var(--cream);padding:1px 6px;border-radius:5px;font-size:.88em}
+hr{border:0;border-top:1px solid var(--sand);margin:2em 0}
+mark{background:#ffe08a;padding:1px 4px;border-radius:4px}
+body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria-label="Dokumenter"><a href="../" style="font:600 1.2rem Cormorant Garamond,Georgia,serif;color:#274472;margin-right:8px">Det lille pusterommet · Julen 2026</a><a href="plan.html">Kampanjeplan</a><a href="vsl.html">VSL-manus</a><a href="sider.html">Sidene</a><a href="e-poster.html">E-postene</a><a href="kalender.html">Romjulskalenderen</a><a href="live-qa.html">Live Q&A</a><a href="sms.html">SMS</a><a href="build.html" class=on>Build</a></nav>
+<header class="hd"><div><small>Jul 2026 · til godkjenning</small><h1>Build · runde 1</h1><p>Utkast. <mark>Gult</mark> betyr at Maren må bekrefte noe (0 steder).</p></div></header>
+<div class="lay"><nav class="toc" aria-label="Innhold"><b>Innhold</b><div class="toc">
+<ul>
+<li><a href="#build-instructions-julen-2026-round-1-det-lille-pusterommet">Build instructions – Julen 2026, round 1 (Det lille pusterommet)</a><ul>
+<li><a href="#1-pages-offers-and-video-still-missing-see-section-2-and-5">1. Pages ✅ (offers and video still missing, see section 2 and 5)</a></li>
+<li><a href="#2-offers-and-checkout">2. Offers and checkout ⬜</a></li>
+<li><a href="#3-forms-tags-segments-automations">3. Forms, tags, segments, automations</a><ul>
+<li><a href="#forms">Forms ✅</a></li>
+<li><a href="#tags">Tags ✅</a></li>
+<li><a href="#automations-publish-in-the-admin">Automations ⬜ publish in the admin</a></li>
+<li><a href="#segments-evaluated-at-send-time">Segments ✅ (evaluated at send time)</a></li>
+</ul>
+</li>
+<li><a href="#4-content">4. Content ✅</a></li>
+<li><a href="#5-missing-inputs">5. Missing inputs ⬜</a></li>
+<li><a href="#6-emails">6. Emails ⬜</a><ul>
+<li><a href="#broadcasts-fixed-send-time">Broadcasts (fixed send time)</a></li>
+<li><a href="#triggered-emails">Triggered emails</a></li>
+</ul>
+</li>
+<li><a href="#7-sms">7. SMS ⬜</a></li>
+<li><a href="#8-live-qa-thu-2611-19001945">8. Live Q&amp;A, Thu 26.11 19.00–19.45 ⬜</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav><article><h1 id="build-instructions-julen-2026-round-1-det-lille-pusterommet">Build instructions – Julen 2026, round 1 (Det lille pusterommet)</h1>
+<p>Updated 18.11.2026, 02.45 Vietnam time. All send times are <strong>Oslo time</strong>.</p>
+<p>Kajabi site: Det lille pusterommet (<code>90166</code>), https://www.detlillepusterommet.no</p>
+<p>Round 1 runs 18–26.11: invitations from Wed 18.11, the video opens Wed 25.11 08.00, the julepris runs Wed 25.11 and Thu 26.11 (closes 23.59), and the Live Q&amp;A is Thu 26.11 19.00–19.45.</p>
+<p>✅ = done · ⬜ = still to do</p>
+<hr />
+<h2 id="1-pages-offers-and-video-still-missing-see-section-2-and-5">1. Pages ✅ (offers and video still missing, see section 2 and 5)</h2>
+<p>Published in Kajabi, one Custom Code block each, hidden from search engines.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Link</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registration</td>
+<td><a href="https://www.detlillepusterommet.no/julevideo">/julevideo</a></td>
+<td>States: before 25.11 · 25–26.11 · before round 2 (27.11–8.12) · 9–10.12 · closed. Form: name, email, phone (all required, no consent checkbox). Redirects to <code>/julevideo-takk</code>.</td>
+</tr>
+<tr>
+<td>Thank you</td>
+<td><a href="https://www.detlillepusterommet.no/julevideo-takk">/julevideo-takk</a></td>
+<td>Forwards to the video page from 25.11 08.00.</td>
+</tr>
+<tr>
+<td>Video + sales</td>
+<td><a href="https://www.detlillepusterommet.no/julevideo-se">/julevideo-se</a></td>
+<td>Before 25.11: thumbnail + countdown. From 25.11 08.00: video first, the offer appears after the button «Se tilbudet». Price and buy links switch by day: Wednesday 7 997 kr (or 3 × 2 797 kr), Thursday 8 997 kr (or 3 × 3 147 kr). 27.11–8.12: «Denne runden er over» with a button to <code>/julevideo</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Preview any state with <code>?state=...</code>, e.g. <code>/julevideo-se?state=r1d1#tilbud</code>. States: registration <code>before1</code>, <code>open1</code>, <code>before2</code>, <code>open2</code>, <code>closed</code>; video <code>before1</code>, <code>r1d1</code>, <code>r1d2</code>, <code>between</code>, <code>r2d1</code>, <code>r2d2</code>, <code>closed</code>. After an update, the URL without <code>?</code> can show the old version for about 5 minutes (Kajabi cache).</p>
+<p>Removed: <code>/julevideo-live</code> (back to draft; the Zoom link goes straight into emails, SMS and the video page) and the waitlist form on <code>/julevideo-se</code>.</p>
+<h2 id="2-offers-and-checkout">2. Offers and checkout ⬜</h2>
+<p>Not built yet. Needed before <strong>Tue 24.11</strong> so the video page can be tested.</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Price</th>
+<th>Offer</th>
+<th>Checkout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wed 25.11</td>
+<td>7 997 kr</td>
+<td>⬜</td>
+<td>⬜ (Edpay)</td>
+</tr>
+<tr>
+<td>Wed 25.11</td>
+<td>3 × 2 797 kr</td>
+<td>⬜</td>
+<td>⬜ (Edpay)</td>
+</tr>
+<tr>
+<td>Thu 26.11</td>
+<td>8 997 kr</td>
+<td>⬜</td>
+<td>⬜ (Edpay)</td>
+</tr>
+<tr>
+<td>Thu 26.11</td>
+<td>3 × 3 147 kr</td>
+<td>⬜</td>
+<td>⬜ (Edpay)</td>
+</tr>
+</tbody>
+</table>
+<p>Each offer grants course <code>2149607383</code> and access group <code>2149619906</code>, and tags buyers <code>bw26-kjopt</code> and <code>Fra stress til ro-skreddersydd for deg</code> (<code>2150447869</code>). The checkout links then go into the video page (Claude updates it).</p>
+<h2 id="3-forms-tags-segments-automations">3. Forms, tags, segments, automations</h2>
+<h3 id="forms">Forms ✅</h3>
+<ul>
+<li>Registration <code>BW26 Registrering</code> (<code>2149786880</code>): name, email, phone. Redirects to <code>/julevideo-takk</code>.</li>
+<li>Waitlist <code>BW26 Venteliste</code> (<code>2149786881</code>): email only. Shown on <code>/julevideo</code> only after the campaign closes (from 11.12).</li>
+</ul>
+<h3 id="tags">Tags ✅</h3>
+<p><code>bw26-registrert</code>, <code>bw26-kjopt</code>, <code>bw26-kalender</code>, <code>bw26-venteliste</code>, <code>wbn26-registrert</code>.</p>
+<h3 id="automations-publish-in-the-admin">Automations ⬜ publish in the admin</h3>
+<p>All are drafts. Kajabi's AI tools cannot publish automations, so publish them by hand <strong>before 12.00 on Wed 18.11</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Automation</th>
+<th>What it does</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://app.kajabi.com/admin/workflows/1605707/edit">1605707</a></td>
+<td>Registration form → tag <code>bw26-registrert</code></td>
+<td>⬜ Publish</td>
+</tr>
+<tr>
+<td><a href="https://app.kajabi.com/admin/workflows/1605708/edit">1605708</a></td>
+<td>Waitlist form → tag <code>bw26-venteliste</code></td>
+<td>⬜ Publish</td>
+</tr>
+<tr>
+<td><a href="https://app.kajabi.com/admin/workflows/1605710/edit">1605710</a></td>
+<td>Webinar registration form → tag <code>wbn26-registrert</code> (keeps new webinar registrants out of the invitations)</td>
+<td>⬜ Publish</td>
+</tr>
+<tr>
+<td><a href="https://app.kajabi.com/admin/workflows/1605709/edit">1605709</a></td>
+<td>Old round 2 waitlist (form already deleted)</td>
+<td>⬜ Delete, and delete tag <code>bw26-venteliste-runde2</code></td>
+</tr>
+</tbody>
+</table>
+<p>After publishing: register once on <code>/julevideo</code> with an internal email and check that the contact gets <code>bw26-registrert</code> and lands on <code>/julevideo-takk</code>.</p>
+<h3 id="segments-evaluated-at-send-time">Segments ✅ (evaluated at send time)</h3>
+<p>Excluded from the invitations: program and coaching customers, people who registered for a webinar from 15.11, people who clicked the stop link, and anyone already registered or who bought.</p>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>ID</th>
+<th>Filters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A – BW26 R1 invitasjon</td>
+<td><a href="https://app.kajabi.com/admin/sites/90166/contacts?segment_id=2148750564"><code>2148750564</code></a></td>
+<td>none of the tags: Fra stress til ro-skreddersydd for deg, aktiv coachingkunde, avsluttet coachingkunde, 3 mnd pakke terapi/coaching, 15.11.26 live wbn, 22.11.26 live wbn, wbn26-registrert, bw26-registrert, bw26-kjopt, stopp-salg-fsr</td>
+</tr>
+<tr>
+<td>B – BW26 påmeldt</td>
+<td><code>2148750565</code></td>
+<td>tag bw26-registrert; no tag stopp-salg-fsr (includes buyers)</td>
+</tr>
+<tr>
+<td>C – BW26 påmeldt, ikke kjøpt</td>
+<td><code>2148750566</code></td>
+<td>tag bw26-registrert; none of the tags stopp-salg-fsr, bw26-kjopt, Fra stress til ro-skreddersydd for deg</td>
+</tr>
+</tbody>
+</table>
+<p>⬜ Open segment A in the admin and check the contact count looks right before scheduling A1.</p>
+<h2 id="4-content">4. Content ✅</h2>
+<ul>
+<li>20 round 1 emails: <a href="../emails/index.html">see all</a>. Copy-ready Kajabi HTML for every email: <a href="../emails/kajabi/index.html">Kajabi HTML</a> (one «Kopier» button per email).</li>
+<li>6 round 1 SMS: <a href="sms.html">SMS</a>.</li>
+<li>VSL script and Live Q&amp;A run sheet: <a href="vsl.html">VSL</a>, <a href="live-qa.html">Live Q&amp;A</a>.</li>
+</ul>
+<h2 id="5-missing-inputs">5. Missing inputs ⬜</h2>
+<table>
+<thead>
+<tr>
+<th>Missing</th>
+<th>Used in</th>
+<th>Needed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zoom link, Live Q&amp;A round 1 (26.11 19.00)</td>
+<td>Emails B3, C4, C4b, Q1; SMS S4, S5; video page (Thursday banner)</td>
+<td>Tue 24.11 18.00 (B3)</td>
+</tr>
+<tr>
+<td>Zoom link, Live Q&amp;A round 2 (10.12 12.00)</td>
+<td>Email B1-R2 (sent from 27.11 on registration), round 2 emails</td>
+<td>Fri 27.11</td>
+</tr>
+<tr>
+<td>VSL video (embed code)</td>
+<td>Video page</td>
+<td>Tue 24.11</td>
+</tr>
+<tr>
+<td>Offers and checkout links (section 2)</td>
+<td>Video page</td>
+<td>Tue 24.11</td>
+</tr>
+<tr>
+<td>Q&amp;A recording page <code>/julevideo-opptak</code></td>
+<td>Email C5 (26.11 21.00)</td>
+<td>Thu 26.11 21.00</td>
+</tr>
+<tr>
+<td>Romjulskalenderen page <code>/romjulskalenderen</code></td>
+<td>Buyer emails D0 and D1</td>
+<td>Wed 25.11 07.00 (D0)</td>
+</tr>
+<tr>
+<td>Ordinary after-purchase email (to align D1 with it)</td>
+<td>D1</td>
+<td>Wed 25.11 08.00</td>
+</tr>
+</tbody>
+</table>
+<p>Send the Zoom links to Claude: they are pasted into the emails, the SMS and the video page in one go.</p>
+<h2 id="6-emails">6. Emails ⬜</h2>
+<p>None is built in Kajabi yet. <strong>A1 must be scheduled before Wednesday 18.11, 12.00.</strong></p>
+<h3 id="broadcasts-fixed-send-time">Broadcasts (fixed send time)</h3>
+<p>For each email:</p>
+<ol>
+<li>Kajabi → Marketing → Email Campaigns → New broadcast → classic editor (not drag-and-drop).</li>
+<li>Recipients: choose the saved segment in the table below. Do not add other filters: the segments already exclude buyers, customers, recent webinar registrants and the stop list, and Kajabi re-evaluates them at send time.</li>
+<li>Subject and preview text: from the email's page.</li>
+<li>Body: on the <a href="../emails/kajabi/index.html">Kajabi HTML page</a>, click «Kopier» for the email, switch the Kajabi editor to HTML and paste.</li>
+<li>Send a test to yourself, check images and buttons, then schedule at the time below.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Email</th>
+<th>Send (Oslo time)</th>
+<th>Segment</th>
+<th>Who receives it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>Wed 18.11, 12.00</td>
+<td>A</td>
+<td>Not registered, minus customers, recent webinar registrants and the stop list</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Thu 19.11, 19.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Fri 20.11, 19.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Sat 21.11, 10.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Sat 21.11, 10.00</td>
+<td>B</td>
+<td>Everyone registered</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Sun 22.11, 18.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>Mon 23.11, 18.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Tue 24.11, 18.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>Tue 24.11, 18.00</td>
+<td>B</td>
+<td>Everyone registered (needs the Zoom link)</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>Wed 25.11, 08.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Wed 25.11, 08.00</td>
+<td>C</td>
+<td>Registered, not bought</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Wed 25.11, 13.00</td>
+<td>C</td>
+<td>Registered, not bought</td>
+</tr>
+<tr>
+<td>A9</td>
+<td>Wed 25.11, 19.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Wed 25.11, 20.00</td>
+<td>C</td>
+<td>Registered, not bought</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Thu 26.11, 08.00</td>
+<td>A</td>
+<td>Same as A1</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Thu 26.11, 08.00</td>
+<td>C</td>
+<td>Registered, not bought (needs the Zoom link)</td>
+</tr>
+<tr>
+<td>C4b</td>
+<td>Thu 26.11, 14.00</td>
+<td>C</td>
+<td>Registered, not bought (needs the Zoom link)</td>
+</tr>
+<tr>
+<td>Q1</td>
+<td>Thu 26.11, 18.00</td>
+<td>B</td>
+<td>Everyone registered, buyers included (needs the Zoom link)</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Thu 26.11, 21.00</td>
+<td>C</td>
+<td>Registered, not bought (needs the recording page)</td>
+</tr>
+<tr>
+<td>D0</td>
+<td>Wed 25.11, 07.00</td>
+<td>⬜ segment to create</td>
+<td>People who bought in the webinar week 15–18.11 (tag Fra stress til ro-skreddersydd for deg, bought before 25.11)</td>
+</tr>
+</tbody>
+</table>
+<p>B3, C4, C4b and Q1 can be built now and the Zoom link added before they send.</p>
+<h3 id="triggered-emails">Triggered emails</h3>
+<ul>
+<li><strong>B1</strong> (right after registration): sequence <code>BW26 – B1</code>, email on day 0. Registration form <code>2149786880</code> → Automations → Subscribe to sequence <code>BW26 – B1</code>. B1 does not contain the Zoom link; the link comes in Q1 and the SMS on 26.11.</li>
+<li><strong>D1</strong> (right after purchase): sequence <code>BW26 – D1</code>, email on day 0, triggered by all four offers. On hold until the ordinary after-purchase email is checked, so the buyer does not get two welcome emails.</li>
+</ul>
+<h2 id="7-sms">7. SMS ⬜</h2>
+<p>Send the 6 round 1 SMS at the times on the <a href="sms.html">SMS page</a>, with the same SMS tool as the webinar SMS. S4 and S5 (Live Q&amp;A) go to everyone registered, buyers included; the others only to registrants who have not bought.</p>
+<h2 id="8-live-qa-thu-2611-19001945">8. Live Q&amp;A, Thu 26.11 19.00–19.45 ⬜</h2>
+<p>Everyone who registered is invited, buyers included (emails B1, B3, C4, C4b, Q1; SMS S4, S5). See the <a href="live-qa.html">run sheet</a>. The recording goes on <code>/julevideo-opptak</code> around 21.00 and email C5 links to it.</p></article></div></body></html>

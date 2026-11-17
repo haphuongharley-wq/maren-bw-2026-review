@@ -19,6 +19,7 @@ DOCS = [
     ("04-calendar-no", "kalender", "Romjulskalenderen · 8 luker"),
     ("05-live-qa-no", "live-qa", "Live Q&A · 26. november og 10. desember"),
     ("06-sms-no", "sms", "SMS · 12 meldinger"),
+    (str(Path.home() / "maren-project/docs/build-instructions-round-1"), "build", "Build · runde 1"),
 ]
 CSS = """
 :root{--navy:#274472;--navy-dd:#142340;--gold:#AB9461;--gold-d:#8a7340;--gold-l:#d8c79c;--cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--ink:#1f2a3d;--slate:#5d6a82}
@@ -71,7 +72,7 @@ def page(slug, title, body, toc, count):
 
 OUT.mkdir(exist_ok=True)
 for name, slug, title in DOCS:
-    text = (SRC / f"{name}.md").read_text(encoding="utf-8")
+    text = (Path(f"{name}.md") if name.startswith("/") else SRC / f"{name}.md").read_text(encoding="utf-8")
     md = markdown.Markdown(extensions=["tables", "sane_lists", "toc"])
     html = md.convert(text)
     toc = md.toc
