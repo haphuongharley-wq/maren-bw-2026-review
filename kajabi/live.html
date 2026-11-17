@@ -1,0 +1,115 @@
+<!--
+  Det lille pusterommet · Julen 2026 · DIREKTESENDING (/julevideo-live)
+  One stable link for every email and SMS that invites to the live Q&A. Paste into ONE Kajabi "Custom Code" section.
+  CONFIG.sessions: one entry per round. Set zoom to the meeting URL when it exists.
+  From 30 minutes before start until the end, a set zoom link forwards visitors straight to Zoom.
+  Before that: the time of the next session. After the last session of a round: link to the recording page.
+  Preview: ?state=before|live|after  (no forwarding in previews)
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ---- base (same in all four snippets) ---- */
+.bw{--navy:#274472;--navy-d:#1a2f52;--deep:#142340;--deep-2:#1c2f52;--gold:#AB9461;--gold-d:#8a7340;--gold-dd:#6f5c2e;--gold-t:#74602f;--gold-l:#d8c79c;--gold-xl:#f6efe1;
+  --cream:#f4efe5;--bg:#FAF9F6;--sand:#EDE7DB;--field:#958c7a;--ink:#1f2a3d;--slate:#5d6a82;--mist:#c3cde0;--snow:#e6ebf4;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:Inter,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --r:24px;--r-md:16px;--r-sm:12px;
+  --sh:0 1px 2px rgba(20,35,64,.06),0 12px 28px -14px rgba(20,35,64,.2),0 40px 80px -40px rgba(20,35,64,.3);
+  --sh-btn:0 14px 30px -14px rgba(111,92,46,.9);
+  --sec:clamp(64px,10vw,128px);--ease:cubic-bezier(.2,.7,.2,1);
+  display:block;position:relative;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);text-align:left;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.bw *,.bw *::before,.bw *::after{box-sizing:border-box}
+.bw [hidden]{display:none!important}
+.bw img{display:block;max-width:100%;height:auto}
+.bw a{color:var(--navy);text-underline-offset:3px}
+.bw a:focus-visible,.bw button:focus-visible,.bw summary:focus-visible,.bw input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.bw h1,.bw h2,.bw h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em;color:var(--navy);margin:0 0 .45em;text-wrap:balance;font-variant-numeric:lining-nums}
+.bw h1{font-size:clamp(2.4rem,7.4vw,4.2rem)}
+.bw h2{font-size:clamp(1.95rem,4.8vw,3rem)}
+.bw h3{font-size:1.5rem}
+.bw h1 em,.bw h2 em{font-style:italic;font-weight:500;color:var(--gold-t)}
+.bw p{margin:0 0 1em}
+.bw ul,.bw ol{margin:0;padding:0;list-style:none}
+.bw b,.bw strong{font-weight:600}
+.bw mark{background:#fff0b8;color:#1f2a3d;padding:.05em .3em;border-radius:4px;font-size:.92em;font-style:normal}
+.bw .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.bw .narrow{max-width:700px;margin-left:auto;margin-right:auto}
+.bw .center{text-align:center}
+.bw section{padding:var(--sec) 0}
+.bw .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.75rem;font-weight:600;line-height:1.4;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-t);margin:0 0 18px}
+.bw .eyebrow::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+.bw .center .eyebrow::after{content:"";width:28px;height:1px;background:currentColor;flex:none}
+.bw .lead{font-size:clamp(1.1rem,1.8vw,1.25rem);line-height:1.6;color:var(--slate)}
+.bw .cream{background:var(--cream)}
+.bw .dark{background:var(--deep);color:var(--snow)}
+.bw .dark h1,.bw .dark h2,.bw .dark h3{color:#fff}
+.bw .dark h1 em,.bw .dark h2 em{color:var(--gold-l)}
+.bw .dark .eyebrow{color:var(--gold-l)}
+.bw .dark .lead{color:var(--mist)}
+.bw .dark a:focus-visible,.bw .dark button:focus-visible{outline-color:var(--gold-l)}
+.bw .sig{font:italic 500 1.75rem/1.2 var(--serif);color:var(--gold-t);margin:0}
+.bw .dark .sig{color:var(--gold-l)}
+.bw .rise{animation:bw-rise .8s var(--ease) both}
+@keyframes bw-rise{from{opacity:0;transform:translateY(14px)}}
+
+.bw .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 32px;border:0;border-radius:999px;background:var(--gold-d);color:#fff;font:600 1.04rem/1.2 var(--sans);text-align:center;text-decoration:none;cursor:pointer;box-shadow:var(--sh-btn);transition:background-color .2s,transform .25s var(--ease),box-shadow .25s}
+.bw .btn:hover{background:var(--gold-dd);transform:translateY(-2px)}
+.bw .btn:active{transform:translateY(0)}
+.bw .btn.navy{background:var(--navy);box-shadow:0 14px 30px -14px rgba(26,47,82,.8)}
+.bw .btn.navy:hover{background:var(--navy-d)}
+.bw .btn.ghost{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
+.bw .btn.ghost:hover{background:var(--navy);color:#fff}
+.bw .btn.block{width:100%}
+.bw .live{min-height:70vh;display:flex;align-items:center}
+.bw .live .card{background:#fff;border:1px solid var(--sand);border-radius:var(--r);box-shadow:var(--sh);padding:clamp(28px,6vw,56px)}
+.bw .live .when{font:600 1.25rem/1.4 var(--sans);color:var(--navy);margin:0 0 24px}
+.bw .live small{display:block;color:var(--slate);margin-top:18px}
+</style>
+<div class="bw" data-bw-page="live">
+  <section class="live"><div class="wrap narrow center"><div class="card">
+    <p class="eyebrow">Direktesending med Maren</p>
+    <h1>Spørsmål og svar <em>med Maren</em></h1>
+    <div data-state-show="before">
+      <p class="when" data-when></p>
+      <p>Her stiller du spørsmålene dine, og jeg svarer ærlig. Kom tilbake til denne siden når det er tid, så kommer du rett inn.</p>
+    </div>
+    <div data-state-show="live" hidden>
+      <p class="when">Vi er i gang, eller starter straks.</p>
+      <a class="btn" data-zoom href="#">Gå til direktesendingen</a>
+      <small data-nozoom hidden>Lenken kommer her rett før start. Last inn siden på nytt om litt.</small>
+    </div>
+    <div data-state-show="after" hidden>
+      <p class="when">Direktesendingen er ferdig. Takk til alle som var med!</p>
+      <a class="btn" href="https://www.detlillepusterommet.no/julevideo-opptak">Se opptaket</a>
+    </div>
+  </div></div></section>
+</div>
+<script>
+(function(){
+  var CONFIG={
+    sessions:[
+      {start:'2026-11-26T19:00',end:'2026-11-26T19:45',label:'torsdag 26. november kl. 19.00 til 19.45',zoom:''},
+      {start:'2026-12-10T12:00',end:'2026-12-10T12:45',label:'torsdag 10. desember kl. 12.00 til 12.45',zoom:''}
+    ]
+  };
+  var root=document.querySelector('.bw[data-bw-page="live"]');if(!root)return;
+  var TZ='Europe/Oslo',q=new URLSearchParams(location.search),preview=q.get('state'),now=Date.now();
+  function off(ms){var p={};new Intl.DateTimeFormat('en-US',{timeZone:TZ,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'}).formatToParts(new Date(ms)).forEach(function(x){p[x.type]=+x.value;});return Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute,p.second)-ms;}
+  function at(s){var m=s.match(/(\d+)-(\d+)-(\d+)T(\d+):(\d+)/),g=Date.UTC(+m[1],m[2]-1,+m[3],+m[4],+m[5]);return g-off(g-off(g));} // Oslo wall time to UTC ms, DST-safe
+  var EARLY=30*60*1000,state='after',s=CONFIG.sessions[CONFIG.sessions.length-1];
+  for(var i=0;i<CONFIG.sessions.length;i++){var x=CONFIG.sessions[i];
+    if(now<at(x.start)-EARLY){state='before';s=x;break;}
+    if(now<=at(x.end)){state='live';s=x;break;}
+    // between sessions: show "after" (recording) until the next one is within reach
+    if(i+1<CONFIG.sessions.length&&now<at(CONFIG.sessions[i+1].start)-EARLY&&now>at(x.end)+6*3600*1000){state='before';s=CONFIG.sessions[i+1];break;}
+    if(i+1<CONFIG.sessions.length&&now<=at(x.end)+6*3600*1000){state='after';s=x;break;}
+  }
+  if(['before','live','after'].indexOf(preview)>=0)state=preview;
+  root.querySelector('[data-when]').textContent=s.label.charAt(0).toUpperCase()+s.label.slice(1)+'.';
+  var z=root.querySelector('[data-zoom]');
+  if(s.zoom){z.href=s.zoom;}else{z.hidden=true;root.querySelector('[data-nozoom]').hidden=false;}
+  root.querySelectorAll('[data-state-show]').forEach(function(el){el.hidden=el.getAttribute('data-state-show')!==state;});
+  if(state==='live'&&s.zoom&&!preview)location.replace(s.zoom);
+})();
+</script>
