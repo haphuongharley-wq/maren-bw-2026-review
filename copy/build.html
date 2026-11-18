@@ -42,7 +42,7 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <ul>
 <li><a href="#build-instructions-julen-2026-round-1-det-lille-pusterommet">Build instructions – Julen 2026, round 1 (Det lille pusterommet)</a><ul>
 <li><a href="#1-pages-offers-and-video-still-missing-see-section-2-and-5">1. Pages ✅ (offers and video still missing, see section 2 and 5)</a></li>
-<li><a href="#2-offers-and-checkout">2. Offers and checkout ⬜</a></li>
+<li><a href="#2-offers-and-checkout">2. Offers and checkout ✅</a></li>
 <li><a href="#3-forms-tags-segments-automations">3. Forms, tags, segments, automations</a><ul>
 <li><a href="#forms">Forms ✅</a></li>
 <li><a href="#tags">Tags ✅</a></li>
@@ -98,45 +98,50 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 </tbody>
 </table>
 <p>Preview any state with <code>?state=...</code>, e.g. <code>/julevideo-se?state=r1d1#tilbud</code>. Round 1 states: registration <code>before1</code>, <code>open1</code>; video <code>before1</code>, <code>r1d1</code> (Wednesday), <code>r1d2</code> (Thursday). After an update, the URL without <code>?</code> can show the old version for about 5 minutes (Kajabi cache).</p>
-<h2 id="2-offers-and-checkout">2. Offers and checkout ⬜</h2>
-<p>Not built yet. Needed before <strong>Tue 24.11</strong> so the video page can be tested.</p>
+<h2 id="2-offers-and-checkout">2. Offers and checkout ✅</h2>
+<p>Done 18.11. The buy buttons on the video page link to these (checked per day with <code>?state=r1d1#tilbud</code> and <code>?state=r1d2#tilbud</code>).</p>
 <table>
 <thead>
 <tr>
 <th>Day</th>
 <th>Price</th>
-<th>Offer</th>
-<th>Checkout</th>
+<th>Card (Kajabi offer)</th>
+<th>Vipps (Edpay)</th>
+<th>Klarna (Edpay)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Wed 25.11</td>
 <td>7 997 kr</td>
-<td>⬜</td>
-<td>⬜ (Edpay)</td>
+<td>2151521890 · <code>/offers/wzFdMxUb/checkout</code></td>
+<td>11524</td>
+<td>11524</td>
 </tr>
 <tr>
 <td>Wed 25.11</td>
 <td>3 × 2 797 kr</td>
-<td>⬜</td>
-<td>⬜ (Edpay)</td>
+<td>2151521901 · <code>/offers/EC82HuoB/checkout</code></td>
+<td>11527</td>
+<td>–</td>
 </tr>
 <tr>
 <td>Thu 26.11</td>
 <td>8 997 kr</td>
-<td>⬜</td>
-<td>⬜ (Edpay)</td>
+<td>2151521903 · <code>/offers/jSCKoWZ7/checkout</code></td>
+<td>11525</td>
+<td>11525</td>
 </tr>
 <tr>
 <td>Thu 26.11</td>
 <td>3 × 3 147 kr</td>
-<td>⬜</td>
-<td>⬜ (Edpay)</td>
+<td>2151521946 · <code>/offers/coLwY8LX/checkout</code></td>
+<td>11528</td>
+<td>–</td>
 </tr>
 </tbody>
 </table>
-<p>Each offer grants course <code>2149607383</code> and access group <code>2149619906</code>. Purchase automation for each offer, same as the existing «Fra stress til ro – skreddersydd for deg» offers (e.g. automation 1494613): tag <code>bw26-kjopt</code>, tag <code>Fra stress til ro-skreddersydd for deg</code> (<code>2150447869</code>), subscribe to the ordinary welcome sequence <code>2148916296</code> («Etter kjøp av Fra stress til ro – skreddersydd for deg»), and subscribe to sequence <code>BW26 – D1</code>. The checkout links then go into the video page (Claude updates it).</p>
+<p>All four Kajabi offers grant course <code>2149607383</code> and access group <code>2149619906</code>. ⬜ Still to do: the purchase automation for each offer (same as the existing «Fra stress til ro – skreddersydd for deg» offers, e.g. automation 1494613): tag <code>bw26-kjopt</code>, tag <code>Fra stress til ro-skreddersydd for deg</code> (<code>2150447869</code>), subscribe to the welcome sequence <code>2148916296</code>, and subscribe to <code>BW26 – D1</code>. Check that Edpay purchases also get these. ⬜ One test purchase per button, then refund.</p>
 <h2 id="3-forms-tags-segments-automations">3. Forms, tags, segments, automations</h2>
 <h3 id="forms">Forms ✅</h3>
 <ul>
@@ -212,11 +217,6 @@ body{font-variant-numeric:lining-nums}</style></head><body><nav class="bar" aria
 <tbody>
 <tr>
 <td>VSL video (embed code)</td>
-<td>Video page</td>
-<td>Tue 24.11</td>
-</tr>
-<tr>
-<td>Offers and checkout links (section 2)</td>
 <td>Video page</td>
 <td>Tue 24.11</td>
 </tr>
