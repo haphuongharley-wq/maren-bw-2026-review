@@ -303,10 +303,10 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
     });
   }
   // ---- page ----
-  function gcal(a,start,url){ // "Legg i Google Kalender": opens a prefilled 20 minute Google Calendar event
+  function gcal(a,start,url){ // "Legg i Google Kalender": opens a prefilled 30 minute Google Calendar event
     function f(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';}
     var s=at(start);
-    a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Gratis video fra Maren Kvalvaag-Toven')+'&dates='+f(s)+'/'+f(s+20*60000)+'&details='+encodeURIComponent('Se videoen her: '+url)+'&location='+encodeURIComponent(url)+'&ctz=Europe/Oslo';
+    a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Gratis video fra Maren Kvalvaag-Toven')+'&dates='+f(s)+'/'+f(s+30*60000)+'&details='+encodeURIComponent('Se videoen her: '+url)+'&location='+encodeURIComponent(url)+'&ctz=Europe/Oslo';
     a.target='_blank';a.rel='noopener';
   }
   var state=resolve(STATES);

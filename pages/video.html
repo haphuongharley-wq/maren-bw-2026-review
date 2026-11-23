@@ -45,8 +45,8 @@ body{margin:0}
   ?state=r1d2vent (r1d2 after the session, box hidden), ?state=r2d2opptak (r2d2 + qa=replay). Previews ignore what the
   browser remembers.
 
-  VIDEO: replace the inside of the <div data-kajabi-video> frame with the video embed code
-  (keep the div, it keeps the 16:9 frame). Same embed in all four sale states.
+  VIDEO: the <div data-kajabi-video> frame holds a <video> of Maren's recording (pages/video/ on GitHub Pages).
+  Same video in all four sale states.
 
   NO KAJABI FORM on this page.
 -->
@@ -109,6 +109,7 @@ body{margin:0}
 .bw .dark .btn.ghost:hover{background:var(--gold-l);color:var(--deep)}
 .bw .btn.block{width:100%}
 .bw .micro{font-size:.86rem;line-height:1.5;color:var(--slate);margin:12px 0 0}
+.bw .micro a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 
 /* Cards, quotes */
 .bw .card{background:#fff;border:1px solid var(--sand);border-radius:var(--r);padding:clamp(24px,5vw,40px);box-shadow:var(--sh);color:var(--ink)}
@@ -333,7 +334,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
         </div>
         <p class="note">Siden åpner av seg selv når nedtellingen er ferdig. Du trenger ikke å gjøre noe.</p>
         <a class="btn" href="#" data-ics-btn>Legg i Google Kalender</a>
-        <p class="line">Sett av 20 minutter <span data-state-show="before1">onsdag</span><span data-state-show="before2" hidden>onsdag</span> morgen.</p>
+        <p class="line">Sett av 30 minutter <span data-state-show="before1">onsdag</span><span data-state-show="before2" hidden>onsdag</span> morgen.</p>
       </div>
     </section>
     <section class="cream">
@@ -372,13 +373,11 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
           <a data-qa="replay" data-link="replay" href="#" hidden>Se opptaket</a>
         </div>
         <h1>Hvorfor jula tapper flinke piker for krefter, og hvordan du <em>tar romjula tilbake for deg selv</em></h1>
-        <!-- VIDEO: replace the inside of this div with the video embed code (20 minutes). Keep the div. -->
-        <div class="player" data-kajabi-video>
-          <div class="poster">
-            <img src="https://haphuongharley-wq.github.io/maren-bw-2026-review/pages/img/maren-stol.jpg" alt="" width="800" height="1199">
-            <span class="play" aria-hidden="true"></span>
-            <p class="plbl">[Video, 20 minutter]</p>
-          </div>
+        <!-- VIDEO: Maren's recording (1188 × 488, 29 min), hosted with the page images. preload="none": nothing downloads until play. -->
+        <div class="player" data-kajabi-video style="aspect-ratio:1188/488">
+          <video controls playsinline preload="none" poster="https://haphuongharley-wq.github.io/maren-bw-2026-review/pages/video/julevideo-2026-poster.jpg" aria-label="Video: Hvorfor jula tapper flinke piker for krefter">
+            <source src="https://haphuongharley-wq.github.io/maren-bw-2026-review/pages/video/julevideo-2026.mp4" type="video/mp4">
+          </video>
         </div>
         <a class="btn" href="#tilbud" data-reveal>Se tilbudet ↓</a>
       </div>
@@ -406,7 +405,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
             <a class="alt" data-buy="split" href="#tilbud"><span>Eller del opp: <span class="nw" data-price="split">3 × 2 797 kr</span> <span class="nw">(totalt <span data-price="total">8 391 kr</span>)</span></span></a>
             <a class="alt sm" data-buy="vippsSplit" href="#tilbud">Del opp med Vipps</a>
             <ul class="pay" aria-label="Betalingsmåter"><li>Vipps</li><li>Klarna</li><li>Kort</li></ul>
-            <p class="micro">Klarna: betal senere eller del opp.</p>
+            <p class="micro">Klarna: betal senere eller del opp.<br>Ved kjøp godtar du <a href="https://www.detlillepusterommet.no/kjopsvilkar-fstr" target="_blank" rel="noopener">kjøpsvilkårene</a>.</p>
           </div>
         </div>
       </section>
@@ -585,7 +584,9 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
       function tick(){
         var t=Math.max(0,target-Date.now());
         if(preview&&(t===0||t>7*864e5))t=(9*3600+17*60+42)*1000+(days?2*864e5:0); // stable value in previews
-        if(!preview&&t===0&&!done){done=true;setTimeout(function(){location.reload();},1500);} // next state
+        if(!preview&&t===0&&!done){done=true;var v=root.querySelector('[data-kajabi-video] video'); // next state
+          if(v&&!v.paused&&!v.ended)v.addEventListener('pause',function(){location.reload();},{once:true}); // do not cut off someone watching
+          else setTimeout(function(){location.reload();},1500);}
         var x=Math.floor(t/1000),h=Math.floor(x/3600);
         if(days){days.textContent=Math.floor(h/24);h%=24;}
         el.querySelector('[data-cd=h]').textContent=pad(h);
@@ -596,10 +597,10 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
     });
   }
   // ---- page ----
-  function gcal(a,start,url){ // "Legg i Google Kalender": opens a prefilled 20 minute Google Calendar event
+  function gcal(a,start,url){ // "Legg i Google Kalender": opens a prefilled 30 minute Google Calendar event
     function f(ms){return new Date(ms).toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';}
     var s=at(start);
-    a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Gratis video fra Maren Kvalvaag-Toven')+'&dates='+f(s)+'/'+f(s+20*60000)+'&details='+encodeURIComponent('Se videoen her: '+url)+'&location='+encodeURIComponent(url)+'&ctz=Europe/Oslo';
+    a.href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Gratis video fra Maren Kvalvaag-Toven')+'&dates='+f(s)+'/'+f(s+30*60000)+'&details='+encodeURIComponent('Se videoen her: '+url)+'&location='+encodeURIComponent(url)+'&ctz=Europe/Oslo';
     a.target='_blank';a.rel='noopener';
   }
   var alias=QA_PREVIEW[preview],qaMode=alias?alias[1]:/^(live|wait|replay|off)$/.test(q.get('qa'))?q.get('qa'):'';
