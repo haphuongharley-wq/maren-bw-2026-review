@@ -170,10 +170,12 @@
 .bw .price .alt{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:10px;color:var(--navy);font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:5px}
 .bw .price .alt:hover{color:var(--gold-t)}
 .bw .price .alt.sm{min-height:44px;margin-top:0;font-size:.92rem}
-.bw .paywith{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+/* Klarna highlighted for flexible payment (Maren 23.11); Vipps full width under it */
+.bw .kbox{margin:14px 0 10px;padding:16px 16px 14px;border:1.5px solid #ffb3c7;border-radius:16px;background:#fff1f5;text-align:center}
+.bw .kbox-h{margin:0;font-weight:700;font-size:1rem;color:#17120f}
+.bw .kbox-t{margin:4px 0 12px;font-size:.9rem;line-height:1.45;color:var(--slate)}
 .bw .btn.vipps{padding:14px 16px;background:#ff5b24;box-shadow:none}.bw .btn.vipps:hover{background:#e04a17}
 .bw .btn.klarna{padding:14px 16px;background:#ffb3c7;color:#17120f;box-shadow:none}.bw .btn.klarna:hover{background:#ff9fb8}
-@media (max-width:380px){.bw .paywith{grid-template-columns:1fr}}
 .bw .nw{white-space:nowrap}
 .bw [tabindex="-1"]:focus{outline:none}
 .bw .pay{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 0}
@@ -381,12 +383,13 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
             <p class="giftl"><svg viewBox="0 0 20 26" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 25V10a8 8 0 0 1 16 0v15Z"/><circle cx="13.5" cy="16" r="1" fill="currentColor"/></svg><span>Med gaven <b>Romjulskalenderen</b></span></p>
             <div class="cd light" data-countdown="end" role="timer" aria-label="Tid igjen av dagens pris"><span><b data-cd="h">00</b><small>timer</small></span><span><b data-cd="m">00</b><small>minutter</small></span><span><b data-cd="s">00</b><small>sekunder</small></span></div>
             <a class="btn block" data-buy="full" href="#tilbud">Ja, jeg vil begynne</a>
-            <div class="paywith"><a class="btn vipps" data-buy="vipps" href="#tilbud">Betal med Vipps</a><a class="btn klarna" data-buy="klarna" href="#tilbud">Betal med Klarna</a></div>
+            <div class="kbox"><p class="kbox-h">Fleksibel betaling med Klarna</p><p class="kbox-t">Betal senere eller del opp, slik det passer deg.</p><a class="btn klarna block" data-buy="klarna" href="#tilbud">Betal med Klarna</a></div>
+            <a class="btn vipps block" data-buy="vipps" href="#tilbud">Betal med Vipps</a>
             <figure class="pquote"><blockquote>«Jeg kjenner ikke like mye på dårlig samvittighet når jeg vet at jeg må sette meg selv først.»</blockquote><figcaption>Cecilie Liland, deltaker i Fra stress til ro</figcaption></figure>
             <a class="alt" data-buy="split" href="#tilbud"><span>Eller del opp: <span class="nw" data-price="split">3 × 2 797 kr</span> <span class="nw">(totalt <span data-price="total">8 391 kr</span>)</span></span></a>
             <a class="alt sm" data-buy="vippsSplit" href="#tilbud">Del opp med Vipps</a>
             <ul class="pay" aria-label="Betalingsmåter"><li>Vipps</li><li>Klarna</li><li>Kort</li></ul>
-            <p class="micro">Klarna: betal senere eller del opp.<br>Ved kjøp godtar du <a href="https://www.detlillepusterommet.no/kjopsvilkar-fstr" target="_blank" rel="noopener">kjøpsvilkårene</a>.</p>
+            <p class="micro">Ved kjøp godtar du <a href="https://www.detlillepusterommet.no/kjopsvilkar-fstr" target="_blank" rel="noopener">kjøpsvilkårene</a>.</p>
           </div>
         </div>
       </section>
@@ -403,6 +406,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
           <div class="alone">
             <h3>Du går ikke alene</h3>
             <ul class="ticks">
+              <li>Enneagramtest, som gir deg skreddersydde videoer og coaching gjennom programmet</li>
               <li>eget fellesskap med de andre deltakerne</li>
               <li>gruppecoaching med Maren hver måned</li>
               <li>direktesending hver måned, med felles meditasjon</li>
@@ -423,7 +427,7 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
           <div>
             <p class="eyebrow">Gave til deg</p>
             <h2>Romjulskalenderen</h2>
-            <p class="lead">En kalender med 8 luker, fra 25. desember til 1. januar. 5 minutter hver dag med Maren, med Stopp · Se · Velg: et lydopptak, en liten oppgave og en side å skrive ut. Du runder av 2026 og velger 2027.</p>
+            <p class="lead">En kalender med 8 luker, fra 25. desember til 1. januar. 5 minutter hver dag med Maren, med Stopp · Se · Velg: et lydopptak, en liten oppgave og en side å skrive ut. Du runder av 2026 og går inn i 2027 med mindre stress og mer ro.</p>
           </div>
         </div>
       </section>
@@ -459,8 +463,8 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
 
       <section class="dark final center jul-night">
         <div class="wrap narrow">
-          <h2>I jula skal du få <em>være med selv.</em></h2>
-          <a class="btn" href="#bli-med">Start for&nbsp;<span data-price="price">7 997 kr</span></a>
+          <h2>Gi deg selv en hverdag med <em>mindre stress og mer ro.</em></h2>
+          <a class="btn" href="#bli-med"><span>Klikk her for å benytte deg av tilbudet (<span class="nw" data-price="price">7 997 kr</span>) nå!</span></a>
         </div>
       </section>
     </div>
