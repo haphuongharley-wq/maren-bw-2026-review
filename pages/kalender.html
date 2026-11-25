@@ -456,8 +456,8 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
     return done.length>=8?'alldone':'open';
   }
   var state=current();
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){forms(state);apply(state);});else{forms(state);apply(state);}
-  countdowns({first:FIRST+'T00:00'});
+  function init(){forms(state);apply(state);countdowns({first:FIRST+'T00:00'});} // countdowns skip hidden sections, so they start after apply()
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
   root.querySelector('[data-pdf-all]').href=CONFIG.pdfAll;
 
   var doors=root.querySelectorAll('[data-door]'),dlg=root.querySelector('dialog'),box=root.querySelector('[data-luke]'),toast=root.querySelector('[data-toast]'),timer;
