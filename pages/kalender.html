@@ -33,11 +33,10 @@ body{margin:0}
     closed   from 7 Jan 2027
   Progress and the unlocked flag are kept in this browser (localStorage).
   Preview: ?state=locked|feil|waiting|open|alldone|closed (open = 27 Dec with 2 doors done).
-  Any date: ?dato=2026-12-29 (uses this browser's real progress).
+  Any date: ?dato=2026-12-29 (uses this browser's real progress; ignored on detlillepusterommet.no).
 
   NATIVE KAJABI FORM: add one Form section DIRECTLY AFTER this code section:
-    "Romjulskalenderen": Fornavn (name, required), E-post (required), Mobil (custom phone field;
-    required or optional is still to be confirmed by Maren). Submit text: «Åpne kalenderen min».
+    "Romjulskalenderen": Navn and E-post (Kajabi defaults, both required). Submit text: «Åpne kalenderen min».
     Tag: bw26-kalender. Redirect after submit: THIS page URL + ?apnet=1 (unlocks the calendar).
   The script moves it into the [data-kajabi-form] placeholder and hides the emptied section.
   A native form cannot check the e-mail against the buyers. The error text («Vi finner ikke denne
@@ -303,14 +302,13 @@ background-size:240px 240px;animation:jul-snow 26s linear infinite}
         </blockquote>
       </figure>
       <div class="card">
-        <p class="err" role="alert" data-state-show="feil" hidden>Vi finner ikke denne e-posten blant deltakerne. Prøv e-posten du brukte da du kjøpte. <mark>[Maren, bekreft: kontakt-e-post for hjelp]</mark></p>
+        <p class="err" role="alert" data-state-show="feil" hidden>Vi finner ikke denne e-posten blant deltakerne. Prøv e-posten du brukte da du kjøpte.</p>
         <!-- FORM PLACEHOLDER: native Kajabi form "Romjulskalenderen" is moved in here -->
         <div class="kform" data-kajabi-form="kalender">
           <template data-preview-form data-next='{"locked":"?state=waiting","feil":"?state=waiting"}'>
             <form>
               <div class="field"><label for="bw-fn">Fornavn</label><input id="bw-fn" name="name" type="text" autocomplete="given-name" required></div>
               <div class="field"><label for="bw-em">E-post</label><input id="bw-em" name="email" type="email" autocomplete="email" required></div>
-              <div class="field"><label for="bw-tel">Mobil <mark>[Maren, bekreft: påkrevd eller valgfritt på kalendersiden]</mark></label><input id="bw-tel" name="phone" type="tel" autocomplete="tel"></div>
               <button type="submit">Åpne kalenderen min</button>
             </form>
           </template>
@@ -446,7 +444,7 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
   function long(d){var p=d.split('-');return +p[2]+'. '+MONTHS[p[1]-1];}
   var PRESET={locked:{today:'2026-12-20',u:0,done:[]},feil:{today:'2026-12-20',u:0,done:[]},waiting:{today:'2026-12-20',u:1,done:[]},
     open:{today:'2026-12-27',u:1,done:[0,1]},alldone:{today:'2027-01-01',u:1,done:[0,1,2,3,4,5,6,7]},closed:{today:'2027-01-07',u:1,done:[]}}[preview];
-  var today=PRESET?PRESET.today:(q.get('dato')||new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now)));
+  var today=PRESET?PRESET.today:((!/detlillepusterommet\.no$/.test(location.hostname)&&q.get('dato'))||new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now)));
   function load(k,d){if(PRESET)return d;try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v;}catch(e){return d;}}
   function save(k,v){if(PRESET)return;try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
   if(!PRESET&&q.get('apnet')==='1'){save(KEY_U,true);history.replaceState(null,'',location.pathname+location.hash);} // redirect target of the form
@@ -458,8 +456,7 @@ document.querySelectorAll('.bw [data-kajabi-form]').forEach(function(ph){
     return done.length>=8?'alldone':'open';
   }
   var state=current();
-  forms(state);
-  apply(state);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){forms(state);apply(state);});else{forms(state);apply(state);}
   countdowns({first:FIRST+'T00:00'});
   root.querySelector('[data-pdf-all]').href=CONFIG.pdfAll;
 
